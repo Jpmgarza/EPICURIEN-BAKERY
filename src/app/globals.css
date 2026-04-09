@@ -9,6 +9,8 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-sans);
   --font-mono: var(--font-geist-mono);
+  --font-satoshi: var(--font-satoshi);
+  --font-cormorant: var(--font-cormorant);
   --font-heading: var(--font-sans);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -81,6 +83,13 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+
+  /* Épicurien Brand Colors */
+  --dominant-brand: #FFFAF0;
+  --secondary-brand: #0C0908;
+  --accent-brand: #DA9100;
+  --muted-text: #2B1B17;
+  --divider: rgba(218, 145, 0, 0.25);
 }
 
 .dark {
@@ -117,14 +126,29 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+/* Noise texture overlay used in Hero */
+.bg-noise {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-satoshi;
   }
   html {
-    @apply font-sans;
+    @apply font-satoshi;
+  }
+  h1 {
+    @apply font-cormorant font-bold text-4xl;
+  }
+  h2 {
+    @apply font-satoshi font-medium text-2xl;
+  }
+  h3 {
+    @apply font-satoshi font-medium text-xl;
   }
 }
