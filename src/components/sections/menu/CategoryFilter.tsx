@@ -38,7 +38,7 @@ export function CategoryFilter() {
           <button
             key={f.key}
             onClick={() => setActiveFilter(f.key)}
-            className={`font-satoshi text-[10px] tracking-[0.2em] uppercase px-6 py-2.5 rounded-full border transition-all duration-200 cursor-pointer ${
+            className={`font-satoshi text-[10px] tracking-[0.2em] uppercase px-6 py-2.5 border transition-all duration-200 cursor-pointer ${
               activeFilter === f.key
                 ? "bg-[var(--accent-brand)] border-[var(--accent-brand)] text-[var(--secondary-brand)]"
                 : "border-[var(--secondary-brand)]/25 text-[var(--secondary-brand)] opacity-50 hover:opacity-100 hover:border-[var(--secondary-brand)]/50"

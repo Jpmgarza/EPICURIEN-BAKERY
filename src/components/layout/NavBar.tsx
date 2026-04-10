@@ -137,7 +137,7 @@ export function NavBar() {
               href={GRAB_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-[var(--accent-brand)] text-[var(--secondary-brand)] font-satoshi font-medium text-[10px] tracking-[0.2em] uppercase px-5 py-2.5 rounded-full hover:opacity-90 transition-opacity"
+              className="flex items-center gap-2 bg-[var(--accent-brand)] text-[var(--secondary-brand)] font-satoshi font-medium text-[10px] tracking-[0.2em] uppercase px-5 py-2.5 hover:opacity-90 transition-opacity"
             >
               <Bike size={13} />
               {t.nav.orderGrab}
@@ -216,7 +216,7 @@ export function NavBar() {
                   href={GRAB_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 w-full bg-[var(--accent-brand)] text-[var(--secondary-brand)] font-satoshi font-medium text-xs tracking-[0.2em] uppercase px-4 py-3.5 rounded-full"
+                  className="flex items-center justify-center gap-2 w-full bg-[var(--accent-brand)] text-[var(--secondary-brand)] font-satoshi font-medium text-xs tracking-[0.2em] uppercase px-4 py-3.5"
                 >
                   <Bike size={14} />
                   {t.nav.orderGrab}

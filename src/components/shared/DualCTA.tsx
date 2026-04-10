@@ -58,7 +58,7 @@ export function DualCTA({
           href={GRAB_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2.5 bg-[var(--accent-brand)] text-[var(--secondary-brand)] font-satoshi font-medium text-xs tracking-[0.2em] uppercase px-8 py-4 rounded-full hover:opacity-90 transition-opacity"
+          className="flex items-center gap-2.5 bg-[var(--accent-brand)] text-[var(--secondary-brand)] font-satoshi font-medium text-xs tracking-[0.2em] uppercase px-8 py-4 hover:opacity-90 transition-opacity"
         >
           <Bike size={15} />
           {t.hero.ctaGrab}
@@ -68,7 +68,7 @@ export function DualCTA({
           target="_blank"
           rel="noopener noreferrer"
           className={cn(
-            "flex items-center gap-2.5 border font-satoshi font-medium text-xs tracking-[0.2em] uppercase px-8 py-4 rounded-full hover:opacity-70 transition-opacity",
+            "flex items-center gap-2.5 border font-satoshi font-medium text-xs tracking-[0.2em] uppercase px-8 py-4 hover:opacity-70 transition-opacity",
             variant === "dark"
               ? "border-[var(--dominant-brand)]/30 text-[var(--dominant-brand)]"
               : "border-[var(--secondary-brand)]/30 text-[var(--secondary-brand)]"

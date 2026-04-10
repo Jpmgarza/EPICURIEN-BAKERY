@@ -41,7 +41,7 @@ export function InstagramStrip() {
             href="https://instagram.com/epicurien.bkk"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block font-satoshi text-[var(--secondary-brand)] opacity-60 hover:opacity-90 text-[10px] tracking-[0.3em] uppercase border border-[var(--secondary-brand)]/30 hover:border-[var(--secondary-brand)]/60 px-8 py-3.5 rounded-full transition-all"
+            className="inline-block font-satoshi text-[var(--secondary-brand)] opacity-60 hover:opacity-90 text-[10px] tracking-[0.3em] uppercase border border-[var(--secondary-brand)]/30 hover:border-[var(--secondary-brand)]/60 px-8 py-3.5 transition-all"
           >
             {t.home.followInstagram}
           </a>
