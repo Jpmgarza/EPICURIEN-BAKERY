@@ -25,7 +25,7 @@ export function PhilosophyCards() {
   ];
 
   return (
-    <section className="bg-[var(--dominant-brand)] py-20 px-6">
+    <section data-nav-color="light" className="bg-[var(--dominant-brand)] py-20 px-6">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-5">
         {cards.map((card, i) => (
           <div

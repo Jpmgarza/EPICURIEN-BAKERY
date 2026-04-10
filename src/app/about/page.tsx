@@ -11,7 +11,7 @@ export default function AboutPage() {
   return (
     <PageTransition>
       {/* Hero */}
-      <section className="bg-[var(--secondary-brand)] min-h-[55vh] flex flex-col items-center justify-center text-center px-6 pt-16 relative overflow-hidden">
+      <section data-nav-color="dark" className="bg-[var(--secondary-brand)] min-h-[55vh] flex flex-col items-center justify-center text-center px-6 pt-16 relative overflow-hidden">
         {/* Decorative ampersand */}
         <span className="absolute font-cormorant italic text-[var(--accent-brand)] opacity-[0.04] text-[22rem] leading-none select-none pointer-events-none top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
           &amp;
@@ -31,7 +31,7 @@ export default function AboutPage() {
       <PhilosophyCards />
 
       {/* CTA footer */}
-      <section className="bg-[var(--dominant-brand)] py-28 px-6">
+      <section data-nav-color="light" className="bg-[var(--dominant-brand)] py-28 px-6">
         <div className="max-w-3xl mx-auto">
           <DualCTA heading={t.about.ctaHeading} variant="light" />
         </div>

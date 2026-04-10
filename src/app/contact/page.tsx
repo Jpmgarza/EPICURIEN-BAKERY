@@ -12,7 +12,7 @@ export default function ContactPage() {
   const { t } = useLang();
   return (
     <PageTransition>
-      <section className="bg-[var(--dominant-brand)] min-h-screen flex flex-col items-center justify-center text-center px-6 pt-16">
+      <section data-nav-color="light" className="bg-[var(--dominant-brand)] min-h-screen flex flex-col items-center justify-center text-center px-6 pt-16">
         <div className="w-8 h-px bg-[var(--accent-brand)] opacity-60 mb-10" />
         <h1 className="font-cormorant font-normal italic text-[var(--secondary-brand)] text-5xl md:text-7xl mb-16">
           {t.nav.contact}

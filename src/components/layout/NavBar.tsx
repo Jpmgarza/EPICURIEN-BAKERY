@@ -12,11 +12,11 @@ const GRAB_URL = "https://food.grab.com/th/en/";
 function NavLink({
   href,
   label,
-  transparent,
+  textColorClass,
 }: {
   href: string;
   label: string;
-  transparent: boolean;
+  textColorClass: string;
 }) {
   return (
     <motion.div
@@ -27,9 +27,7 @@ function NavLink({
     >
       <Link
         href={href}
-        className={`font-satoshi text-xs tracking-[0.2em] uppercase opacity-50 hover:opacity-100 transition-all duration-300 ${
-          transparent ? "text-white" : "text-[var(--secondary-brand)]"
-        }`}
+        className={`font-satoshi text-xs tracking-[0.2em] uppercase opacity-50 hover:opacity-100 transition-all duration-300 ${textColorClass}`}
       >
         {label}
       </Link>
@@ -42,31 +40,94 @@ function NavLink({
   );
 }
 
+type DisplayMode = "transparent" | "light" | "dark";
+
 export function NavBar() {
   const { locale, setLocale, t } = useLang();
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [navTheme, setNavTheme] = useState<"dark" | "light">("light");
   const pathname = usePathname();
 
   const isHome = pathname === "/";
   const transparent = isHome && !scrolled;
 
+  // ── Home page: scroll-aware transparency (unchanged from previous) ──────
   useEffect(() => {
     if (!isHome) {
       setScrolled(false);
       return;
     }
-
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 80);
-    };
-
-    // Sync with current scroll position immediately
+    const handleScroll = () => setScrolled(window.scrollY > 80);
     handleScroll();
-
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isHome]);
+
+  // ── Non-home pages: section-aware color system ──────────────────────────
+  useEffect(() => {
+    if (isHome) return;
+
+    const sections = document.querySelectorAll<HTMLElement>("[data-nav-color]");
+    if (sections.length === 0) return;
+
+    // Find the section currently occupying the navbar region.
+    // "Active" = top has passed the 80px navbar threshold AND bottom is still visible.
+    // Among candidates, the one whose top is closest to (but ≤) 80px wins.
+    const syncTheme = () => {
+      let active: HTMLElement | null = null;
+      sections.forEach((sec) => {
+        const rect = sec.getBoundingClientRect();
+        if (rect.top <= 80 && rect.bottom > 0) {
+          if (!active || rect.top > active.getBoundingClientRect().top) {
+            active = sec;
+          }
+        }
+      });
+      if (active) {
+        setNavTheme(
+          (active as HTMLElement).dataset.navColor as "dark" | "light"
+        );
+      }
+    };
+
+    // Sync immediately on mount/route-change
+    syncTheme();
+
+    // IntersectionObserver triggers re-sync whenever any section crosses
+    // the 80px navbar threshold — avoids continuous scroll polling
+    const observer = new IntersectionObserver(() => syncTheme(), {
+      rootMargin: "-80px 0px 0px 0px",
+      threshold: [0, 1],
+    });
+    sections.forEach((s) => observer.observe(s));
+
+    return () => observer.disconnect();
+  }, [isHome, pathname]);
+
+  // ── Derive three-way display mode ───────────────────────────────────────
+  const displayMode: DisplayMode = transparent
+    ? "transparent"
+    : !isHome && navTheme === "dark"
+    ? "dark"
+    : "light";
+
+  // Background + border — all values reference CSS custom properties, no hex in JS
+  const navBgClass: Record<DisplayMode, string> = {
+    transparent: "bg-transparent border-transparent",
+    dark: "bg-[var(--secondary-brand)]/95 backdrop-blur-md border-[var(--dominant-brand)]/8",
+    light: "bg-[var(--dominant-brand)]/95 backdrop-blur-md border-[var(--secondary-brand)]/10",
+  };
+
+  // Text colour — all values are CSS colour names or CSS var references
+  const textColorClass: Record<DisplayMode, string> = {
+    transparent: "text-white",
+    dark: "text-[var(--dominant-brand)]",
+    light: "text-[var(--secondary-brand)]",
+  };
+
+  const bg = navBgClass[displayMode];
+  const tc = textColorClass[displayMode];
 
   const navLinks = [
     { href: "/", label: t.nav.home },
@@ -75,29 +136,21 @@ export function NavBar() {
     { href: "/visit", label: t.nav.visit },
   ];
 
-  const textColor = transparent
-    ? "text-white"
-    : "text-[var(--secondary-brand)]";
-
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${
-          transparent
-            ? "bg-transparent border-b border-transparent"
-            : "bg-[var(--dominant-brand)]/95 backdrop-blur-md border-b border-[var(--secondary-brand)]/10"
-        }`}
+        className={`fixed top-0 left-0 right-0 z-50 border-b transition-all duration-300 ease-in-out ${bg}`}
       >
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex flex-col leading-none group">
             <span
-              className={`font-cormorant text-lg tracking-[0.15em] group-hover:text-[var(--accent-brand)] transition-all duration-300 ${textColor}`}
+              className={`font-cormorant text-lg tracking-[0.15em] group-hover:text-[var(--accent-brand)] transition-all duration-300 ${tc}`}
             >
               ÉPICURIEN
             </span>
             <span
-              className={`font-satoshi text-[8px] tracking-[0.35em] uppercase mt-0.5 opacity-60 transition-all duration-300 ${textColor}`}
+              className={`font-satoshi text-[8px] tracking-[0.35em] uppercase mt-0.5 opacity-60 transition-all duration-300 ${tc}`}
             >
               {t.nav.brandSub}
             </span>
@@ -106,7 +159,7 @@ export function NavBar() {
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-10">
             {navLinks.map((link) => (
-              <NavLink key={link.href} {...link} transparent={transparent} />
+              <NavLink key={link.href} {...link} textColorClass={tc} />
             ))}
           </div>
 
@@ -117,14 +170,15 @@ export function NavBar() {
                 <span key={loc} className="flex items-center">
                   {i > 0 && (
                     <span
-                      className={`opacity-20 px-1 transition-all duration-300 ${textColor}`}
+                      className={`opacity-20 px-1 transition-all duration-300 ${tc}`}
                     >
                       |
                     </span>
                   )}
                   <button
+                    type="button"
                     onClick={() => setLocale(loc)}
-                    className={`uppercase px-0.5 cursor-pointer transition-all duration-300 ${textColor} ${
+                    className={`uppercase px-0.5 cursor-pointer transition-all duration-300 ${tc} ${
                       locale === loc ? "font-medium" : "opacity-50 hover:opacity-100"
                     }`}
                   >
@@ -133,6 +187,7 @@ export function NavBar() {
                 </span>
               ))}
             </div>
+            {/* CTA stays gold regardless of nav theme */}
             <a
               href={GRAB_URL}
               target="_blank"
@@ -147,7 +202,7 @@ export function NavBar() {
           {/* Mobile hamburger */}
           <button
             type="button"
-            className={`md:hidden p-1 transition-all duration-300 ${textColor}`}
+            className={`md:hidden p-1 transition-all duration-300 ${tc}`}
             onClick={() => setDrawerOpen(true)}
             aria-label={t.nav.openMenu}
           >
@@ -176,6 +231,7 @@ export function NavBar() {
               transition={{ type: "tween", duration: 0.3, ease: "easeInOut" }}
             >
               <button
+                type="button"
                 className="self-end text-[var(--dominant-brand)] opacity-60 hover:opacity-100 transition-opacity mb-12"
                 onClick={() => setDrawerOpen(false)}
                 aria-label={t.nav.closeMenu}
@@ -201,6 +257,7 @@ export function NavBar() {
                   {(["fr", "en", "th"] as const).map((loc) => (
                     <button
                       key={loc}
+                      type="button"
                       onClick={() => setLocale(loc)}
                       className={`uppercase cursor-pointer transition-colors ${
                         locale === loc

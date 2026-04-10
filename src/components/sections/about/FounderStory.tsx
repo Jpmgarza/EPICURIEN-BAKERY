@@ -6,7 +6,7 @@ export function FounderStory() {
   const { t } = useLang();
 
   return (
-    <section className="bg-[var(--dominant-brand)] py-28 px-6">
+    <section data-nav-color="light" className="bg-[var(--dominant-brand)] py-28 px-6">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-start">
         {/* Image placeholder */}
         <div className="aspect-[3/4] relative overflow-hidden">
