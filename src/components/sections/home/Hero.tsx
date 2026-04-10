@@ -40,7 +40,7 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
             className="text-[var(--secondary-brand)] opacity-70 text-xs tracking-[0.25em] uppercase font-satoshi"
           >
-            N.1 Best Croissant in Paris 2021
+            {t.hero.trustBadge}
           </motion.div>
 
           {/* H1 */}

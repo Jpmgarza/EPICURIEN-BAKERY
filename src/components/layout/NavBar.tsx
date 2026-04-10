@@ -1,14 +1,23 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "motion/react";
 import { Menu, X, Bike } from "lucide-react";
 import { useLang } from "@/lib/lang";
 
 const GRAB_URL = "https://food.grab.com/th/en/";
 
-function NavLink({ href, label }: { href: string; label: string }) {
+function NavLink({
+  href,
+  label,
+  transparent,
+}: {
+  href: string;
+  label: string;
+  transparent: boolean;
+}) {
   return (
     <motion.div
       className="relative"
@@ -18,7 +27,9 @@ function NavLink({ href, label }: { href: string; label: string }) {
     >
       <Link
         href={href}
-        className="font-satoshi text-[var(--secondary-brand)] text-xs tracking-[0.2em] uppercase opacity-50 hover:opacity-100 transition-opacity"
+        className={`font-satoshi text-xs tracking-[0.2em] uppercase opacity-50 hover:opacity-100 transition-all duration-300 ${
+          transparent ? "text-white" : "text-[var(--secondary-brand)]"
+        }`}
       >
         {label}
       </Link>
@@ -34,6 +45,28 @@ function NavLink({ href, label }: { href: string; label: string }) {
 export function NavBar() {
   const { locale, setLocale, t } = useLang();
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+
+  const isHome = pathname === "/";
+  const transparent = isHome && !scrolled;
+
+  useEffect(() => {
+    if (!isHome) {
+      setScrolled(false);
+      return;
+    }
+
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 80);
+    };
+
+    // Sync with current scroll position immediately
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isHome]);
 
   const navLinks = [
     { href: "/", label: t.nav.home },
@@ -42,16 +75,30 @@ export function NavBar() {
     { href: "/visit", label: t.nav.visit },
   ];
 
+  const textColor = transparent
+    ? "text-white"
+    : "text-[var(--secondary-brand)]";
+
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-[var(--dominant-brand)]/95 backdrop-blur-md border-b border-[var(--secondary-brand)]/10">
+      <nav
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${
+          transparent
+            ? "bg-transparent border-b border-transparent"
+            : "bg-[var(--dominant-brand)]/95 backdrop-blur-md border-b border-[var(--secondary-brand)]/10"
+        }`}
+      >
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex flex-col leading-none group">
-            <span className="font-cormorant text-[var(--secondary-brand)] text-lg tracking-[0.15em] group-hover:text-[var(--accent-brand)] transition-colors duration-300">
+            <span
+              className={`font-cormorant text-lg tracking-[0.15em] group-hover:text-[var(--accent-brand)] transition-all duration-300 ${textColor}`}
+            >
               ÉPICURIEN
             </span>
-            <span className="font-satoshi text-[var(--secondary-brand)] opacity-60 text-[8px] tracking-[0.35em] uppercase mt-0.5">
+            <span
+              className={`font-satoshi text-[8px] tracking-[0.35em] uppercase mt-0.5 opacity-60 transition-all duration-300 ${textColor}`}
+            >
               {t.nav.brandSub}
             </span>
           </Link>
@@ -59,7 +106,7 @@ export function NavBar() {
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-10">
             {navLinks.map((link) => (
-              <NavLink key={link.href} {...link} />
+              <NavLink key={link.href} {...link} transparent={transparent} />
             ))}
           </div>
 
@@ -69,16 +116,16 @@ export function NavBar() {
               {(["fr", "en", "th"] as const).map((loc, i) => (
                 <span key={loc} className="flex items-center">
                   {i > 0 && (
-                    <span className="text-[var(--secondary-brand)] opacity-20 px-1">
+                    <span
+                      className={`opacity-20 px-1 transition-all duration-300 ${textColor}`}
+                    >
                       |
                     </span>
                   )}
                   <button
                     onClick={() => setLocale(loc)}
-                    className={`uppercase px-0.5 cursor-pointer transition-colors ${
-                      locale === loc
-                        ? "text-[var(--secondary-brand)] font-medium"
-                        : "text-[var(--secondary-brand)] opacity-50 hover:opacity-100"
+                    className={`uppercase px-0.5 cursor-pointer transition-all duration-300 ${textColor} ${
+                      locale === loc ? "font-medium" : "opacity-50 hover:opacity-100"
                     }`}
                   >
                     {loc}
@@ -99,7 +146,8 @@ export function NavBar() {
 
           {/* Mobile hamburger */}
           <button
-            className="md:hidden text-[var(--secondary-brand)] p-1"
+            type="button"
+            className={`md:hidden p-1 transition-all duration-300 ${textColor}`}
             onClick={() => setDrawerOpen(true)}
             aria-label={t.nav.openMenu}
           >
@@ -108,7 +156,7 @@ export function NavBar() {
         </div>
       </nav>
 
-      {/* Mobile Drawer */}
+      {/* Mobile Drawer — unchanged */}
       <AnimatePresence>
         {drawerOpen && (
           <>
