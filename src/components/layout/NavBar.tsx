@@ -18,7 +18,7 @@ function NavLink({ href, label }: { href: string; label: string }) {
     >
       <Link
         href={href}
-        className="font-satoshi text-[var(--dominant-brand)] text-xs tracking-[0.2em] uppercase opacity-70 hover:opacity-100 transition-opacity"
+        className="font-satoshi text-[var(--secondary-brand)] text-xs tracking-[0.2em] uppercase opacity-50 hover:opacity-100 transition-opacity"
       >
         {label}
       </Link>
@@ -44,15 +44,15 @@ export function NavBar() {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-[var(--secondary-brand)]/95 backdrop-blur-md border-b border-[var(--divider)]">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-[var(--dominant-brand)]/95 backdrop-blur-md border-b border-[var(--secondary-brand)]/10">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex flex-col leading-none group">
-            <span className="font-cormorant text-[var(--dominant-brand)] text-lg tracking-[0.15em] group-hover:text-[var(--accent-brand)] transition-colors duration-300">
+            <span className="font-cormorant text-[var(--secondary-brand)] text-lg tracking-[0.15em] group-hover:text-[var(--accent-brand)] transition-colors duration-300">
               ÉPICURIEN
             </span>
-            <span className="font-satoshi text-[var(--accent-brand)] text-[8px] tracking-[0.35em] uppercase mt-0.5">
-              French Bakery
+            <span className="font-satoshi text-[var(--secondary-brand)] opacity-60 text-[8px] tracking-[0.35em] uppercase mt-0.5">
+              {t.nav.brandSub}
             </span>
           </Link>
 
@@ -69,7 +69,7 @@ export function NavBar() {
               {(["fr", "en", "th"] as const).map((loc, i) => (
                 <span key={loc} className="flex items-center">
                   {i > 0 && (
-                    <span className="text-[var(--dominant-brand)] opacity-20 px-1">
+                    <span className="text-[var(--secondary-brand)] opacity-20 px-1">
                       |
                     </span>
                   )}
@@ -77,8 +77,8 @@ export function NavBar() {
                     onClick={() => setLocale(loc)}
                     className={`uppercase px-0.5 cursor-pointer transition-colors ${
                       locale === loc
-                        ? "text-[var(--accent-brand)]"
-                        : "text-[var(--dominant-brand)] opacity-40 hover:opacity-80"
+                        ? "text-[var(--secondary-brand)] font-medium"
+                        : "text-[var(--secondary-brand)] opacity-50 hover:opacity-100"
                     }`}
                   >
                     {loc}
@@ -99,9 +99,9 @@ export function NavBar() {
 
           {/* Mobile hamburger */}
           <button
-            className="md:hidden text-[var(--dominant-brand)] p-1"
+            className="md:hidden text-[var(--secondary-brand)] p-1"
             onClick={() => setDrawerOpen(true)}
-            aria-label="Open navigation menu"
+            aria-label={t.nav.openMenu}
           >
             <Menu size={22} />
           </button>
@@ -130,7 +130,7 @@ export function NavBar() {
               <button
                 className="self-end text-[var(--dominant-brand)] opacity-60 hover:opacity-100 transition-opacity mb-12"
                 onClick={() => setDrawerOpen(false)}
-                aria-label="Close navigation menu"
+                aria-label={t.nav.closeMenu}
               >
                 <X size={20} />
               </button>

@@ -8,13 +8,21 @@ const fr: Dict = {
     visit: "Nous trouver",
     contact: "Contact",
     orderGrab: "Commander sur Grab",
+    brandSub: "Boulangerie Française",
+    openMenu: "Ouvrir le menu de navigation",
+    closeMenu: "Fermer le menu de navigation",
+    footerHeading: "Navigation",
   },
   hero: {
     trustBadge: "1er Meilleur Croissant de Paris — 2021",
-    headline: "Paris, en une bouchée.",
+    headline: "Une bouchée et t'es accroché.",
     subline: "Boulangerie-Pâtisserie Artisanale · W District, Bangkok",
     ctaGrab: "Commander sur Grab",
     ctaVisit: "Visiter la boutique",
+    badgeRing: "ÉPICURIEN · BOULANGERIE FRANÇAISE · BANGKOK · ÉPICURIEN · BOULANGERIE FRANÇAISE · BANGKOK · ",
+    badgeNumber: "N°1",
+    badgeAward: "MEILLEUR\nCROISSANT\nDE PARIS",
+    badgeYear: "2021",
   },
   trustBar: {
     award: "Champion Paris 2021",
@@ -29,10 +37,48 @@ const fr: Dict = {
     filterPatisseries: "Pâtisseries",
     filterBoissons: "Boissons",
     addToGrab: "Commander sur Grab",
+    viewFullMenu: "Voir la carte complète",
+  },
+  home: {
+    midPageHeading: "Chaque matin, tout juste sorti du four.",
+    followInstagram: "Suivre sur Instagram",
+  },
+  menu: {
+    headline: "La Carte",
+    subline: "Cuit frais chaque matin dans notre atelier du W District",
+    // Viennoiseries descriptions
+    croissant: "Notre meilleure vente. Enzo a remporté le 1er Meilleur Croissant de Paris 2021 pour exactement ceci.",
+    painChocolat: "Bâtons de chocolat (pas trop sucré)",
+    painRaisins: "Crème pâtissière et raisins secs",
+    painSuisse: "Crème pâtissière et pépites de chocolat",
+    chaussonPommes: "Garniture aux pommes",
+    croissantAmandes: "Croissant aux amandes",
+    painChocolatAmandes: "Bâtons de chocolat et crème d'amande",
+    painRaisinAmandes: "Crème pâtissière avec raisins et crème d'amande",
+    painSuisseAmandes: "Crème pâtissière avec pépites de chocolat et crème d'amande",
+    // Pâtisseries descriptions
+    cookies: "Croustillant à l'extérieur, moelleux à l'intérieur. Assez sucré.",
+    madeleineeLemon: "Comme un gâteau éponge au citron. Zeste de citron dans la pâte. 2 pièces ฿90 ou 4 pièces ฿170",
+    // Boissons descriptions
+    icedEspresso: "Espresso Glacé",
+    icedLatte: "Latte Glacé",
+    icedMocha: "Mocha Glacé",
+    thaiTea: "Thé Thaï",
+    greenTea: "Thé vert (pas du matcha)",
+    icedCocoa: "Cacao Glacé",
+    lemonTea: "Thé au Citron",
+    strawberrySoda: "Soda Fraise",
+    lemonSoda: "Soda Citron",
+    peachSoda: "Soda Pêche",
+    passionSoda: "Soda Fruit de la Passion",
+    lycheeSoda: "Soda Litchi",
+    appleSoda: "Soda Pomme",
+    kiwiSoda: "Soda Kiwi",
   },
   about: {
     headline: "L'Artisan",
     subline: "L'histoire derrière chaque croissant",
+    ctaHeading: "Prêt à goûter ?",
     pullQuote: "Jamais de raccourcis.",
     story:
       "Enzo Le Bohec, lauréat du Meilleur Croissant de Paris 2021, a quitté la France pour apporter l'âme de la boulangerie-pâtisserie française authentique à Bangkok. Chaque article chez Épicurien est fait à partir de zéro, quotidiennement, avec du beurre AOP français importé et des techniques traditionnelles.",
@@ -45,6 +91,11 @@ const fr: Dict = {
     philosophy3Desc:
       "1ère place, Meilleur Croissant de Paris 2021. Chaque fournée maintient ce standard.",
   },
+  storyTeaser: {
+    pullQuote: "La pâtisserie est un langage d'amour.",
+    body: "Enzo Le Bohec a quitté Paris avec une seule mission : apporter l'âme d'une vraie boulangerie-pâtisserie à Bangkok. Chaque croissant, chaque tarte, chaque pain est fait maison chaque matin — avec du beurre AOP français importé et la discipline d'un champion.",
+    meetBaker: "Rencontrez le boulanger →",
+  },
   visit: {
     headline: "Nous Trouver",
     subline: "W District · Sukhumvit 71 · Bangkok",
@@ -56,10 +107,22 @@ const fr: Dict = {
     directionsBtn: "Obtenir l'itinéraire",
     grabBanner:
       "Vous ne pouvez pas venir aujourd'hui ? Commandez sur Grab — livré frais.",
+    grabHeading: "Vous ne pouvez pas venir aujourd'hui ?",
+    grabSubline: "Commandez sur Grab — livré frais",
   },
   footer: {
     tagline: "Boulangerie-Pâtisserie Artisanale, Bangkok",
     copyright: "© 2025 Épicurien French Bakery · Conçu avec amour à Bangkok",
+    instagramAriaLabel: "Instagram @epicurien.bkk",
+    facebookAriaLabel: "Facebook Épicurien",
+  },
+  contact: {
+    instagramLabel: "Instagram",
+    instagramHandle: "@epicurien.bkk",
+    facebookLabel: "Facebook",
+    facebookHandle: "Épicurien Boulangerie Française",
+    phoneLabel: "Téléphone",
+    wholesale: "Pour les demandes en gros ou traiteur, envoyez-nous un DM sur Instagram",
   },
 };
 

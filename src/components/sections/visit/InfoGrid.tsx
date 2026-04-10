@@ -28,7 +28,7 @@ export function InfoGrid() {
             >
               <Icon
                 size={16}
-                className="text-[var(--accent-brand)] shrink-0 mt-0.5"
+                className="text-[var(--secondary-brand)] opacity-40 shrink-0 mt-0.5"
               />
               <p className="font-satoshi text-[var(--muted-text)] text-sm leading-relaxed opacity-80">
                 {text}
@@ -48,8 +48,8 @@ export function InfoGrid() {
             <MapPin size={15} />
             {t.visit.directionsBtn}
           </a>
-          <p className="font-satoshi text-[var(--muted-text)] text-xs opacity-50 text-center tracking-wide">
-            W District · Sukhumvit 71 · Bangkok
+          <p className="font-satoshi text-[var(--muted-text)] text-xs opacity-60 text-center tracking-wide">
+            {t.visit.subline}
           </p>
         </div>
       </div>

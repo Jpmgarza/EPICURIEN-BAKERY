@@ -52,7 +52,7 @@ export default function RootLayout({
       lang="en"
       className={`${cormorant.variable} ${satoshi.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-[var(--secondary-brand)]">
+      <body className="min-h-full flex flex-col bg-[var(--dominant-brand)]">
         <LangProvider>
           <NavBar />
           {children}

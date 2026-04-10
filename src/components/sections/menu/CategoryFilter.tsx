@@ -1,10 +1,13 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "motion/react";
 import { Bike } from "lucide-react";
 import { useLang } from "@/lib/lang";
 import { products, type Category } from "@/lib/products";
+
+const SUPABASE_STORAGE = "https://pbrnjxgzfmhbcgcqawro.supabase.co/storage/v1/object/public/products/";
 
 const GRAB_URL = "https://food.grab.com/th/en/";
 
@@ -59,20 +62,34 @@ export function CategoryFilter() {
           {filtered.map((product) => (
             <div
               key={product.id}
-              className="group bg-[var(--secondary-brand)] border border-[rgba(218,145,0,0.12)] hover:border-[var(--accent-brand)] transition-all duration-300 overflow-hidden"
+              className="group bg-[var(--secondary-brand)] border border-[var(--dominant-brand)]/8 hover:border-[var(--dominant-brand)]/25 transition-all duration-300 overflow-hidden"
             >
-              {/* Image placeholder */}
-              <div className="aspect-[4/5] relative overflow-hidden">
+              {/* Product image */}
+              <div className="aspect-[4/5] relative overflow-hidden bg-[#0C0908]">
                 <div className="absolute inset-0 bg-gradient-to-br from-[#1c1309] via-[#0C0908] to-[#1a1007]" />
                 <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_25%_75%,rgba(218,145,0,0.18),transparent_55%)]" />
                 <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_75%_20%,rgba(255,250,240,0.06),transparent_50%)]" />
+                {product.image && (
+                  <Image
+                    src={SUPABASE_STORAGE + product.image}
+                    alt={product.name}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  />
+                )}
               </div>
               {/* Info + CTA */}
               <div className="p-5 border-t border-[rgba(218,145,0,0.08)]">
                 <p className="font-satoshi font-medium text-[var(--dominant-brand)] text-sm mb-1.5">
                   {product.name}
                 </p>
-                <p className="font-satoshi text-[var(--accent-brand)] text-sm mb-4">
+                {product.descriptionKey && (
+                  <p className="font-satoshi text-[var(--dominant-brand)]/70 text-xs mb-3 leading-relaxed">
+                    {t.menu[product.descriptionKey as keyof typeof t.menu] || ""}
+                  </p>
+                )}
+                <p className="font-satoshi text-[var(--dominant-brand)] opacity-60 text-sm mb-4">
                   {product.price} THB
                 </p>
                 <a

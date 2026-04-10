@@ -34,7 +34,7 @@ export function PhilosophyCards() {
           >
             <card.icon
               size={20}
-              className="text-[var(--accent-brand)] mb-6"
+              className="text-[var(--dominant-brand)] opacity-50 mb-6"
             />
             <h3 className="font-satoshi font-medium text-[var(--dominant-brand)] text-sm mb-3 tracking-wide">
               {card.title}

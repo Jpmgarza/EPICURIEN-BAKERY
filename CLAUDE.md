@@ -1,161 +1,268 @@
-# CLAUDE.md
+🏆 **N.1 Best Croissant in Paris 2021** — Enzo Le Bohec
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+# CLAUDE.md — Épicurien French Bakery (Bangkok)
 
-## Project: Épicurien French Bakery
+This file provides guidance to Claude Code (claude.ai/code) when working
+with code in this repository.
+
+---
+
+## Project
 
 **Client:** Épicurien French Bakery — W District, Bangkok  
-**Founder:** Enzo Le Bohec (1st Best Croissant in Paris 2021)  
-**Brand direction:** Moody French luxury — think Pierre Hermé meets fine-dining dessert bar  
-**Audience:** Trilingual (French primary, English, Thai)
+**Brand direction:** Moody French luxury — Pierre Hermé meets fine-dining dessert bar  
+**Audience:** Trilingual — English (primary), French, Thai  
+**Default locale:** `"en"` — English is both the default and the main language of the site.
+
+---
 
 ## Stack
-- **Framework:** Next.js 16 App Router, TypeScript
-- **Styling:** Tailwind CSS v4 (CSS-first: `@import "tailwindcss"` in `globals.css`)
-- **Animation:** `motion` package (`motion/react`) — **never** `framer-motion`
-- **Icons:** Lucide React only — **exception:** `Instagram` and `Facebook` were removed from lucide-react v1.x; use `@/components/shared/SocialIcons.tsx` instead
-- **Fonts:** Cormorant Garamond (H1, italic) + Satoshi local (H2–body) + Geist Mono (fallback)
-- **Deploy:** Vercel (auto-deploys on push to `main`)
+
+| Layer | Choice | Notes |
+|-------|--------|-------|
+| Framework | Next.js 16 App Router + TypeScript | |
+| Styling | Tailwind CSS v4 — CSS-first | `@import "tailwindcss"` in `globals.css` |
+| Animation | `motion/react` | **Never** `framer-motion` |
+| UI primitives | `@base-ui/react` + `shadcn` | Only `button.tsx` installed so far |
+| Icons | Lucide React only | **Exception:** Instagram + Facebook → `@/components/shared/SocialIcons.tsx` |
+| Fonts | Cormorant Garamond (H1, Google Fonts) + Satoshi (H2–body, local WOFF2) | |
+| Deploy | Vercel | Auto-deploys on push to `main` |
+
+---
 
 ## Commands
 
 ```bash
-npm run dev       # Start dev server (webpack) on localhost:3000
+npm run dev       # Dev server on localhost:3000 (webpack)
 npm run build     # Production build
 npm run lint      # ESLint + TypeScript checks
 npm run start     # Serve prior production build
 ```
 
-> **`--webpack` flag is required.** Turbopack crashes on this project because the full OneDrive path exceeds Windows' 260-character path limit when Turbopack generates `.next` cache filenames. The `dev` script in `package.json` already includes `--webpack`.
+> **`--webpack` flag is required.** Turbopack crashes because the OneDrive
+> path exceeds Windows' 260-char limit when generating `.next` cache filenames.
+> The `dev` script in `package.json` already includes `--webpack`.
 
 **If the dev server breaks:**
 ```bash
 npx kill-port 3000
-cmd //c "rmdir /s /q .next"   # Windows-safe cache clear
+cmd //c "rmdir /s /q .next"
 npm run dev
 ```
 
+---
+
+## Environment Variables
+
+Create `.env.local` at project root — **do not commit this file.**
+
+```env
+NEXT_PUBLIC_SUPABASE_URL=https://pbrnjxgzfmhbcgcqawro.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=<your-anon-key-here>
+```
+
+Both are required — the app throws at startup if missing.  
+For Vercel: set both in project Environment Variables settings (keep `NEXT_PUBLIC_` prefix).
+
+---
+
+## Supabase & Image Storage
+
+All product images live in Supabase, not `public/`. Bucket: **`products`**.
+
+**Image URL pattern:**
+https://pbrnjxgzfmhbcgcqawro.supabase.co/storage/v1/object/public/products/<filename>
+
+text
+
+**`src/lib/supabase.ts` exports:**
+- `supabase` — configured client
+- `uploadProductImage(file, productName)` → `string | null`
+- `getImageUrl(bucket, path)` → `string`
+- `deleteProductImage(filePath)` → `boolean`
+
+**Using images in components:**
+```tsx
+import Image from "next/image";
+
+export function ProductCard({ product }) {
+  const imageUrl = `https://pbrnjxgzfmhbcgcqawro.supabase.co/storage/v1/object/public/products/${product.image}`;
+  return <Image src={imageUrl} alt={product.name} width={300} height={300} />;
+}
+```
+
+**`products.ts` shape:**
+```ts
+{ id, name, price, category, descriptionKey?, image }
+// image = filename only, e.g. "croissant-au-beurre.jpg"
+// descriptionKey = optional key into t.menu
+```
+
+**Rules:**
+- `next.config.ts` already whitelists the Supabase domain — no config changes needed
+- All images go in the `products` bucket (subdirectories OK: `products/croissants/`)
+- Naming: lowercase, hyphens, include extension
+
+---
+
 ## Pages
 
-| Route | File | Description |
-|-------|------|-------------|
-| `/` | `src/app/page.tsx` | Home — Hero, TrustBar, FeaturedProducts, MidPageCTA, StoryTeaser, InstagramStrip |
-| `/menu` | `src/app/menu/page.tsx` | Full product catalog with category filter |
-| `/about` | `src/app/about/page.tsx` | Founder story + philosophy cards |
-| `/visit` | `src/app/visit/page.tsx` | Address, hours, Google Maps embed |
-| `/contact` | `src/app/contact/page.tsx` | Instagram, Facebook, phone — no form yet |
+| Route | File | Sections |
+|-------|------|----------|
+| `/` | `src/app/page.tsx` | Hero, TrustBar, FeaturedProducts, MidPageCTA, StoryTeaser, InstagramStrip |
+| `/menu` | `src/app/menu/page.tsx` | Compact dark hero → cream filter + product grid |
+| `/about` | `src/app/about/page.tsx` | Dark hero → FounderStory + PhilosophyCards + CTA |
+| `/visit` | `src/app/visit/page.tsx` | Dark hero → InfoGrid + MapEmbed + Grab banner |
+| `/contact` | `src/app/contact/page.tsx` | Full cream — Instagram, Facebook, phone only (no form) |
+
+---
+
+## File Structure
+src/
+app/ App Router pages + layouts
+components/
+layout/ NavBar, Footer, MobileStickyBar, PageTransition
+shared/ DualCTA, TrustBar, SocialIcons, ImageUpload
+ui/ shadcn components (button.tsx only)
+sections/ Page-specific sections (grouped by page)
+lib/
+lang/ LangProvider, useLang(), en/fr/th dictionaries
+supabase.ts Supabase client + image helpers
+products.ts Product catalog + featuredProducts
+utils.ts cn() helper (clsx + tailwind-merge)
+globals.css Tailwind directives + CSS vars + @theme inline
+public/
+fonts/ Satoshi-Regular.woff2, Satoshi-Medium.woff2
+
+text
+
+---
 
 ## Component Architecture
+layout/
+NavBar.tsx "use client" — fixed top, mobile drawer (AnimatePresence), lang toggle
+Footer.tsx "use client" — useLang()
+MobileStickyBar.tsx "use client" — fixed bottom, hidden on md+
+PageTransition.tsx "use client" — wraps content in <motion.main>
+shared/
+DualCTA.tsx "use client" — Grab + Directions buttons
+TrustBar.tsx "use client" — award/ingredient/location strip
+SocialIcons.tsx server — inline SVG (Instagram + Facebook not in lucide-react v1.x)
+ImageUpload.tsx "use client" — drag-and-drop upload to Supabase
+ui/
+button.tsx shadcn Button
+sections/
+home/ Hero, FeaturedProducts, MidPageCTA, StoryTeaser, InstagramStrip
+menu/ CategoryFilter ("use client" — filter state + product grid)
+about/ FounderStory, PhilosophyCards ("use client" — useLang)
+visit/ InfoGrid ("use client"), MapEmbed (server)
 
-```
-src/components/
-  layout/
-    NavBar.tsx          "use client" — fixed top, mobile drawer (AnimatePresence), lang toggle
-    Footer.tsx          "use client" — uses useLang() for translations
-    MobileStickyBar.tsx "use client" — fixed bottom, hidden on md+
-    PageTransition.tsx  "use client" — wraps page content in <motion.main>
-  shared/
-    DualCTA.tsx         "use client" — Grab + Directions buttons; uses useLang()
-    TrustBar.tsx        "use client" — award/ingredient/location strip; uses useLang()
-    SocialIcons.tsx     server — inline SVG for Instagram + Facebook (not in lucide-react v1.x)
-  sections/
-    home/               Hero, FeaturedProducts, MidPageCTA, StoryTeaser, InstagramStrip
-    menu/               CategoryFilter ("use client" — filter state + product grid)
-    about/              FounderStory, PhilosophyCards (both "use client" for useLang)
-    visit/              InfoGrid ("use client"), MapEmbed (server)
-src/lib/
-  lang/
-    index.ts            LangProvider + useLang() — uses createElement, NOT JSX (it's a .ts file)
-    en.ts               Source of truth — typed as Dict, NO "as const"
-    fr.ts / th.ts       Implement Dict with translated strings
-  products.ts           Static product array + featuredProducts subset
-  utils.ts              cn() helper (clsx + tailwind-merge)
-```
+text
 
-**Rule for `"use client"`:** Any component that calls `useLang()`, uses `useState`/`useEffect`, or renders `motion.*` elements must have `"use client"`. Server components cannot use React Context.
+**`"use client"` rule:** Required on any component that calls `useLang()`,
+uses `useState`/`useEffect`, or renders `motion.*` elements.
+
+---
 
 ## i18n
 
-`useLang()` returns `{ locale, setLocale, t }` where `t` is the typed `Dict` from `en.ts`.
+`useLang()` returns `{ locale, setLocale, t }`:
+- `locale` — `"en"` (default) | `"fr"` | `"th"`
+- `t` — typed `Dict` of all translated strings for current locale
+- `en.ts` is the source of truth — always populate English first, then mirror to `fr.ts` and `th.ts`
 
-**Adding a new string:**
-1. Add key to `src/lib/lang/en.ts` (no `as const` — fr/th need different string values)
-2. Mirror in `fr.ts` and `th.ts`
-3. Use in a `"use client"` component: `const { t } = useLang()`
+**`lang/index.ts` uses `createElement`, not JSX** — it's a `.ts` file (not `.tsx`).
+ESLint rejects JSX in `.ts` files. Do not convert it.
 
-**Do not use next-intl or any i18n library** — OneDrive's file-read errors break packages with heavy dynamic imports at startup.
+**`en.ts` has no `as const`** — `fr.ts` and `th.ts` must independently satisfy `Dict`.
 
-## Color System (60/30/10 rule)
+**Adding a translation string:**
+1. Add key + English value to `en.ts` (camelCase, no `as const`)
+2. Mirror exact key structure in `fr.ts` and `th.ts`
+3. Use in `"use client"` component: `const { t } = useLang()`
+4. Run `npm run lint` — TypeScript catches missing keys
 
-| Role | Hex | CSS variable | Usage |
-|------|-----|-------------|-------|
-| Dominant 60% | `#FFFAF0` | `--dominant-brand` | Section backgrounds, breathing space |
-| Secondary 30% | `#0C0908` | `--secondary-brand` | Hero, NavBar, Footer, product cards |
-| Accent 10% | `#DA9100` | `--accent-brand` | CTAs, icons, price tags, borders |
-| Muted text | `#2B1B17` | `--muted-text` | Body text on cream backgrounds |
-| Divider | `rgba(218,145,0,0.25)` | `--divider` | Gold hairline borders |
+**Do not use next-intl or any i18n library** — OneDrive file-read errors
+break packages with heavy dynamic imports at startup.
 
-**Current section split per page:**
-- Home: Hero + TrustBar dark → FeaturedProducts + MidPageCTA + StoryTeaser + InstagramStrip cream
-- Menu: compact dark hero → cream filter+grid section
-- About: dark hero → cream FounderStory + PhilosophyCards + CTA
-- Visit: dark hero → cream InfoGrid + MapEmbed + Grab banner
-- Contact: full cream
-
-**Product image areas are always dark** (`bg-[var(--secondary-brand)]` or dark gradients) — never white.
+---
 
 ## Tailwind v4 Gotchas
 
-- Custom fonts (`font-satoshi`, `font-cormorant`) must be declared in the `@theme inline` block in `globals.css` — `tailwind.config.ts` extensions alone are not enough in CSS-first mode:
+- Custom fonts must be declared in `@theme inline` in `globals.css`:
   ```css
   @theme inline {
     --font-satoshi: var(--font-satoshi);
     --font-cormorant: var(--font-cormorant);
   }
   ```
-- Use `bg-[var(--dominant-brand)]` inline syntax — no legacy `theme()` function in CSS.
+  `tailwind.config.ts` extensions alone are not enough in CSS-first mode.
+- Use `bg-[var(--color-name)]` inline syntax — no legacy `theme()` function.
 - `shadcn/tailwind.css` is imported in `globals.css` for shadcn token compatibility.
+
+---
 
 ## motion/react Gotchas
 
-- Import: `import { motion } from "motion/react"` — not `framer-motion`.
-- When defining `Variants` objects, import and annotate the type explicitly:
+- Import: `import { motion } from "motion/react"` — never `framer-motion`
+- Always annotate `Variants` objects explicitly:
   ```ts
   import { motion, type Variants } from "motion/react";
   const myVariants: Variants = { ... };
   ```
-  Without the annotation, TypeScript infers `ease: string` instead of `Easing`, which fails type-checking.
-- `whileHover` on a parent `motion.div` propagates to child `variants` — use this pattern for nav underline animations.
+  Without annotation, TypeScript infers `ease: string` instead of `Easing` → build fails.
+- `whileHover` on a parent `motion.div` propagates to child `variants` — use for nav underline animations.
+
+---
 
 ## Critical Constraints
 
-1. **No next-intl** — custom `LangContext` only.
-2. **No carousel autoplay** — ever.
-3. **No white backgrounds** for product image areas.
-4. **`lang/index.ts` uses `createElement`** not JSX — the file is `.ts` not `.tsx`; ESLint rejects JSX in `.ts` files.
-5. **`en.ts` has no `as const`** — fr/th must satisfy `Dict` with their own string values.
-6. **Contact form** — no `POST /api/contact` route exists yet. When adding one, create the route at `src/app/api/contact/route.ts`.
+1. **No next-intl** — custom `LangContext` only
+2. **No carousel autoplay** — ever
+3. **No `framer-motion`** — use `motion/react`
+4. **`lang/index.ts` stays `.ts`** — uses `createElement`, not JSX
+5. **`en.ts` has no `as const`** — fr/th satisfy `Dict` independently
+6. **Contact form API route doesn't exist yet** — create at `src/app/api/contact/route.ts` when needed
 
-## CTAs (global)
+---
 
-- **Order on Grab:** `https://food.grab.com/th/en/` (placeholder — replace with real merchant deep-link)
-- **Get Directions:** `https://maps.app.goo.gl/mRJsESrH4KEqCGJ9A`
-- **Instagram:** `https://instagram.com/epicurien.bkk`
-- **Facebook:** `https://facebook.com/share/18WCJuTpEe/`
-- **Phone:** `+66 80 791 2902`
+## CTAs (Global)
 
-## Design Reference
+| CTA | URL |
+|-----|-----|
+| Order on Grab | `https://food.grab.com/th/en/` *(replace with real merchant deep-link)* |
+| Get Directions | `https://maps.app.goo.gl/mRJsESrH4KEqCGJ9A` |
+| Instagram | `https://instagram.com/epicurien.bkk` |
+| Facebook | `https://facebook.com/share/18WCJuTpEe/` |
+| Phone | `+66 80 791 2902` |
 
-**Primary:** [Pierre Hermé](https://pierreherme.com) — gold standard for typography, product photography, luxury spacing, mobile-first.  
-**Priority:** Mobile experience → Desktop refinement → Trilingual accessibility.
+---
+
+## Common Tasks
+
+### Adding a New Product
+1. Upload image to Supabase `products` bucket — note the relative path
+2. Add product object to `src/lib/products.ts` (id, name, price, category, image, descriptionKey)
+3. Add `descriptionKey` string to `en.ts`, `fr.ts`, `th.ts` under `menu` section
+4. If featured: add to `featuredProducts` array
+
+### Adding a New Page
+1. Create `src/app/[route]/page.tsx`
+2. Wrap content in `<PageTransition>`
+3. Add links in `NavBar.tsx` and `Footer.tsx`
+4. Add translations in `src/lib/lang/{en,fr,th}.ts`
+5. Test all three locales by toggling the language selector
+
+---
 
 ## Troubleshooting
 
 | Problem | Fix |
 |---------|-----|
-| Turbopack crash / path too long | Already fixed: dev script uses `--webpack`. If it appears again, verify `package.json` has `next dev --webpack`. |
-| `UNKNOWN: unknown error, read` | `npx kill-port 3000 && cmd //c "rmdir /s /q .next" && npm run dev` |
-| `Cannot apply unknown utility class font-satoshi` | Add `--font-satoshi: var(--font-satoshi)` to `@theme inline` block in `globals.css` |
+| Turbopack crash / path too long | `package.json` dev script must include `--webpack` |
+| `UNKNOWN: unknown error, read` (OneDrive timeout) | `npx kill-port 3000 && cmd //c "rmdir /s /q .next" && npm run dev` |
+| `Cannot apply unknown utility class font-satoshi` | Add `--font-satoshi: var(--font-satoshi)` to `@theme inline` in `globals.css` |
 | `Export Instagram doesn't exist` | Use `InstagramIcon` from `@/components/shared/SocialIcons` |
-| `Variants` type error on `ease` | Annotate variant objects as `Variants` from `"motion/react"` |
-| Vercel deploy fails | Check build logs — TypeScript errors in `motion` variant objects are the most common cause |
+| `Variants` type error on `ease` | Annotate variant objects as `type Variants` from `"motion/react"` |
+| Vercel deploy fails | TypeScript errors in `motion` variant objects are most common cause — check build logs |
+| Supabase env vars missing at build | Set both `NEXT_PUBLIC_` vars in `.env.local` and in Vercel project settings |

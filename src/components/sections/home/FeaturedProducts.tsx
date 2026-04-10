@@ -1,9 +1,12 @@
 "use client";
 
+import Image from "next/image";
 import { motion, type Variants } from "motion/react";
 import Link from "next/link";
 import { useLang } from "@/lib/lang";
 import { featuredProducts } from "@/lib/products";
+
+const SUPABASE_STORAGE = "https://pbrnjxgzfmhbcgcqawro.supabase.co/storage/v1/object/public/products/";
 
 const containerVariants: Variants = {
   hidden: {},
@@ -43,18 +46,27 @@ export function FeaturedProducts() {
                 href="/menu"
                 className="group block bg-[var(--secondary-brand)] border border-[rgba(218,145,0,0.12)] hover:border-[var(--accent-brand)] transition-all duration-300 overflow-hidden"
               >
-                {/* Dark marble image placeholder */}
-                <div className="aspect-[4/5] relative overflow-hidden">
+                {/* Product image */}
+                <div className="aspect-[4/5] relative overflow-hidden bg-[#0C0908]">
                   <div className="absolute inset-0 bg-gradient-to-br from-[#1c1309] via-[#0C0908] to-[#1a1007]" />
                   <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_25%_75%,rgba(218,145,0,0.18),transparent_55%)]" />
                   <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_75%_20%,rgba(255,250,240,0.06),transparent_50%)]" />
+                  {product.image && (
+                    <Image
+                      src={SUPABASE_STORAGE + product.image}
+                      alt={product.name}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    />
+                  )}
                 </div>
                 {/* Info */}
                 <div className="p-5 border-t border-[rgba(218,145,0,0.08)]">
                   <p className="font-satoshi font-medium text-[var(--dominant-brand)] text-sm mb-1.5">
                     {product.name}
                   </p>
-                  <p className="font-satoshi text-[var(--accent-brand)] text-sm">
+                  <p className="font-satoshi text-[var(--dominant-brand)] opacity-60 text-sm">
                     {product.price} THB
                   </p>
                 </div>
@@ -69,7 +81,7 @@ export function FeaturedProducts() {
             href="/menu"
             className="inline-flex items-center gap-2 font-satoshi text-[var(--secondary-brand)] text-[10px] tracking-[0.3em] uppercase border-b border-[var(--secondary-brand)]/30 pb-px hover:border-[var(--secondary-brand)] hover:opacity-70 transition-all"
           >
-            View Full Menu
+            {t.products.viewFullMenu}
           </Link>
         </div>
       </div>
