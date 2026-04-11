@@ -13,10 +13,12 @@ function NavLink({
   href,
   label,
   textColorClass,
+  dimOpacity = "opacity-50",
 }: {
   href: string;
   label: string;
   textColorClass: string;
+  dimOpacity?: string;
 }) {
   return (
     <motion.div
@@ -27,12 +29,12 @@ function NavLink({
     >
       <Link
         href={href}
-        className={`font-satoshi text-xs tracking-[0.2em] uppercase opacity-50 hover:opacity-100 transition-all duration-300 ${textColorClass}`}
+        className={`font-satoshi text-xs tracking-[0.2em] uppercase ${dimOpacity} hover:opacity-100 transition-all duration-300 ${textColorClass}`}
       >
         {label}
       </Link>
       <motion.span
-        className="absolute -bottom-0.5 left-0 h-px w-full bg-[var(--accent-brand)] origin-left block"
+        className="absolute -bottom-0.5 left-0 h-px w-full bg-current origin-left block"
         variants={{ rest: { scaleX: 0 }, hover: { scaleX: 1 } }}
         transition={{ duration: 0.3, ease: "easeOut" }}
       />
@@ -126,8 +128,16 @@ export function NavBar() {
     light: "text-[var(--secondary-brand)]",
   };
 
+  // CTA button — 3 states driven by the same displayMode
+  const ctaClass: Record<DisplayMode, string> = {
+    transparent: "bg-white text-[var(--secondary-brand)]",
+    light:       "bg-[var(--secondary-brand)] text-[var(--dominant-brand)]",
+    dark:        "bg-white text-[var(--secondary-brand)]",
+  };
+
   const bg = navBgClass[displayMode];
   const tc = textColorClass[displayMode];
+  const cta = ctaClass[displayMode];
 
   const navLinks = [
     { href: "/", label: t.nav.home },
@@ -145,12 +155,12 @@ export function NavBar() {
           {/* Logo */}
           <Link href="/" className="flex flex-col leading-none group">
             <span
-              className={`font-cormorant text-lg tracking-[0.15em] group-hover:text-[var(--accent-brand)] transition-all duration-300 ${tc}`}
+              className={`font-cormorant text-lg tracking-[0.15em] group-hover:opacity-70 transition-all duration-300 ${tc}`}
             >
               ÉPICURIEN
             </span>
             <span
-              className={`font-satoshi text-[8px] tracking-[0.35em] uppercase mt-0.5 opacity-60 transition-all duration-300 ${tc}`}
+              className={`font-satoshi text-[8px] tracking-[0.35em] uppercase mt-0.5 transition-all duration-300 ${displayMode === "transparent" ? "opacity-75" : "opacity-60"} ${tc}`}
             >
               {t.nav.brandSub}
             </span>
@@ -159,7 +169,12 @@ export function NavBar() {
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-10">
             {navLinks.map((link) => (
-              <NavLink key={link.href} {...link} textColorClass={tc} />
+              <NavLink
+                key={link.href}
+                {...link}
+                textColorClass={tc}
+                dimOpacity={displayMode === "transparent" ? "opacity-75" : "opacity-50"}
+              />
             ))}
           </div>
 
@@ -179,7 +194,9 @@ export function NavBar() {
                     type="button"
                     onClick={() => setLocale(loc)}
                     className={`uppercase px-0.5 cursor-pointer transition-all duration-300 ${tc} ${
-                      locale === loc ? "font-medium" : "opacity-50 hover:opacity-100"
+                      locale === loc
+                        ? "font-medium"
+                        : `${displayMode === "transparent" ? "opacity-75" : "opacity-50"} hover:opacity-100`
                     }`}
                   >
                     {loc}
@@ -187,12 +204,11 @@ export function NavBar() {
                 </span>
               ))}
             </div>
-            {/* CTA stays gold regardless of nav theme */}
             <a
               href={GRAB_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-[var(--accent-brand)] text-[var(--secondary-brand)] font-satoshi font-medium text-[10px] tracking-[0.2em] uppercase px-5 py-2.5 hover:opacity-90 transition-opacity"
+              className={`flex items-center gap-2 font-satoshi font-medium text-[10px] tracking-[0.2em] uppercase px-5 py-2.5 hover:opacity-90 transition-[background-color,color] duration-300 ease-in-out ${cta}`}
             >
               <Bike size={13} />
               {t.nav.orderGrab}
@@ -244,7 +260,7 @@ export function NavBar() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="font-cormorant italic text-[var(--dominant-brand)] text-3xl hover:text-[var(--accent-brand)] transition-colors"
+                    className="font-cormorant italic text-[var(--dominant-brand)] text-3xl hover:opacity-70 transition-opacity"
                     onClick={() => setDrawerOpen(false)}
                   >
                     {link.label}
@@ -261,7 +277,7 @@ export function NavBar() {
                       onClick={() => setLocale(loc)}
                       className={`uppercase cursor-pointer transition-colors ${
                         locale === loc
-                          ? "text-[var(--accent-brand)]"
+                          ? "text-[var(--dominant-brand)]"
                           : "text-[var(--dominant-brand)] opacity-40"
                       }`}
                     >
@@ -273,7 +289,7 @@ export function NavBar() {
                   href={GRAB_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 w-full bg-[var(--accent-brand)] text-[var(--secondary-brand)] font-satoshi font-medium text-xs tracking-[0.2em] uppercase px-4 py-3.5"
+                  className="flex items-center justify-center gap-2 w-full bg-white text-[var(--secondary-brand)] font-satoshi font-medium text-xs tracking-[0.2em] uppercase px-4 py-3.5"
                 >
                   <Bike size={14} />
                   {t.nav.orderGrab}

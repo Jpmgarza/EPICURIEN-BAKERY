@@ -7,7 +7,7 @@ import { useLang } from "@/lib/lang";
 import { DualCTA } from "@/components/shared/DualCTA";
 
 const HERO_IMAGE =
-  "https://pbrnjxgzfmhbcgcqawro.supabase.co/storage/v1/object/public/products/Home-hero-image-women.png";
+  "https://pbrnjxgzfmhbcgcqawro.supabase.co/storage/v1/object/public/products/Main-hero-image-breadcrumbs.png.png";
 
 export function Hero() {
   const { t } = useLang();
@@ -20,12 +20,13 @@ export function Hero() {
         alt=""
         fill
         priority
+        sizes="100vw"
         className="object-cover object-center"
       />
-      {/* Dark overlay for text contrast */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[rgba(12,9,8,0.25)] via-[rgba(12,9,8,0.15)] to-transparent pointer-events-none" />
-      {/* Subtle warm veil — softens marble */}
-      <div className="absolute inset-0 bg-[rgba(255,250,240,0.25)] pointer-events-none" />
+      {/* Base text-protection overlay — ensures WCAG AA contrast for white text on photo */}
+      <div className="absolute inset-0 bg-[rgba(12,9,8,0.55)] pointer-events-none" />
+      {/* Nav-area scrim — extra depth behind the transparent navbar */}
+      <div className="absolute inset-x-0 top-0 h-44 bg-gradient-to-b from-[rgba(12,9,8,0.32)] to-transparent pointer-events-none" />
       {/* Fade to cream at the bottom so page flows into next section */}
       <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[var(--dominant-brand)] to-transparent pointer-events-none" />
 
@@ -33,16 +34,6 @@ export function Hero() {
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pt-16 flex flex-col items-center justify-center">
         {/* Centered headline + subline + CTA */}
         <div className="flex flex-col items-center text-center gap-7 max-w-4xl">
-          {/* Award Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: -12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-            className="text-[var(--secondary-brand)] opacity-70 text-xs tracking-[0.25em] uppercase font-satoshi"
-          >
-            {t.hero.trustBadge}
-          </motion.div>
-
           {/* H1 */}
           <motion.h1
             initial={{ opacity: 0, y: 24 }}
@@ -58,12 +49,12 @@ export function Hero() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.38 }}
-            className="font-satoshi text-[var(--secondary-brand)] opacity-70 text-[11px] tracking-[0.3em] uppercase"
+            className="font-satoshi text-white/75 text-[11px] tracking-[0.3em] uppercase"
           >
             {t.hero.subline}
           </motion.p>
 
-          {/* Thin gold divider */}
+          {/* Thin divider */}
           <motion.div
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
@@ -77,7 +68,7 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.55 }}
           >
-            <DualCTA variant="light" />
+            <DualCTA variant="dark" />
           </motion.div>
         </div>
 
@@ -147,7 +138,7 @@ export function Hero() {
 
       {/* Scroll hint */}
       <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-[var(--accent-brand)] opacity-70"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-[var(--secondary-brand)] opacity-60"
         animate={{ y: [0, 8, 0] }}
         transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
       >
