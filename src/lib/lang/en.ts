@@ -13,7 +13,7 @@ const en = {
   },
   hero: {
     trustBadge: "1st Best Croissant in Paris — 2021",
-    headline: "One bite and you're hooked.",
+    headline: "THE ART OF FRENCH CROISSANTS.",
     subline: "Artisan French Bakery · W District, Bangkok",
     ctaGrab: "Order on Grab",
     ctaVisit: "Visit the Shop",

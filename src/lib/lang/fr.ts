@@ -15,7 +15,7 @@ const fr: Dict = {
   },
   hero: {
     trustBadge: "1er Meilleur Croissant de Paris — 2021",
-    headline: "Une bouchée et t'es accroché.",
+    headline: "L'ART DU CROISSANT FRANÇAIS.",
     subline: "Boulangerie-Pâtisserie Artisanale · W District, Bangkok",
     ctaGrab: "Commander sur Grab",
     ctaVisit: "Visiter la boutique",
