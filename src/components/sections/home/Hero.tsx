@@ -7,7 +7,7 @@ import { useLang } from "@/lib/lang";
 import { DualCTA } from "@/components/shared/DualCTA";
 
 const HERO_IMAGE =
-  "https://pbrnjxgzfmhbcgcqawro.supabase.co/storage/v1/object/public/products/Main-hero-image-breadcrumbs.png.png";
+  "https://pbrnjxgzfmhbcgcqawro.supabase.co/storage/v1/object/public/products/hero-image-goldmarble-croissant.png";
 
 export function Hero() {
   const { t } = useLang();
