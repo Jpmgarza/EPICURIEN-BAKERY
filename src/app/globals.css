@@ -87,9 +87,9 @@
   /* Épicurien Brand Colors */
   --dominant-brand: #FFFAF0;
   --secondary-brand: #0C0908;
-  --accent-brand: #ffd400;
+  --accent-brand: #FFFFFF;
   --muted-text: #2B1B17;
-  --divider: rgba(255, 212, 0, 0.25);
+  --divider: rgba(255, 255, 255, 0.10);
 }
 
 .dark {

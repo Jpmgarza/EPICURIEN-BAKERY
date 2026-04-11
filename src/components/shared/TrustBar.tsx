@@ -16,14 +16,14 @@ export function TrustBar() {
               {t.trustBar.award}
             </span>
           </div>
-          <span className="hidden sm:block text-[var(--accent-brand)] opacity-40 select-none">·</span>
+          <span className="hidden sm:block text-[var(--secondary-brand)] opacity-20 select-none">·</span>
           <div className="flex items-center gap-2.5">
             <Wheat size={13} className="text-[var(--secondary-brand)] opacity-60 shrink-0" />
             <span className="font-satoshi text-[var(--secondary-brand)] opacity-70 text-[10px] tracking-[0.2em] uppercase">
               {t.trustBar.ingredient}
             </span>
           </div>
-          <span className="hidden sm:block text-[var(--accent-brand)] opacity-40 select-none">·</span>
+          <span className="hidden sm:block text-[var(--secondary-brand)] opacity-20 select-none">·</span>
           <div className="flex items-center gap-2.5">
             <MapPin size={13} className="text-[var(--secondary-brand)] opacity-60 shrink-0" />
             <span className="font-satoshi text-[var(--secondary-brand)] opacity-70 text-[10px] tracking-[0.2em] uppercase">

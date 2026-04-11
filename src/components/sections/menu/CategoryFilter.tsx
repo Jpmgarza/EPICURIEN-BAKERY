@@ -40,7 +40,7 @@ export function CategoryFilter() {
             onClick={() => setActiveFilter(f.key)}
             className={`font-satoshi text-[10px] tracking-[0.2em] uppercase px-6 py-2.5 border transition-all duration-200 cursor-pointer ${
               activeFilter === f.key
-                ? "bg-[var(--accent-brand)] border-[var(--accent-brand)] text-[var(--secondary-brand)]"
+                ? "bg-[var(--secondary-brand)] border-[var(--secondary-brand)] text-[var(--dominant-brand)]"
                 : "border-[var(--secondary-brand)]/25 text-[var(--secondary-brand)] opacity-50 hover:opacity-100 hover:border-[var(--secondary-brand)]/50"
             }`}
           >
@@ -67,7 +67,7 @@ export function CategoryFilter() {
               {/* Product image */}
               <div className="aspect-[4/5] relative overflow-hidden bg-[#0C0908]">
                 <div className="absolute inset-0 bg-gradient-to-br from-[#1c1309] via-[#0C0908] to-[#1a1007]" />
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_25%_75%,rgba(218,145,0,0.18),transparent_55%)]" />
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_25%_75%,rgba(255,255,255,0.05),transparent_55%)]" />
                 <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_75%_20%,rgba(255,250,240,0.06),transparent_50%)]" />
                 {product.image && (
                   <Image
@@ -80,7 +80,7 @@ export function CategoryFilter() {
                 )}
               </div>
               {/* Info + CTA */}
-              <div className="p-5 border-t border-[rgba(218,145,0,0.08)]">
+              <div className="p-5 border-t border-[rgba(255,255,255,0.06)]">
                 <p className="font-satoshi font-medium text-[var(--dominant-brand)] text-sm mb-1.5">
                   {product.name}
                 </p>
@@ -96,7 +96,7 @@ export function CategoryFilter() {
                   href={GRAB_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 w-full border border-[var(--accent-brand)]/40 text-[var(--accent-brand)] font-satoshi text-[10px] tracking-[0.2em] uppercase py-2.5 hover:bg-[var(--accent-brand)] hover:text-[var(--secondary-brand)] hover:border-[var(--accent-brand)] transition-all duration-200"
+                  className="flex items-center justify-center gap-2 w-full border border-white/30 text-white font-satoshi text-[10px] tracking-[0.2em] uppercase py-2.5 hover:bg-white hover:text-[var(--secondary-brand)] hover:border-white transition-all duration-200"
                 >
                   <Bike size={12} />
                   {t.products.addToGrab}

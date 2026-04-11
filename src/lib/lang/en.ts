@@ -23,7 +23,7 @@ const en = {
     badgeYear: "2021",
   },
   trustBar: {
-    award: "Paris 2021 Champion",
+    award: "1st Best Croissant in Paris — 2021",
     ingredient: "AOP Butter · French Flour",
     location: "W District · BTS Phra Khanong",
   },
@@ -79,7 +79,7 @@ const en = {
     ctaHeading: "Ready to taste it?",
     pullQuote: "No shortcuts. Ever.",
     story:
-      "Enzo Le Bohec, winner of the Best Croissant in Paris 2021, left France to bring the soul of authentic French boulangerie-pâtisserie to Bangkok. Every item at Épicurien is made from scratch, daily, using imported French AOP butter and traditional techniques.",
+      "Enzo Le Bohec is a Franco-Thai chef and owner, at the helm of Épicurien in Bangkok. Winner of the 1st Prize for Best Croissant in Paris 2021, he puts all his expertise into an artisan bakery prepared with care and freshness every day.\n\nLocated at W District, Sukhumvit 71, Épicurien welcomes all lovers of French pastries and viennoiseries in a warm and authentic atmosphere.",
     philosophy1Title: "Baked Fresh Daily",
     philosophy1Desc: "Nothing leaves the kitchen unless it was baked this morning.",
     philosophy2Title: "French AOP Butter",

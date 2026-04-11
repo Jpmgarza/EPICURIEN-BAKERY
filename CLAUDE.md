@@ -1,9 +1,8 @@
-🏆 **N.1 Best Croissant in Paris 2021** — Enzo Le Bohec
+# CLAUDE.md
 
-# CLAUDE.md — Épicurien French Bakery (Bangkok)
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-This file provides guidance to Claude Code (claude.ai/code) when working
-with code in this repository.
+> **Brand fact:** Enzo Le Bohec won **N.1 Best Croissant in Paris 2021** — keep this visible in trust/award copy.
 
 ---
 
@@ -118,46 +117,48 @@ export function ProductCard({ product }) {
 ---
 
 ## File Structure
-src/
-app/ App Router pages + layouts
-components/
-layout/ NavBar, Footer, MobileStickyBar, PageTransition
-shared/ DualCTA, TrustBar, SocialIcons, ImageUpload
-ui/ shadcn components (button.tsx only)
-sections/ Page-specific sections (grouped by page)
-lib/
-lang/ LangProvider, useLang(), en/fr/th dictionaries
-supabase.ts Supabase client + image helpers
-products.ts Product catalog + featuredProducts
-utils.ts cn() helper (clsx + tailwind-merge)
-globals.css Tailwind directives + CSS vars + @theme inline
-public/
-fonts/ Satoshi-Regular.woff2, Satoshi-Medium.woff2
 
-text
+```
+src/
+  app/                   App Router pages + layouts
+  components/
+    layout/              NavBar, Footer, MobileStickyBar, PageTransition
+    shared/              DualCTA, TrustBar, SocialIcons, ImageUpload
+    ui/                  shadcn components (button.tsx only)
+    sections/            Page-specific sections (grouped by page)
+  lib/
+    lang/                LangProvider, useLang(), en/fr/th dictionaries
+    supabase.ts          Supabase client + image helpers
+    products.ts          Product catalog + featuredProducts
+    utils.ts             cn() helper (clsx + tailwind-merge)
+  globals.css            Tailwind directives + CSS vars + @theme inline
+public/
+  fonts/                 Satoshi-Regular.woff2, Satoshi-Medium.woff2
+```
 
 ---
 
 ## Component Architecture
-layout/
-NavBar.tsx "use client" — fixed top, mobile drawer (AnimatePresence), lang toggle
-Footer.tsx "use client" — useLang()
-MobileStickyBar.tsx "use client" — fixed bottom, hidden on md+
-PageTransition.tsx "use client" — wraps content in <motion.main>
-shared/
-DualCTA.tsx "use client" — Grab + Directions buttons
-TrustBar.tsx "use client" — award/ingredient/location strip
-SocialIcons.tsx server — inline SVG (Instagram + Facebook not in lucide-react v1.x)
-ImageUpload.tsx "use client" — drag-and-drop upload to Supabase
-ui/
-button.tsx shadcn Button
-sections/
-home/ Hero, FeaturedProducts, MidPageCTA, StoryTeaser, InstagramStrip
-menu/ CategoryFilter ("use client" — filter state + product grid)
-about/ FounderStory, PhilosophyCards ("use client" — useLang)
-visit/ InfoGrid ("use client"), MapEmbed (server)
 
-text
+```
+layout/
+  NavBar.tsx          "use client" — fixed top, mobile drawer (AnimatePresence), lang toggle
+  Footer.tsx          "use client" — useLang()
+  MobileStickyBar.tsx "use client" — fixed bottom, hidden on md+
+  PageTransition.tsx  "use client" — wraps content in <motion.main>
+shared/
+  DualCTA.tsx         "use client" — Grab + Directions buttons
+  TrustBar.tsx        "use client" — award/ingredient/location strip
+  SocialIcons.tsx     server — inline SVG (Instagram + Facebook not in lucide-react v1.x)
+  ImageUpload.tsx     "use client" — drag-and-drop upload to Supabase
+ui/
+  button.tsx          shadcn Button
+sections/
+  home/               Hero, FeaturedProducts, MidPageCTA, StoryTeaser, InstagramStrip
+  menu/               CategoryFilter ("use client" — filter state + product grid)
+  about/              FounderStory, PhilosophyCards ("use client" — useLang)
+  visit/              InfoGrid ("use client"), MapEmbed (server)
+```
 
 **`"use client"` rule:** Required on any component that calls `useLang()`,
 uses `useState`/`useEffect`, or renders `motion.*` elements.

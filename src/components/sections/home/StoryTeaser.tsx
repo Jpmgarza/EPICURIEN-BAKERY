@@ -17,7 +17,7 @@ export function StoryTeaser() {
 
         {/* Text + link */}
         <div className="flex flex-col gap-7">
-          <div className="w-8 h-px bg-[var(--accent-brand)] opacity-60" />
+          <div className="w-8 h-px bg-[var(--secondary-brand)] opacity-30" />
           <p className="font-satoshi text-[var(--muted-text)] text-[15px] leading-[1.8] opacity-80">
             {t.storyTeaser.body}
           </p>

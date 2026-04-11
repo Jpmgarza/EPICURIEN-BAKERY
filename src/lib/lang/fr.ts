@@ -25,7 +25,7 @@ const fr: Dict = {
     badgeYear: "2021",
   },
   trustBar: {
-    award: "Champion Paris 2021",
+    award: "1er Meilleur Croissant de Paris — 2021",
     ingredient: "Beurre AOP · Farine française",
     location: "W District · BTS Phra Khanong",
   },
@@ -81,7 +81,7 @@ const fr: Dict = {
     ctaHeading: "Prêt à goûter ?",
     pullQuote: "Jamais de raccourcis.",
     story:
-      "Enzo Le Bohec, lauréat du Meilleur Croissant de Paris 2021, a quitté la France pour apporter l'âme de la boulangerie-pâtisserie française authentique à Bangkok. Chaque article chez Épicurien est fait à partir de zéro, quotidiennement, avec du beurre AOP français importé et des techniques traditionnelles.",
+      "Enzo Le Bohec est un chef et propriétaire franco-thaï, à la tête d'Épicurien à Bangkok. Lauréat du 1er prix du Meilleur Croissant de Paris 2021, il met tout son savoir-faire au service d'une boulangerie artisanale préparée avec soin et fraîcheur chaque jour.\n\nInstallé au W District, Sukhumvit 71, Épicurien accueille tous les amateurs de viennoiseries et de pâtisseries françaises dans une ambiance chaleureuse et authentique.",
     philosophy1Title: "Cuit frais chaque jour",
     philosophy1Desc: "Rien ne sort de la cuisine s'il n'a pas été cuit ce matin.",
     philosophy2Title: "Beurre AOP français",

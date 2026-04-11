@@ -1,15 +1,17 @@
 "use client";
 
+import Image from "next/image";
 import { InstagramIcon } from "@/components/shared/SocialIcons";
 import { useLang } from "@/lib/lang";
 
-// Static gradient variants for each placeholder — avoids inline styles
-const GLOWS = [
-  "bg-[radial-gradient(ellipse_at_30%_50%,rgba(218,145,0,0.12),transparent_60%)]",
-  "bg-[radial-gradient(ellipse_at_45%_70%,rgba(218,145,0,0.10),transparent_60%)]",
-  "bg-[radial-gradient(ellipse_at_60%_30%,rgba(218,145,0,0.14),transparent_60%)]",
-  "bg-[radial-gradient(ellipse_at_25%_65%,rgba(218,145,0,0.09),transparent_60%)]",
-  "bg-[radial-gradient(ellipse_at_55%_40%,rgba(218,145,0,0.13),transparent_60%)]",
+const BASE = "https://pbrnjxgzfmhbcgcqawro.supabase.co/storage/v1/object/public/products/";
+
+const IMAGES = [
+  { src: "Menu images/pasteries/Croisant.png",              alt: "Croissant" },
+  { src: "Menu images/pasteries/Pain Au Chocolat.png",      alt: "Pain au Chocolat" },
+  { src: "Menu images/pasteries/Croissant Aux Amandes.png", alt: "Croissant aux Amandes" },
+  { src: "Menu images/cakes/Madeleine Au Citron.png",       alt: "Madeleine au Citron" },
+  { src: "Menu images/pasteries/Pain Suisse.png",           alt: "Pain Suisse" },
 ];
 
 export function InstagramStrip() {
@@ -27,11 +29,24 @@ export function InstagramStrip() {
 
         {/* Image grid — 2 cols mobile / 5 cols desktop */}
         <div className="grid grid-cols-2 md:grid-cols-5 gap-2.5">
-          {GLOWS.map((glow, i) => (
-            <div key={i} className="aspect-square relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#1c1309] via-[#0C0908] to-[#1a1007]" />
-              <div className={`absolute inset-0 ${glow}`} />
-            </div>
+          {IMAGES.map(({ src, alt }) => (
+            <a
+              key={src}
+              href="https://instagram.com/epicurien.bkk"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="aspect-square relative overflow-hidden group"
+              title={alt}
+            >
+              <Image
+                src={`${BASE}${encodeURIComponent(src).replace(/%2F/g, "/")}`}
+                alt={alt}
+                fill
+                sizes="(max-width: 768px) 50vw, 20vw"
+                className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+            </a>
           ))}
         </div>
 

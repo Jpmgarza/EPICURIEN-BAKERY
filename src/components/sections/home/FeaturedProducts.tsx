@@ -29,7 +29,7 @@ export function FeaturedProducts() {
           <h2 className="font-cormorant font-normal text-[var(--secondary-brand)] text-4xl md:text-5xl mb-3">
             {t.products.sectionTitle}
           </h2>
-          <div className="w-8 h-px bg-[var(--accent-brand)] mx-auto opacity-60" />
+          <div className="w-8 h-px bg-[var(--secondary-brand)] mx-auto opacity-30" />
         </div>
 
         {/* Product grid */}
@@ -44,12 +44,12 @@ export function FeaturedProducts() {
             <motion.div key={product.id} variants={cardVariants}>
               <Link
                 href="/menu"
-                className="group block bg-[var(--secondary-brand)] border border-[rgba(218,145,0,0.12)] hover:border-[var(--accent-brand)] transition-all duration-300 overflow-hidden"
+                className="group block bg-[var(--secondary-brand)] border border-[rgba(255,255,255,0.08)] hover:border-[rgba(255,255,255,0.30)] transition-all duration-300 overflow-hidden"
               >
                 {/* Product image */}
                 <div className="aspect-[4/5] relative overflow-hidden bg-[#0C0908]">
                   <div className="absolute inset-0 bg-gradient-to-br from-[#1c1309] via-[#0C0908] to-[#1a1007]" />
-                  <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_25%_75%,rgba(218,145,0,0.18),transparent_55%)]" />
+                  <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_25%_75%,rgba(255,255,255,0.05),transparent_55%)]" />
                   <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_75%_20%,rgba(255,250,240,0.06),transparent_50%)]" />
                   {product.image && (
                     <Image
@@ -62,7 +62,7 @@ export function FeaturedProducts() {
                   )}
                 </div>
                 {/* Info */}
-                <div className="p-5 border-t border-[rgba(218,145,0,0.08)]">
+                <div className="p-5 border-t border-[rgba(255,255,255,0.06)]">
                   <p className="font-satoshi font-medium text-[var(--dominant-brand)] text-sm mb-1.5">
                     {product.name}
                   </p>

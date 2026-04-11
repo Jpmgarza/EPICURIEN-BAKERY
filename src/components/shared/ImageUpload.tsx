@@ -61,7 +61,7 @@ export function ImageUpload({
             file:mr-4 file:py-2 file:px-4
             file:rounded-md file:border-0
             file:text-sm file:font-semibold
-            file:bg-[var(--accent-brand)] file:text-white
+            file:bg-[var(--secondary-brand)] file:text-white
             hover:file:bg-[var(--secondary-brand)]
             disabled:opacity-50 disabled:cursor-not-allowed"
         />

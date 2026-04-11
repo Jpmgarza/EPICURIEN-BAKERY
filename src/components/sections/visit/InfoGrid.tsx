@@ -43,7 +43,7 @@ export function InfoGrid() {
             href={MAPS_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center gap-3 w-full bg-[var(--accent-brand)] text-[var(--secondary-brand)] font-satoshi font-medium text-xs tracking-[0.2em] uppercase py-5 hover:opacity-90 transition-opacity"
+            className="flex items-center justify-center gap-3 w-full bg-[var(--secondary-brand)] text-[var(--dominant-brand)] font-satoshi font-medium text-xs tracking-[0.2em] uppercase py-5 hover:opacity-80 transition-opacity"
           >
             <MapPin size={15} />
             {t.visit.directionsBtn}
