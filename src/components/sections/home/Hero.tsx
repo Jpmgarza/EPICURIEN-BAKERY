@@ -13,7 +13,7 @@ export function Hero() {
   const { t } = useLang();
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-[#f0ece6]">
+    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-[var(--secondary-brand)]">
       {/* Hero image */}
       <Image
         src={HERO_IMAGE}

@@ -130,9 +130,9 @@ export function NavBar() {
 
   // CTA button — 3 states driven by the same displayMode
   const ctaClass: Record<DisplayMode, string> = {
-    transparent: "bg-white text-[var(--secondary-brand)]",
+    transparent: "bg-[var(--accent-brand)] text-[var(--secondary-brand)]",
     light:       "bg-[var(--secondary-brand)] text-[var(--dominant-brand)]",
-    dark:        "bg-white text-[var(--secondary-brand)]",
+    dark:        "bg-[var(--accent-brand)] text-[var(--secondary-brand)]",
   };
 
   const bg = navBgClass[displayMode];
@@ -289,7 +289,7 @@ export function NavBar() {
                   href={GRAB_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 w-full bg-white text-[var(--secondary-brand)] font-satoshi font-medium text-xs tracking-[0.2em] uppercase px-4 py-3.5"
+                  className="flex items-center justify-center gap-2 w-full bg-[var(--accent-brand)] text-[var(--secondary-brand)] font-satoshi font-medium text-xs tracking-[0.2em] uppercase px-4 py-3.5"
                 >
                   <Bike size={14} />
                   {t.nav.orderGrab}

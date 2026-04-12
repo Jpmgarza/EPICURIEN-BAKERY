@@ -21,9 +21,23 @@ export function Footer() {
                 {t.nav.brandSub}
               </span>
             </div>
-            <p className="font-satoshi text-[var(--dominant-brand)] opacity-50 text-sm leading-relaxed">
-              {t.footer.tagline}
-            </p>
+
+            <div className="mt-6">
+              <picture>
+                <source
+                  srcSet="https://pbrnjxgzfmhbcgcqawro.supabase.co/storage/v1/object/public/products/Epicurien-logo/Footer-logo.svg"
+                  type="image/svg+xml"
+                />
+                <img
+                  src="https://pbrnjxgzfmhbcgcqawro.supabase.co/storage/v1/object/public/products/Epicurien-logo/footer-logo.png"
+                  alt="Épicurien French Bakery logo"
+                  width={300}
+                  height={300}
+                  loading="lazy"
+                  className="opacity-80"
+                />
+              </picture>
+            </div>
           </div>
 
           {/* Col 2: Nav + social */}

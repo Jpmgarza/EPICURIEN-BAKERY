@@ -72,6 +72,36 @@ const en = {
     lycheeSoda: "Lychee Soda",
     appleSoda: "Apple Soda",
     kiwiSoda: "Kiwi Soda",
+    // Pains descriptions
+    baguette: "Traditional French baguette",
+    focacciaBread: "Focaccia bread, sold per piece",
+    ficelle: "Bacon & cheese",
+    // New Viennoiseries descriptions
+    brioche: "Soft brioche bread",
+    briocheVanillaCream: "Filled with vanilla cream",
+    tarteAuSucre: "Brioche with butter & sugar",
+    doubleCroissant: "Two buttery croissants",
+    croissantCaramel: "Caramel croissant",
+    croissantChocolateHazelnut: "Chocolate & hazelnut",
+    croissantStrawberryJam: "Strawberry jam filling",
+    croissantChocolateBun: "Croissant paired with a chocolate pastry bun",
+    // New Pâtisseries descriptions
+    frenchButterCake: "Sold by the slice",
+    madeleineLemon4: "Like sponge cake with lemon. 4 pieces",
+    miniFinancier: "Almond financiers, 5 pieces",
+    miniCreamPuffs: "Filled cream puffs, 3 pieces",
+    chouquettes: "Light choux pastry puffs, 6 pieces",
+    tiramisu: "Served in a cup",
+    pannaCotta: "With strawberry sauce",
+    chocolateMousse: "Rich chocolate mousse",
+    milkRice: "Madagascar vanilla, French rice pudding",
+    tropicale: "Tropical dessert",
+    cheesecakeCup: "120g",
+    // New Boissons descriptions
+    icedAmericano: "Iced Americano",
+    iceCappuccino: "Ice Cappuccino",
+    iceCaramelMacchiato: "Ice Caramel Macchiato",
+    icedCaramelMilk: "Iced Caramel Milk",
   },
   about: {
     headline: "L'Artisan",
@@ -98,7 +128,7 @@ const en = {
     headline: "Find Us",
     subline: "W District · Sukhumvit 71 · Bangkok",
     address: "1693 Sukhumvit 71, Klongton Nua, Watthana, Bangkok 10110",
-    hours: "Open daily · 09:00–20:00",
+    hours: "Open daily · 7:00am–9:00pm",
     phone: "+66 80 791 2902",
     bts: "BTS Phra Khanong — 3-min walk",
     parking: "Parking available at W District",
@@ -125,6 +155,11 @@ const en = {
     eyebrow: "Guest Reviews",
     heading: "What our guests say",
     source: "Google Maps",
+    reviewTexts: [
+      "As a French person who grew up eating galettes since childhood, I 100% recommend it. The taste is exactly the same as what you'd find in France — buttery, well balanced, properly baked. Nothing felt adapted or localized. It's the real deal.",
+      "One of the best French bakeries in Bangkok. Baguette, Croissant, and Viennoiseries made with premium French ingredients. The owner won 1st place for best croissant in Paris — you can imagine how high the standard is.",
+      "Fresh, soft and iconic croissants. Ficelle, Brioche and Pain Suisse are my favorites. If you love croissants and bread, you should absolutely try these.",
+    ],
   },
 };
 

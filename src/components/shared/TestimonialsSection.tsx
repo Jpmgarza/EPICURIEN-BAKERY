@@ -4,29 +4,12 @@ import { motion } from "motion/react";
 import { useLang } from "@/lib/lang";
 
 const EASE_UP = [0.16, 1, 0.3, 1] as [number, number, number, number];
+const REVIEWS_URL = "https://maps.app.goo.gl/mRJsESrH4KEqCGJ9A";
 
 const reviews = [
-  {
-    id: "mathieu",
-    author: "Mathieu C.",
-    context: "Galette des Rois",
-    text: "As a French person who grew up eating galettes since childhood, I 100% recommend it. The taste is exactly the same as what you'd find in France — buttery, well balanced, properly baked. Nothing felt adapted or localized. It's the real deal.",
-    stars: 5,
-  },
-  {
-    id: "taron",
-    author: "Taron E.",
-    context: "Baguette & Croissant",
-    text: "One of the best French bakeries in Bangkok. Baguette, Croissant, and Viennoiseries made with premium French ingredients. The owner won 1st place for best croissant in Paris — you can imagine how high the standard is.",
-    stars: 5,
-  },
-  {
-    id: "nan",
-    author: "Nan Bwar Kham Zu",
-    context: "Ficelle & Pain Suisse",
-    text: "Fresh, soft and iconic croissants. Ficelle, Brioche and Pain Suisse are my favorites. If you love croissants and bread, you should absolutely try these.",
-    stars: 5,
-  },
+  { id: "mathieu", author: "Mathieu C.",      context: "Galette des Rois"    },
+  { id: "taron",   author: "Taron E.",         context: "Baguette & Croissant" },
+  { id: "nan",     author: "Nan Bwar Kham Zu", context: "Ficelle & Pain Suisse" },
 ];
 
 interface TestimonialsSectionProps {
@@ -68,50 +51,38 @@ export function TestimonialsSection({ variant = "dark" }: TestimonialsSectionPro
         </motion.div>
 
         {/* ── Reviews grid ──────────────────────────────── */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-          {reviews.map((review, i) => (
-            <motion.article
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[rgba(255,250,240,0.08)]">
+          {reviews.map((review, i) => {
+            const text = t.testimonials.reviewTexts[i];
+            return (
+            <motion.a
               key={review.id}
-              initial={{ opacity: 0, y: 32 }}
+              href={REVIEWS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.85, ease: EASE_UP, delay: i * 0.12 }}
-              className="relative flex flex-col gap-6 p-8 lg:p-10 bg-[#0e0b09] border border-[rgba(255,250,240,0.08)] transition-transform duration-300 hover:-translate-y-1"
+              className="flex flex-col gap-8 p-10 bg-[var(--secondary-brand)] transition-transform duration-300 hover:-translate-y-1 cursor-pointer"
             >
-              {/* Decorative closing quote — top-right, typographic watermark */}
-              <span
-                aria-hidden="true"
-                className="absolute top-4 right-6 font-cormorant font-light text-[6rem] leading-none select-none pointer-events-none text-[rgba(255,250,240,0.06)]"
-              >
-                &rdquo;
+              {/* Pastry type — centered above body */}
+              <span className="font-satoshi text-[0.58rem] uppercase tracking-[0.22em] text-[rgba(255,250,240,0.45)] text-center">
+                {review.context}
               </span>
 
-              {/* Stars — diamond motif */}
-              <div className="flex gap-[6px]">
-                {Array.from({ length: review.stars }).map((_, si) => (
-                  <div
-                    key={si}
-                    className="w-[5px] h-[5px] rotate-45 flex-shrink-0 bg-[var(--dominant-brand)]"
-                  />
-                ))}
-              </div>
-
               {/* Quote body */}
-              <p className="font-cormorant font-normal italic text-[1.15rem] leading-[1.8] flex-1 text-[var(--dominant-brand)]">
-                &ldquo;{review.text}&rdquo;
+              <p className="font-satoshi text-[0.875rem] leading-[1.85] flex-1 text-[var(--dominant-brand)] opacity-80">
+                &ldquo;{text}&rdquo;
               </p>
 
-              {/* Attribution */}
-              <div className="pt-5 border-t border-[rgba(255,250,240,0.12)] flex flex-col gap-[4px]">
-                <span className="font-satoshi text-[0.68rem] uppercase tracking-[0.18em] text-[var(--dominant-brand)]">
-                  {review.author}
-                </span>
-                <span className="font-satoshi text-[0.58rem] uppercase tracking-[0.12em] text-[rgba(255,250,240,0.5)]">
-                  {review.context} · {t.testimonials.source}
-                </span>
-              </div>
-            </motion.article>
-          ))}
+              {/* Author */}
+              <span className="font-satoshi text-[0.65rem] uppercase tracking-[0.22em] text-[var(--dominant-brand)]">
+                {review.author}
+              </span>
+            </motion.a>
+          );
+          })}
         </div>
 
       </div>

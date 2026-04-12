@@ -65,10 +65,9 @@ export function CategoryFilter() {
               className="group bg-[var(--secondary-brand)] border border-[var(--dominant-brand)]/8 hover:border-[var(--dominant-brand)]/25 transition-all duration-300 overflow-hidden"
             >
               {/* Product image */}
-              <div className="aspect-[4/5] relative overflow-hidden bg-[#0C0908]">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#1c1309] via-[#0C0908] to-[#1a1007]" />
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_25%_75%,rgba(255,255,255,0.05),transparent_55%)]" />
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_75%_20%,rgba(255,250,240,0.06),transparent_50%)]" />
+              <div className="aspect-[4/5] relative overflow-hidden bg-[var(--secondary-brand)]">
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_25%_75%,rgba(255,255,255,0.04),transparent_55%)]" />
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_75%_20%,rgba(255,250,240,0.05),transparent_50%)]" />
                 {product.image && (
                   <Image
                     src={SUPABASE_STORAGE + product.image}

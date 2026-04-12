@@ -74,6 +74,36 @@ const fr: Dict = {
     lycheeSoda: "Soda Litchi",
     appleSoda: "Soda Pomme",
     kiwiSoda: "Soda Kiwi",
+    // Pains descriptions
+    baguette: "Baguette française traditionnelle",
+    focacciaBread: "Focaccia, vendue à la pièce",
+    ficelle: "Bacon & fromage",
+    // New Viennoiseries descriptions
+    brioche: "Brioche moelleuse",
+    briocheVanillaCream: "Garnie de crème à la vanille",
+    tarteAuSucre: "Brioche au beurre et sucre",
+    doubleCroissant: "Deux croissants au beurre",
+    croissantCaramel: "Croissant au caramel",
+    croissantChocolateHazelnut: "Chocolat & noisette",
+    croissantStrawberryJam: "Fourré à la confiture de fraises",
+    croissantChocolateBun: "Croissant accompagné d'un pain au chocolat",
+    // New Pâtisseries descriptions
+    frenchButterCake: "Vendu à la tranche",
+    madeleineLemon4: "Moelleuse au citron. 4 pièces",
+    miniFinancier: "Financiers aux amandes, 5 pièces",
+    miniCreamPuffs: "Choux garnis, 3 pièces",
+    chouquettes: "Chouquettes légères, 6 pièces",
+    tiramisu: "Servi en verrine",
+    pannaCotta: "Avec coulis de fraises",
+    chocolateMousse: "Mousse au chocolat onctueuse",
+    milkRice: "Vanille de Madagascar, riz au lait à la française",
+    tropicale: "Dessert tropical",
+    cheesecakeCup: "120g",
+    // New Boissons descriptions
+    icedAmericano: "Americano glacé",
+    iceCappuccino: "Cappuccino glacé",
+    iceCaramelMacchiato: "Caramel Macchiato glacé",
+    icedCaramelMilk: "Lait caramel glacé",
   },
   about: {
     headline: "L'Artisan",
@@ -100,7 +130,7 @@ const fr: Dict = {
     headline: "Nous Trouver",
     subline: "W District · Sukhumvit 71 · Bangkok",
     address: "1693 Sukhumvit 71, Klongton Nua, Watthana, Bangkok 10110",
-    hours: "Ouvert tous les jours · 09h00–20h00",
+    hours: "Ouvert tous les jours · 07h00–21h00",
     phone: "+66 80 791 2902",
     bts: "BTS Phra Khanong — 3 min à pied",
     parking: "Parking disponible au W District",
@@ -128,6 +158,11 @@ const fr: Dict = {
     eyebrow: "Avis clients",
     heading: "Ce que disent nos clients",
     source: "Google Maps",
+    reviewTexts: [
+      "En tant que Français ayant grandi en mangeant des galettes depuis mon enfance, je la recommande sans hésiter. Le goût est exactement le même qu'en France : beurré, équilibré, parfaitement cuit. Rien n'est adapté ni modifié. C'est l'authentique.",
+      "L'une des meilleures boulangeries françaises de Bangkok. Baguettes, croissants et viennoiseries confectionnés avec des ingrédients français de première qualité. Le propriétaire a remporté le premier prix du meilleur croissant à Paris ; vous imaginez donc le niveau d'exigence.",
+      "Des croissants frais, moelleux et emblématiques. Ficelle, brioche et pain suisse sont mes préférés. Si vous aimez les croissants et le pain, vous devez absolument les goûter.",
+    ],
   },
 };
 

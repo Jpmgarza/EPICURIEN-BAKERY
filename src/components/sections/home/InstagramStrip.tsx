@@ -45,7 +45,7 @@ export function InstagramStrip() {
                 sizes="(max-width: 768px) 50vw, 20vw"
                 className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+              <div className="absolute inset-0 bg-[var(--secondary-brand)]/0 group-hover:bg-[var(--secondary-brand)]/20 transition-colors duration-300" />
             </a>
           ))}
         </div>

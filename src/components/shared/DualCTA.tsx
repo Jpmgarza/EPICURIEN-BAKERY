@@ -61,7 +61,7 @@ export function DualCTA({
           className={cn(
             "flex items-center gap-2.5 font-satoshi font-medium text-xs tracking-[0.2em] uppercase px-8 py-4 hover:opacity-90 transition-opacity",
             variant === "dark"
-              ? "bg-white text-[var(--secondary-brand)]"
+              ? "bg-[var(--accent-brand)] text-[var(--secondary-brand)]"
               : "bg-[var(--secondary-brand)] text-[var(--dominant-brand)]"
           )}
         >

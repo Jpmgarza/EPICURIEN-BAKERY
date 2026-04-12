@@ -30,16 +30,16 @@ export function PhilosophyCards() {
         {cards.map((card, i) => (
           <div
             key={i}
-            className="bg-[#0e0b09] border border-[rgba(255,255,255,0.08)] p-8"
+            className="bg-[var(--accent-brand)] border border-[var(--secondary-brand)] p-8"
           >
             <card.icon
               size={20}
-              className="text-[var(--dominant-brand)] opacity-50 mb-6"
+              className="text-[var(--secondary-brand)] opacity-50 mb-6"
             />
-            <h3 className="font-satoshi font-medium text-[var(--dominant-brand)] text-sm mb-3 tracking-wide">
+            <h3 className="font-satoshi font-medium text-[var(--secondary-brand)] text-sm mb-3 tracking-wide">
               {card.title}
             </h3>
-            <p className="font-satoshi text-[var(--dominant-brand)] opacity-40 text-sm leading-relaxed">
+            <p className="font-satoshi text-[var(--secondary-brand)] opacity-60 text-sm leading-relaxed">
               {card.desc}
             </p>
           </div>

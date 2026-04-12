@@ -37,10 +37,32 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const ICON_BASE =
+  "https://pbrnjxgzfmhbcgcqawro.supabase.co/storage/v1/object/public/products/favicon%20logo";
+const FAVICON_FILES =
+  "https://pbrnjxgzfmhbcgcqawro.supabase.co/storage/v1/object/public/products/favicon%20logo";
+
 export const metadata: Metadata = {
   title: "Épicurien — French Bakery Bangkok",
   description:
     "Authentic French boulangerie-pâtisserie in Bangkok's W District, founded by Enzo Le Bohec.",
+  icons: {
+    icon: [
+      { url: `${ICON_BASE}/favicon.ico`, type: "image/x-icon" },
+      { url: `${ICON_BASE}/favicon-16x16.png`, sizes: "16x16", type: "image/png" },
+      { url: `${ICON_BASE}/favicon-32x32.png`, sizes: "32x32", type: "image/png" },
+      { url: `${ICON_BASE}/android-icon-192x192.png`, sizes: "192x192", type: "image/png" },
+    ],
+    apple: [
+      { url: `${ICON_BASE}/apple-icon-180x180.png`, sizes: "180x180", type: "image/png" },
+    ],
+  },
+  manifest: `${FAVICON_FILES}/manifest.json`,
+  other: {
+    "msapplication-TileColor": "#ffffff",
+    "msapplication-TileImage": `${ICON_BASE}/ms-icon-144x144.png`,
+    "msapplication-config": `${FAVICON_FILES}/browserconfig.xml`,
+  },
 };
 
 export default function RootLayout({
