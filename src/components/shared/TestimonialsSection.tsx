@@ -52,7 +52,7 @@ export function TestimonialsSection({ variant = "dark" }: TestimonialsSectionPro
           transition={{ duration: 0.85, ease: EASE_UP }}
           className="flex flex-col items-center gap-4 mb-20"
         >
-          <p className={`font-satoshi text-[0.6rem] uppercase tracking-[0.4em] ${isDark ? "text-[rgba(255,250,240,0.4)]" : "text-[rgba(12,9,8,0.4)]"}`}>
+          <p className={`font-satoshi text-[0.6rem] uppercase tracking-[0.4em] ${isDark ? "text-[rgba(255,250,240,0.65)]" : "text-[rgba(12,9,8,0.75)]"}`}>
             {t.testimonials.eyebrow}
           </p>
           <div className="flex items-center gap-3">
@@ -91,22 +91,22 @@ export function TestimonialsSection({ variant = "dark" }: TestimonialsSectionPro
                 {Array.from({ length: review.stars }).map((_, si) => (
                   <div
                     key={si}
-                    className="w-[5px] h-[5px] rotate-45 flex-shrink-0 bg-[rgba(255,250,240,0.55)]"
+                    className="w-[5px] h-[5px] rotate-45 flex-shrink-0 bg-[var(--dominant-brand)]"
                   />
                 ))}
               </div>
 
               {/* Quote body */}
-              <p className="font-cormorant font-light italic text-[1.1rem] leading-[1.8] flex-1 text-[rgba(255,250,240,0.88)]">
+              <p className="font-cormorant font-normal italic text-[1.15rem] leading-[1.8] flex-1 text-[var(--dominant-brand)]">
                 &ldquo;{review.text}&rdquo;
               </p>
 
               {/* Attribution */}
-              <div className="pt-5 border-t border-[rgba(255,250,240,0.08)] flex flex-col gap-[4px]">
-                <span className="font-satoshi text-[0.68rem] uppercase tracking-[0.18em] text-[rgba(255,250,240,0.9)]">
+              <div className="pt-5 border-t border-[rgba(255,250,240,0.12)] flex flex-col gap-[4px]">
+                <span className="font-satoshi text-[0.68rem] uppercase tracking-[0.18em] text-[var(--dominant-brand)]">
                   {review.author}
                 </span>
-                <span className="font-satoshi text-[0.58rem] uppercase tracking-[0.12em] text-[rgba(255,250,240,0.3)]">
+                <span className="font-satoshi text-[0.58rem] uppercase tracking-[0.12em] text-[rgba(255,250,240,0.5)]">
                   {review.context} · {t.testimonials.source}
                 </span>
               </div>
