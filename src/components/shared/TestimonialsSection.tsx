@@ -76,12 +76,12 @@ export function TestimonialsSection({ variant = "dark" }: TestimonialsSectionPro
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.85, ease: EASE_UP, delay: i * 0.12 }}
-              className={`relative flex flex-col gap-6 p-8 lg:p-10 border transition-transform duration-300 hover:-translate-y-1 ${isDark ? "border-[rgba(255,250,240,0.08)]" : "border-[rgba(12,9,8,0.08)]"}`}
+              className="relative flex flex-col gap-6 p-8 lg:p-10 bg-[#0e0b09] border border-[rgba(255,250,240,0.08)] transition-transform duration-300 hover:-translate-y-1"
             >
               {/* Decorative closing quote — top-right, typographic watermark */}
               <span
                 aria-hidden="true"
-                className={`absolute top-4 right-6 font-cormorant font-light text-[6rem] leading-none select-none pointer-events-none ${isDark ? "text-[rgba(255,250,240,0.06)]" : "text-[rgba(12,9,8,0.05)]"}`}
+                className="absolute top-4 right-6 font-cormorant font-light text-[6rem] leading-none select-none pointer-events-none text-[rgba(255,250,240,0.06)]"
               >
                 &rdquo;
               </span>
@@ -91,30 +91,22 @@ export function TestimonialsSection({ variant = "dark" }: TestimonialsSectionPro
                 {Array.from({ length: review.stars }).map((_, si) => (
                   <div
                     key={si}
-                    className={`w-[5px] h-[5px] rotate-45 flex-shrink-0 ${isDark ? "bg-[rgba(255,250,240,0.55)]" : "bg-[var(--secondary-brand)] opacity-50"}`}
+                    className="w-[5px] h-[5px] rotate-45 flex-shrink-0 bg-[rgba(255,250,240,0.55)]"
                   />
                 ))}
               </div>
 
               {/* Quote body */}
-              <p
-                className={`font-cormorant font-light italic text-[1.1rem] leading-[1.8] flex-1 ${isDark ? "text-[rgba(255,250,240,0.88)]" : "text-[var(--secondary-brand)]"}`}
-              >
+              <p className="font-cormorant font-light italic text-[1.1rem] leading-[1.8] flex-1 text-[rgba(255,250,240,0.88)]">
                 &ldquo;{review.text}&rdquo;
               </p>
 
               {/* Attribution */}
-              <div
-                className={`pt-5 border-t flex flex-col gap-[4px] ${isDark ? "border-[rgba(255,250,240,0.08)]" : "border-[rgba(12,9,8,0.08)]"}`}
-              >
-                <span
-                  className={`font-satoshi text-[0.68rem] uppercase tracking-[0.18em] ${isDark ? "text-[rgba(255,250,240,0.9)]" : "text-[var(--secondary-brand)]"}`}
-                >
+              <div className="pt-5 border-t border-[rgba(255,250,240,0.08)] flex flex-col gap-[4px]">
+                <span className="font-satoshi text-[0.68rem] uppercase tracking-[0.18em] text-[rgba(255,250,240,0.9)]">
                   {review.author}
                 </span>
-                <span
-                  className={`font-satoshi text-[0.58rem] uppercase tracking-[0.12em] ${isDark ? "text-[rgba(255,250,240,0.3)]" : "text-[rgba(12,9,8,0.35)]"}`}
-                >
+                <span className="font-satoshi text-[0.58rem] uppercase tracking-[0.12em] text-[rgba(255,250,240,0.3)]">
                   {review.context} · {t.testimonials.source}
                 </span>
               </div>
