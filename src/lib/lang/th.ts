@@ -123,6 +123,11 @@ const th: Dict = {
     phoneLabel: "โทรศัพท์",
     wholesale: "สำหรับการสอบถามขายส่งหรือจัดเลี้ยง ส่ง DM มาทาง Instagram",
   },
+  testimonials: {
+    eyebrow: "รีวิวจากลูกค้า",
+    heading: "เสียงจากลูกค้าของเรา",
+    source: "Google Maps",
+  },
 };
 
 export default th;

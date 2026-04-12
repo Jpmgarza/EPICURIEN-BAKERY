@@ -121,6 +121,11 @@ const en = {
     phoneLabel: "Phone",
     wholesale: "For wholesale or catering inquiries, DM us on Instagram",
   },
+  testimonials: {
+    eyebrow: "Guest Reviews",
+    heading: "What our guests say",
+    source: "Google Maps",
+  },
 };
 
 export type Dict = typeof en;

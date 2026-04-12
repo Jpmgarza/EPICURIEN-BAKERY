@@ -3,6 +3,7 @@
 import { PageTransition } from "@/components/layout/PageTransition";
 import { FounderStory } from "@/components/sections/about/FounderStory";
 import { PhilosophyCards } from "@/components/sections/about/PhilosophyCards";
+import { TestimonialsSection } from "@/components/shared/TestimonialsSection";
 import { DualCTA } from "@/components/shared/DualCTA";
 import { useLang } from "@/lib/lang";
 
@@ -29,6 +30,7 @@ export default function AboutPage() {
 
       <FounderStory />
       <PhilosophyCards />
+      <TestimonialsSection variant="dark" />
 
       {/* CTA footer */}
       <section data-nav-color="light" className="bg-[var(--dominant-brand)] py-28 px-6">

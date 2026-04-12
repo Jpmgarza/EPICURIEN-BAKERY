@@ -124,6 +124,11 @@ const fr: Dict = {
     phoneLabel: "Téléphone",
     wholesale: "Pour les demandes en gros ou traiteur, envoyez-nous un DM sur Instagram",
   },
+  testimonials: {
+    eyebrow: "Avis clients",
+    heading: "Ce que disent nos clients",
+    source: "Google Maps",
+  },
 };
 
 export default fr;
