@@ -30,7 +30,7 @@ export default function AboutPage() {
 
       <FounderStory />
       <PhilosophyCards />
-      <TestimonialsSection variant="dark" />
+      <TestimonialsSection variant="light" />
 
       {/* CTA footer */}
       <section data-nav-color="light" className="bg-[var(--dominant-brand)] py-28 px-6">

@@ -14,7 +14,7 @@ export default function HomePage() {
       <FeaturedProducts />
       <MidPageCTA />
       <StoryTeaser />
-      <TestimonialsSection variant="dark" />
+      <TestimonialsSection variant="light" />
       <InstagramStrip />
     </main>
   );
