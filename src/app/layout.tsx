@@ -6,6 +6,7 @@ import { LangProvider } from "@/lib/lang";
 import { NavBar } from "@/components/layout/NavBar";
 import { Footer } from "@/components/layout/Footer";
 import { MobileStickyBar } from "@/components/layout/MobileStickyBar";
+import { LoadingScreen } from "@/components/layout/LoadingScreen";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -54,10 +55,13 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-[var(--dominant-brand)]">
         <LangProvider>
-          <NavBar />
-          {children}
-          <Footer />
-          <MobileStickyBar />
+          <LoadingScreen />
+          <div id="main-content">
+            <NavBar />
+            {children}
+            <Footer />
+            <MobileStickyBar />
+          </div>
         </LangProvider>
       </body>
     </html>
