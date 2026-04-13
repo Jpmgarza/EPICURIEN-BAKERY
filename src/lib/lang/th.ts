@@ -42,6 +42,7 @@ const th: Dict = {
   home: {
     midPageHeading: "ทุกเช้า อบสดใหม่",
     followInstagram: "ติดตามบน Instagram",
+    bottomCTAHeading: "มาลิ้มรสความแตกต่าง",
   },
   menu: {
     headline: "เมนู",

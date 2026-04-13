@@ -40,6 +40,7 @@ const en = {
   home: {
     midPageHeading: "Every morning, freshly baked.",
     followInstagram: "Follow on Instagram",
+    bottomCTAHeading: "Come taste the difference.",
   },
   menu: {
     headline: "The Menu",

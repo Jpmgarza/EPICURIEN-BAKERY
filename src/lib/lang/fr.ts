@@ -42,6 +42,7 @@ const fr: Dict = {
   home: {
     midPageHeading: "Chaque matin, tout juste sorti du four.",
     followInstagram: "Suivre sur Instagram",
+    bottomCTAHeading: "Venez goûter la différence.",
   },
   menu: {
     headline: "La Carte",

@@ -5,6 +5,7 @@ import { MidPageCTA } from "@/components/sections/home/MidPageCTA";
 import { StoryTeaser } from "@/components/sections/home/StoryTeaser";
 import { TestimonialsSection } from "@/components/shared/TestimonialsSection";
 import { InstagramStrip } from "@/components/sections/home/InstagramStrip";
+import { BottomCTA } from "@/components/sections/home/BottomCTA";
 
 export default function HomePage() {
   return (
@@ -16,6 +17,7 @@ export default function HomePage() {
       <StoryTeaser />
       <TestimonialsSection variant="light" />
       <InstagramStrip />
+      <BottomCTA />
     </main>
   );
 }
