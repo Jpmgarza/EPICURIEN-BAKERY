@@ -133,6 +133,7 @@ export function LoadingScreen({
                 width={52}
                 height={52}
                 className="block"
+                loading="eager"
                 unoptimized
               />
             </div>

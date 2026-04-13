@@ -146,8 +146,9 @@ export default async function LocaleLayout({
     <html
       lang={safeLocale}
       className={`${cormorant.variable} ${satoshi.variable} ${geistMono.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col bg-[var(--dominant-brand)]">
+      <body className="min-h-full flex flex-col bg-[var(--dominant-brand)]" suppressHydrationWarning>
         {/* JSON-LD: WebSite schema — static structured data, no user input */}
         <script type="application/ld+json">
           {JSON.stringify(websiteSchema)}
