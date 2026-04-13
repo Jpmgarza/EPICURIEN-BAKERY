@@ -4,13 +4,11 @@ import Image from "next/image";
 import { InstagramIcon } from "@/components/shared/SocialIcons";
 import { useLang } from "@/lib/lang";
 
-const BASE = "https://pbrnjxgzfmhbcgcqawro.supabase.co/storage/v1/object/public/products/";
-
 const IMAGES = [
-  { src: "Menu images/pasteries/Croisant.png",              alt: "Croissant" },
-  { src: "Menu images/pasteries/Pain Au Chocolat.png",      alt: "Pain au Chocolat" },
-  { src: "Menu images/pasteries/Croissant Aux Amandes.png", alt: "Croissant aux Amandes" },
-  { src: "Menu images/cakes/Madeleine Au Citron.png",       alt: "Madeleine au Citron" },
+  { src: "https://pbrnjxgzfmhbcgcqawro.supabase.co/storage/v1/object/public/products/social%20media/instagram/instagram-2.png", alt: "Épicurien on Instagram" },
+  { src: "https://pbrnjxgzfmhbcgcqawro.supabase.co/storage/v1/object/public/products/social%20media/instagram/instagram-1.png", alt: "Épicurien on Instagram" },
+  { src: "https://pbrnjxgzfmhbcgcqawro.supabase.co/storage/v1/object/public/products/social%20media/instagram/Instagram-3.png",  alt: "Épicurien on Instagram" },
+  { src: "https://pbrnjxgzfmhbcgcqawro.supabase.co/storage/v1/object/public/products/social%20media/instagram/Instagram-4.png",  alt: "Épicurien on Instagram" },
 ];
 
 export function InstagramStrip() {
@@ -38,7 +36,7 @@ export function InstagramStrip() {
               title={alt}
             >
               <Image
-                src={`${BASE}${encodeURIComponent(src).replace(/%2F/g, "/")}`}
+                src={src}
                 alt={alt}
                 fill
                 sizes="(max-width: 768px) 50vw, 20vw"
