@@ -21,7 +21,7 @@ export function Hero() {
         fill
         priority
         sizes="100vw"
-        className="object-cover object-center"
+        className="object-cover object-center [object-position:70%_center] md:object-center"
       />
       {/* Base text-protection overlay — ensures WCAG AA contrast for white text on photo */}
       <div className="absolute inset-0 bg-[rgba(12,9,8,0.55)] pointer-events-none" />
