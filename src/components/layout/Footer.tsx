@@ -34,7 +34,7 @@ export function Footer() {
                   width={300}
                   height={300}
                   loading="lazy"
-                  className="opacity-80"
+                  className="w-[120px] sm:w-[160px] h-auto opacity-80"
                 />
               </picture>
             </div>

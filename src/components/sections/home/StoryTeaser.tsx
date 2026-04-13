@@ -7,7 +7,7 @@ export function StoryTeaser() {
   const { t } = useLang();
   return (
     <section className="bg-[var(--dominant-brand)] py-28 px-6">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-center">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-16 md:gap-24 items-center">
         {/* Pull quote */}
         <div>
           <blockquote className="font-cormorant font-normal italic text-[var(--secondary-brand)] text-4xl md:text-5xl lg:text-[3.25rem] leading-tight">

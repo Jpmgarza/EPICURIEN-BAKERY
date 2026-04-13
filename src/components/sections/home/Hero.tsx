@@ -39,7 +39,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
-            className="font-cormorant font-semibold uppercase text-white text-5xl md:text-7xl lg:text-8xl leading-[0.95] tracking-tight"
+            className="font-cormorant font-semibold uppercase text-white text-4xl sm:text-5xl md:text-7xl lg:text-8xl leading-[0.95] tracking-tight"
           >
             {t.hero.headline}
           </motion.h1>
@@ -138,7 +138,7 @@ export function Hero() {
 
       {/* Scroll hint */}
       <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-[var(--secondary-brand)] opacity-60"
+        className="absolute bottom-20 md:bottom-8 left-1/2 -translate-x-1/2 text-[var(--secondary-brand)] opacity-60"
         animate={{ y: [0, 8, 0] }}
         transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
       >

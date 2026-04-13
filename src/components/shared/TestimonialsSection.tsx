@@ -64,7 +64,7 @@ export function TestimonialsSection({ variant = "dark" }: TestimonialsSectionPro
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.85, ease: EASE_UP, delay: i * 0.12 }}
-              className="flex flex-col gap-8 p-10 bg-[var(--secondary-brand)] transition-transform duration-300 hover:-translate-y-1 cursor-pointer"
+              className="flex flex-col gap-8 p-5 sm:p-8 md:p-10 bg-[var(--secondary-brand)] transition-transform duration-300 hover:-translate-y-1 cursor-pointer"
             >
               {/* Pastry type — centered above body */}
               <span className="font-satoshi text-[0.58rem] uppercase tracking-[0.22em] text-[rgba(255,250,240,0.45)] text-center">

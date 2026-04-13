@@ -8,7 +8,7 @@ export function FounderStory() {
 
   return (
     <section data-nav-color="light" className="bg-[var(--dominant-brand)] py-28 px-6">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-start">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-16 md:gap-24 items-start">
         {/* Founder image */}
         <div className="aspect-[3/4] relative overflow-hidden">
           <Image

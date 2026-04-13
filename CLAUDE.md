@@ -108,9 +108,9 @@ export function ProductCard({ product }) {
 
 | Route | File | Sections |
 |-------|------|----------|
-| `/` | `src/app/page.tsx` | Hero, TrustBar, FeaturedProducts, MidPageCTA, StoryTeaser, InstagramStrip |
+| `/` | `src/app/page.tsx` | Hero, TrustBar, FeaturedProducts, MidPageCTA, StoryTeaser, TestimonialsSection, InstagramStrip |
 | `/menu` | `src/app/menu/page.tsx` | Compact dark hero → cream filter + product grid |
-| `/about` | `src/app/about/page.tsx` | Dark hero → FounderStory + PhilosophyCards + CTA |
+| `/about` | `src/app/about/page.tsx` | Dark hero → FounderStory + PhilosophyCards + TestimonialsSection + CTA |
 | `/visit` | `src/app/visit/page.tsx` | Dark hero → InfoGrid + MapEmbed + Grab banner |
 | `/contact` | `src/app/contact/page.tsx` | Full cream — Instagram, Facebook, phone only (no form) |
 
@@ -143,9 +143,14 @@ public/
 ```
 layout/
   NavBar.tsx          "use client" — fixed top, mobile drawer (AnimatePresence), lang toggle
+                      Section-aware color: reads data-nav-color="light"|"dark" from page sections
+                      on scroll to switch navbar between light and dark styles (non-home pages only).
+                      On home, navbar is transparent and becomes opaque after scrolling past hero.
   Footer.tsx          "use client" — useLang()
   MobileStickyBar.tsx "use client" — fixed bottom, hidden on md+
   PageTransition.tsx  "use client" — wraps content in <motion.main>
+  LoadingScreen.tsx   "use client" — luxury loading screen shown once on first visit;
+                      animated icon fades out automatically. Do not remove.
 shared/
   DualCTA.tsx         "use client" — Grab + Directions buttons
   TrustBar.tsx        "use client" — award/ingredient/location strip
@@ -185,6 +190,50 @@ ESLint rejects JSX in `.ts` files. Do not convert it.
 
 **Do not use next-intl or any i18n library** — OneDrive file-read errors
 break packages with heavy dynamic imports at startup.
+
+---
+
+## Brand Colors
+
+Defined as CSS custom properties in `globals.css` — use these everywhere instead of raw hex values:
+
+| Variable | Value | Purpose |
+|----------|-------|---------|
+| `--dominant-brand` | `#FFFAF0` | Warm cream — light section backgrounds |
+| `--secondary-brand` | `#0C0908` | Near-black — dark section backgrounds, primary text |
+| `--accent-brand` | `#FFFFFF` | Pure white |
+| `--muted-text` | `#2B1B17` | Dark brown — subdued body copy |
+| `--divider` | `rgba(255,255,255,0.10)` | Subtle white rule between dark sections |
+
+Usage: `bg-[var(--dominant-brand)]`, `text-[var(--secondary-brand)]`, etc.
+
+The typical section pattern is either **cream** (`bg-[var(--dominant-brand)]` with dark text) or **dark** (`bg-[var(--secondary-brand)]` with light text). Alternate between them for visual rhythm.
+
+---
+
+## LoadingScreen Mechanism
+
+`LoadingScreen.tsx` renders an animated curtain (fixed overlay, `z-[9999]`) for ~3 s on first page load. When the timer fires it:
+1. Adds `body.page-loaded` CSS class
+2. Unmounts the overlay via `AnimatePresence`
+
+`#main-content` in `layout.tsx` starts at `opacity: 0`; `globals.css` transitions it to `opacity: 1` when `body.page-loaded` is present. **Do not remove** `#main-content` wrapper or the `body.page-loaded` CSS rule — the page would flash invisible content without them.
+
+---
+
+## NavBar Color Convention (`data-nav-color`)
+
+NavBar reads `data-nav-color` attributes from page sections as the user scrolls (non-home pages only). On the home page it switches from transparent → opaque after the hero.
+
+To control navbar appearance on a new section, add `data-nav-color="light"` or `data-nav-color="dark"` to the section's root element:
+```tsx
+<section data-nav-color="dark" className="bg-[var(--secondary-brand)]">
+  {/* dark background → navbar switches to light text */}
+</section>
+<section data-nav-color="light" className="bg-[var(--dominant-brand)]">
+  {/* light background → navbar switches to dark text */}
+</section>
+```
 
 ---
 
@@ -231,7 +280,7 @@ break packages with heavy dynamic imports at startup.
 
 | CTA | URL |
 |-----|-----|
-| Order on Grab | `https://food.grab.com/th/en/` *(replace with real merchant deep-link)* |
+| Order on Grab | `https://food.grab.com/th/en/` **TODO: replace with real Grab merchant deep-link** |
 | Get Directions | `https://maps.app.goo.gl/mRJsESrH4KEqCGJ9A` |
 | Instagram | `https://instagram.com/epicurien.bkk` |
 | Facebook | `https://facebook.com/share/18WCJuTpEe/` |

@@ -218,7 +218,7 @@ export function NavBar() {
           {/* Mobile hamburger */}
           <button
             type="button"
-            className={`md:hidden p-1 transition-all duration-300 ${tc}`}
+            className={`md:hidden p-2.5 -mr-2.5 transition-all duration-300 ${tc}`}
             onClick={() => setDrawerOpen(true)}
             aria-label={t.nav.openMenu}
           >
@@ -240,7 +240,7 @@ export function NavBar() {
               onClick={() => setDrawerOpen(false)}
             />
             <motion.div
-              className="fixed top-0 right-0 bottom-0 z-[70] w-72 bg-[var(--secondary-brand)] flex flex-col p-8 border-l border-[var(--divider)]"
+              className="fixed top-0 right-0 bottom-0 z-[70] max-w-[288px] w-[calc(100vw-2rem)] bg-[var(--secondary-brand)] flex flex-col p-8 border-l border-[var(--divider)]"
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}

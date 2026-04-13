@@ -30,7 +30,7 @@ export function PhilosophyCards() {
         {cards.map((card, i) => (
           <div
             key={i}
-            className="bg-[var(--accent-brand)] border border-[var(--secondary-brand)] p-8"
+            className="bg-[var(--accent-brand)] border border-[var(--secondary-brand)] p-5 sm:p-8"
           >
             <card.icon
               size={20}

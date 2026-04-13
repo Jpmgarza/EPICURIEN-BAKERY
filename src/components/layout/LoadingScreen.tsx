@@ -101,7 +101,7 @@ export function LoadingScreen({
             <div className="overflow-hidden">
               <motion.h1
                 {...curtain(0.08)}
-                className="font-cormorant font-light [font-size:clamp(2.6rem,8vw,4.2rem)] text-[var(--secondary-brand)] tracking-[0.12em] leading-none m-0"
+                className="font-cormorant font-light [font-size:clamp(1.8rem,8vw,4.2rem)] text-[var(--secondary-brand)] tracking-[0.12em] leading-none m-0"
               >
                 <em className="italic">{firstChar}</em>
                 {restChars}
