@@ -34,14 +34,14 @@ export function FeaturedProducts() {
 
         {/* Product grid */}
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"
+          className="flex overflow-x-auto snap-x snap-mandatory [-webkit-overflow-scrolling:touch] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden gap-3 -mx-6 px-6 pb-4 sm:mx-0 sm:px-0 sm:pb-0 sm:grid sm:grid-cols-2 sm:overflow-x-visible sm:snap-none lg:grid-cols-4 sm:gap-4"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-60px" }}
         >
           {featuredProducts.map((product) => (
-            <motion.div key={product.id} variants={cardVariants}>
+            <motion.div key={product.id} variants={cardVariants} className="shrink-0 w-[75vw] snap-start sm:w-auto">
               <Link
                 href="/menu"
                 className="group block bg-[var(--secondary-brand)] border border-[rgba(255,255,255,0.08)] hover:border-[rgba(255,255,255,0.30)] transition-all duration-300 overflow-hidden"
