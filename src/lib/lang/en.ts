@@ -105,7 +105,7 @@ const en = {
     icedCaramelMilk: "Iced Caramel Milk",
   },
   about: {
-    headline: "L'Artisan",
+    headline: "The Artisan",
     subline: "The story behind every croissant",
     ctaHeading: "Ready to taste it?",
 

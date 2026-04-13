@@ -107,7 +107,7 @@ const th: Dict = {
     icedCaramelMilk: "นมคาราเมลเย็น",
   },
   about: {
-    headline: "L'Artisan",
+    headline: "ช่างฝีมือ",
     subline: "เรื่องราวเบื้องหลังทุกชิ้นครัวซองค์",
     ctaHeading: "พร้อมจะลองชิมไหม?",
 
