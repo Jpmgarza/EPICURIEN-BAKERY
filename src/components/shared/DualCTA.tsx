@@ -4,7 +4,7 @@ import { Bike, MapPin } from "lucide-react";
 import { useLang } from "@/lib/lang";
 import { cn } from "@/lib/utils";
 
-const GRAB_URL = "https://food.grab.com/th/en/";
+const GRAB_URL = "https://r.grab.com/g/6-20260413_161946_D423C37AF6D44E2FB0FCDCEB13FA084F_MEXMPS-3-C7LVFA53AXX2AX";
 const MAPS_URL = "https://maps.app.goo.gl/mRJsESrH4KEqCGJ9A";
 
 interface DualCTAProps {

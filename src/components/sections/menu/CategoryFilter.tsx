@@ -9,7 +9,7 @@ import { products, type Category } from "@/lib/products";
 
 const SUPABASE_STORAGE = "https://pbrnjxgzfmhbcgcqawro.supabase.co/storage/v1/object/public/products/";
 
-const GRAB_URL = "https://food.grab.com/th/en/";
+const GRAB_URL = "https://r.grab.com/g/6-20260413_161946_D423C37AF6D44E2FB0FCDCEB13FA084F_MEXMPS-3-C7LVFA53AXX2AX";
 
 type Filter = "All" | Category;
 
