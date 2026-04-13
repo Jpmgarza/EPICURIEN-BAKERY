@@ -30,9 +30,7 @@ export function FounderStory() {
               </p>
             ))}
           </div>
-          <blockquote className="font-cormorant font-normal italic text-[var(--secondary-brand)] text-3xl md:text-4xl leading-tight border-l-2 border-[var(--secondary-brand)] pl-6">
-            &ldquo;{t.about.pullQuote}&rdquo;
-          </blockquote>
+
         </div>
       </div>
     </section>

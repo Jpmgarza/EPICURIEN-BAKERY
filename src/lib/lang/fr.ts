@@ -110,7 +110,7 @@ const fr: Dict = {
     headline: "L'Artisan",
     subline: "L'histoire derrière chaque croissant",
     ctaHeading: "Prêt à goûter ?",
-    pullQuote: "Jamais de raccourcis.",
+
     story:
       "Enzo Le Bohec est un chef et fondateur franco-thaï, à la tête d'Épicurien à Bangkok. Lauréat du 1er prix du Meilleur Croissant de Paris 2021, il façonne chaque matin ses créations avec la rigueur d'un artisan et l'exigence d'un champion.\n\nInstallé au W District, Sukhumvit 71, Épicurien est l'adresse des amateurs de vraie boulangerie-pâtisserie française à Bangkok.",
     philosophy1Title: "Cuit frais chaque jour",

@@ -108,7 +108,7 @@ const en = {
     headline: "L'Artisan",
     subline: "The story behind every croissant",
     ctaHeading: "Ready to taste it?",
-    pullQuote: "No shortcuts. Ever.",
+
     story:
       "Enzo Le Bohec is a Franco-Thai chef and owner, at the helm of Épicurien in Bangkok. Winner of the 1st Prize for Best Croissant in Paris 2021, he puts all his expertise into an artisan bakery prepared with care and freshness every day.\n\nLocated at W District, Sukhumvit 71, Épicurien welcomes all lovers of French pastries and viennoiseries in a warm and authentic atmosphere.",
     philosophy1Title: "Baked Fresh Daily",
