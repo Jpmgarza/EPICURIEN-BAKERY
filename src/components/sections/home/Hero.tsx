@@ -17,7 +17,7 @@ export function Hero() {
       {/* Hero image */}
       <Image
         src={HERO_IMAGE}
-        alt=""
+        alt="Freshly baked artisan croissants at Épicurien French Bakery, W District Bangkok"
         fill
         priority
         sizes="100vw"

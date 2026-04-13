@@ -51,7 +51,7 @@ export function NavBar() {
   const [navTheme, setNavTheme] = useState<"dark" | "light">("light");
   const pathname = usePathname();
 
-  const isHome = pathname === "/";
+  const isHome = pathname === `/${locale}` || pathname === `/${locale}/`;
   const transparent = isHome && !scrolled;
 
   // ── Home page: scroll-aware transparency (unchanged from previous) ──────
@@ -140,10 +140,10 @@ export function NavBar() {
   const cta = ctaClass[displayMode];
 
   const navLinks = [
-    { href: "/", label: t.nav.home },
-    { href: "/menu", label: t.nav.menu },
-    { href: "/about", label: t.nav.about },
-    { href: "/visit", label: t.nav.visit },
+    { href: `/${locale}`, label: t.nav.home },
+    { href: `/${locale}/menu`, label: t.nav.menu },
+    { href: `/${locale}/about`, label: t.nav.about },
+    { href: `/${locale}/visit`, label: t.nav.visit },
   ];
 
   return (
@@ -153,7 +153,7 @@ export function NavBar() {
       >
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex flex-col leading-none group">
+          <Link href={`/${locale}`} className="flex flex-col leading-none group">
             <span
               className={`font-cormorant text-lg tracking-[0.15em] group-hover:opacity-70 transition-all duration-300 ${tc}`}
             >

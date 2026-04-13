@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://epicurien-bakery.vercel.app/sitemap.xml

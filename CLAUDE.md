@@ -25,6 +25,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 | UI primitives | `@base-ui/react` + `shadcn` | Only `button.tsx` installed so far |
 | Icons | Lucide React only | **Exception:** Instagram + Facebook → `@/components/shared/SocialIcons.tsx` |
 | Fonts | Cormorant Garamond (H1, Google Fonts) + Satoshi (H2–body, local WOFF2) | |
+| Analytics | `@vercel/analytics` | Injected in `[locale]/layout.tsx` via `<Analytics />` |
 | Deploy | Vercel | Auto-deploys on push to `main` |
 
 ---
@@ -104,15 +105,21 @@ export function ProductCard({ product }) {
 
 ---
 
-## Pages
+## Routing
+
+All pages live under `src/app/[locale]/`. The locale segment is one of `"en"` | `"fr"` | `"th"`.
+
+`generateStaticParams()` in `src/app/[locale]/layout.tsx` pre-renders `/en`, `/fr`, `/th` at build time.
+
+`src/proxy.ts` exports a `proxy()` function and a Next.js `config` matcher that redirects non-locale paths (e.g. `/menu`) to `/en/menu`. **Important:** for this to be active as middleware it must be imported or placed at `src/middleware.ts` — currently the file is named `proxy.ts` and is not auto-applied.
 
 | Route | File | Sections |
 |-------|------|----------|
-| `/` | `src/app/page.tsx` | Hero, TrustBar, FeaturedProducts, MidPageCTA, StoryTeaser, TestimonialsSection, InstagramStrip |
-| `/menu` | `src/app/menu/page.tsx` | Compact dark hero → cream filter + product grid |
-| `/about` | `src/app/about/page.tsx` | Dark hero → FounderStory + PhilosophyCards + TestimonialsSection + CTA |
-| `/visit` | `src/app/visit/page.tsx` | Dark hero → InfoGrid + MapEmbed + Grab banner |
-| `/contact` | `src/app/contact/page.tsx` | Full cream — Instagram, Facebook, phone only (no form) |
+| `/{locale}` | `src/app/[locale]/page.tsx` | Hero, TrustBar, FeaturedProducts, MidPageCTA, StoryTeaser, TestimonialsSection, InstagramStrip |
+| `/{locale}/menu` | `src/app/[locale]/menu/page.tsx` | Compact dark hero → cream filter + product grid |
+| `/{locale}/about` | `src/app/[locale]/about/page.tsx` | Dark hero → FounderStory + PhilosophyCards + TestimonialsSection + CTA |
+| `/{locale}/visit` | `src/app/[locale]/visit/page.tsx` | Dark hero → InfoGrid + MapEmbed + Grab banner |
+| `/{locale}/contact` | `src/app/[locale]/contact/page.tsx` | Full cream — Instagram, Facebook, phone only (no form) |
 
 ---
 
@@ -120,10 +127,14 @@ export function ProductCard({ product }) {
 
 ```
 src/
-  app/                   App Router pages + layouts
+  app/
+    [locale]/            All pages — layout.tsx initialises LangProvider with URL locale
+    not-found.tsx        Root 404 (links back to /en)
+    globals.css          Tailwind directives + CSS vars + @theme inline
+  proxy.ts               Locale-redirect logic (see Routing section above)
   components/
-    layout/              NavBar, Footer, MobileStickyBar, PageTransition
-    shared/              DualCTA, TrustBar, SocialIcons, ImageUpload
+    layout/              NavBar, Footer, MobileStickyBar, PageTransition, LoadingScreen
+    shared/              DualCTA, TrustBar, SocialIcons, ImageUpload, TestimonialsSection
     ui/                  shadcn components (button.tsx only)
     sections/            Page-specific sections (grouped by page)
   lib/
@@ -131,7 +142,6 @@ src/
     supabase.ts          Supabase client + image helpers
     products.ts          Product catalog + featuredProducts
     utils.ts             cn() helper (clsx + tailwind-merge)
-  globals.css            Tailwind directives + CSS vars + @theme inline
 public/
   fonts/                 Satoshi-Regular.woff2, Satoshi-Medium.woff2
 ```
@@ -152,14 +162,15 @@ layout/
   LoadingScreen.tsx   "use client" — luxury loading screen shown once on first visit;
                       animated icon fades out automatically. Do not remove.
 shared/
-  DualCTA.tsx         "use client" — Grab + Directions buttons
-  TrustBar.tsx        "use client" — award/ingredient/location strip
-  SocialIcons.tsx     server — inline SVG (Instagram + Facebook not in lucide-react v1.x)
-  ImageUpload.tsx     "use client" — drag-and-drop upload to Supabase
+  DualCTA.tsx             "use client" — Grab + Directions buttons
+  TrustBar.tsx            "use client" — award/ingredient/location strip
+  SocialIcons.tsx         server — inline SVG (Instagram + Facebook not in lucide-react v1.x)
+  ImageUpload.tsx         "use client" — drag-and-drop upload to Supabase
+  TestimonialsSection.tsx "use client" — shared across home + about pages
 ui/
   button.tsx          shadcn Button
 sections/
-  home/               Hero, FeaturedProducts, MidPageCTA, StoryTeaser, InstagramStrip
+  home/               Hero, FeaturedProducts, MidPageCTA, StoryTeaser, InstagramStrip, BottomCTA
   menu/               CategoryFilter ("use client" — filter state + product grid)
   about/              FounderStory, PhilosophyCards ("use client" — useLang)
   visit/              InfoGrid ("use client"), MapEmbed (server)
@@ -171,6 +182,8 @@ uses `useState`/`useEffect`, or renders `motion.*` elements.
 ---
 
 ## i18n
+
+Locale is URL-driven: `src/app/[locale]/layout.tsx` reads the `locale` segment from URL params and passes it to `LangProvider` as `initialLocale`. The language toggle in the NavBar updates both React state and the URL.
 
 `useLang()` returns `{ locale, setLocale, t }`:
 - `locale` — `"en"` (default) | `"fr"` | `"th"`
@@ -297,11 +310,11 @@ To control navbar appearance on a new section, add `data-nav-color="light"` or `
 4. If featured: add to `featuredProducts` array
 
 ### Adding a New Page
-1. Create `src/app/[route]/page.tsx`
+1. Create `src/app/[locale]/[route]/page.tsx` (and `layout.tsx` with per-page metadata if needed)
 2. Wrap content in `<PageTransition>`
-3. Add links in `NavBar.tsx` and `Footer.tsx`
+3. Add links in `NavBar.tsx` and `Footer.tsx` — use locale-prefixed hrefs (e.g. `/${locale}/route`)
 4. Add translations in `src/lib/lang/{en,fr,th}.ts`
-5. Test all three locales by toggling the language selector
+5. Test all three locales: `/en/route`, `/fr/route`, `/th/route`
 
 ---
 

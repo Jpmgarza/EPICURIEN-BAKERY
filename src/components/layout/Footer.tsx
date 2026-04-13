@@ -6,7 +6,7 @@ import { InstagramIcon, FacebookIcon } from "@/components/shared/SocialIcons";
 import { useLang } from "@/lib/lang";
 
 export function Footer() {
-  const { t } = useLang();
+  const { t, locale } = useLang();
 
   return (
     <footer className="bg-[var(--secondary-brand)] border-t border-[var(--divider)]">
@@ -43,11 +43,11 @@ export function Footer() {
             </p>
             <div className="flex flex-col gap-3 mb-8">
               {[
-                { href: "/", label: t.nav.home },
-                { href: "/menu", label: t.nav.menu },
-                { href: "/about", label: t.nav.about },
-                { href: "/visit", label: t.nav.visit },
-                { href: "/contact", label: t.nav.contact },
+                { href: `/${locale}`, label: t.nav.home },
+                { href: `/${locale}/menu`, label: t.nav.menu },
+                { href: `/${locale}/about`, label: t.nav.about },
+                { href: `/${locale}/visit`, label: t.nav.visit },
+                { href: `/${locale}/contact`, label: t.nav.contact },
               ].map((link) => (
                 <Link
                   key={link.href}
