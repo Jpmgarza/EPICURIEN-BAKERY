@@ -11,7 +11,6 @@ const IMAGES = [
   { src: "Menu images/pasteries/Pain Au Chocolat.png",      alt: "Pain au Chocolat" },
   { src: "Menu images/pasteries/Croissant Aux Amandes.png", alt: "Croissant aux Amandes" },
   { src: "Menu images/cakes/Madeleine Au Citron.png",       alt: "Madeleine au Citron" },
-  { src: "Menu images/pasteries/Pain Suisse.png",           alt: "Pain Suisse" },
 ];
 
 export function InstagramStrip() {
@@ -28,7 +27,7 @@ export function InstagramStrip() {
         </div>
 
         {/* Image grid — 2 cols mobile / 5 cols desktop */}
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-2.5">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-2.5">
           {IMAGES.map(({ src, alt }) => (
             <a
               key={src}
