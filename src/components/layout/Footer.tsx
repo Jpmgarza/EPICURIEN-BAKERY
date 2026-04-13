@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { InstagramIcon, FacebookIcon } from "@/components/shared/SocialIcons";
 import { useLang } from "@/lib/lang";
@@ -23,20 +24,15 @@ export function Footer() {
             </div>
 
             <div className="mt-6">
-              <picture>
-                <source
-                  srcSet="https://pbrnjxgzfmhbcgcqawro.supabase.co/storage/v1/object/public/products/Epicurien-logo/Footer-logo.svg"
-                  type="image/svg+xml"
-                />
-                <img
-                  src="https://pbrnjxgzfmhbcgcqawro.supabase.co/storage/v1/object/public/products/Epicurien-logo/footer-logo.png"
-                  alt="Épicurien French Bakery logo"
-                  width={300}
-                  height={300}
-                  loading="lazy"
-                  className="w-[120px] sm:w-[160px] h-auto opacity-80"
-                />
-              </picture>
+              <Image
+                src="https://pbrnjxgzfmhbcgcqawro.supabase.co/storage/v1/object/public/products/Epicurien-logo/footer-logo.png"
+                alt="Épicurien French Bakery logo"
+                width={300}
+                height={300}
+                quality={100}
+                sizes="(max-width: 640px) 120px, 160px"
+                className="w-[120px] sm:w-[160px] h-auto opacity-80"
+              />
             </div>
           </div>
 
