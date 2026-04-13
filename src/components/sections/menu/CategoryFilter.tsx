@@ -62,7 +62,7 @@ export function CategoryFilter() {
           {filtered.map((product) => (
             <div
               key={product.id}
-              className="group bg-[var(--secondary-brand)] border border-[var(--dominant-brand)]/8 hover:border-[var(--dominant-brand)]/25 transition-all duration-300 overflow-hidden"
+              className="group bg-[var(--secondary-brand)] border border-[var(--dominant-brand)]/8 hover:border-[var(--dominant-brand)]/25 transition-all duration-300 overflow-hidden flex flex-col"
             >
               {/* Product image */}
               <div className="aspect-[4/5] relative overflow-hidden bg-[var(--secondary-brand)]">
@@ -79,7 +79,7 @@ export function CategoryFilter() {
                 )}
               </div>
               {/* Info + CTA */}
-              <div className="p-5 border-t border-[rgba(255,255,255,0.06)]">
+              <div className="p-5 border-t border-[rgba(255,255,255,0.06)] flex flex-col flex-1">
                 <p className="font-satoshi font-medium text-[var(--dominant-brand)] text-sm mb-1.5">
                   {product.name}
                 </p>
@@ -95,7 +95,7 @@ export function CategoryFilter() {
                   href={GRAB_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 w-full border border-white/30 text-white font-satoshi text-[10px] tracking-[0.2em] uppercase py-2.5 hover:bg-white hover:text-[var(--secondary-brand)] hover:border-white transition-all duration-200"
+                  className="flex items-center justify-center gap-2 w-full border border-white/30 text-white font-satoshi text-[10px] tracking-[0.2em] uppercase py-2.5 hover:bg-white hover:text-[var(--secondary-brand)] hover:border-white transition-all duration-200 mt-auto"
                 >
                   <Bike size={12} />
                   {t.products.addToGrab}
