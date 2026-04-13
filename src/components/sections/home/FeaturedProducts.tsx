@@ -22,7 +22,7 @@ export function FeaturedProducts() {
   const { t } = useLang();
 
   return (
-    <section className="bg-[var(--dominant-brand)] py-24 px-6">
+    <section className="bg-[var(--dominant-brand)] min-h-screen flex flex-col justify-center py-16 px-6">
       <div className="max-w-7xl mx-auto">
         {/* Section heading */}
         <div className="text-center mb-14">
@@ -47,7 +47,7 @@ export function FeaturedProducts() {
                 className="group block bg-[var(--secondary-brand)] border border-[rgba(255,255,255,0.08)] hover:border-[rgba(255,255,255,0.30)] transition-all duration-300 overflow-hidden"
               >
                 {/* Product image */}
-                <div className="aspect-[4/5] relative overflow-hidden bg-[var(--secondary-brand)]">
+                <div className="aspect-[3/4] sm:aspect-[4/5] relative overflow-hidden bg-[var(--secondary-brand)]">
                   <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_25%_75%,rgba(255,255,255,0.04),transparent_55%)]" />
                   <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_75%_20%,rgba(255,250,240,0.05),transparent_50%)]" />
                   {product.image && (
