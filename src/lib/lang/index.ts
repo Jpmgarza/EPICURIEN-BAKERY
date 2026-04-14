@@ -43,6 +43,8 @@ export function LangProvider({
 
   function setLocale(newLocale: Locale) {
     setLocaleState(newLocale); // instant UI feedback before navigation
+    // Flag must be set BEFORE router.push so LoadingScreen reads it on remount
+    sessionStorage.setItem("epicurien_lang_switch", "true");
     const segments = pathname.split("/").filter(Boolean);
     if (segments.length > 0 && LOCALES.includes(segments[0])) {
       segments[0] = newLocale;
