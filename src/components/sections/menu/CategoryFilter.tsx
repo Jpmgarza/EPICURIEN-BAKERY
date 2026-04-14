@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "motion/react";
 import { Bike } from "lucide-react";
 import { useLang } from "@/lib/lang";
+import { frProductNames } from "@/lib/lang/fr-product-names";
 import { products, type Category } from "@/lib/products";
 
 const SUPABASE_STORAGE = "https://pbrnjxgzfmhbcgcqawro.supabase.co/storage/v1/object/public/products/";
@@ -14,7 +15,7 @@ const GRAB_URL = "https://r.grab.com/g/6-20260413_161946_D423C37AF6D44E2FB0FCDCE
 type Filter = "All" | Category;
 
 export function CategoryFilter() {
-  const { t } = useLang();
+  const { t, locale } = useLang();
   const [activeFilter, setActiveFilter] = useState<Filter>("All");
 
   const filters: { key: Filter; label: string }[] = [
@@ -81,7 +82,7 @@ export function CategoryFilter() {
               {/* Info + CTA */}
               <div className="p-5 border-t border-[rgba(255,255,255,0.06)] flex flex-col flex-1">
                 <p className="font-satoshi font-medium text-[var(--dominant-brand)] text-sm mb-1.5">
-                  {product.name}
+                  {locale === "fr" ? (frProductNames[product.id] ?? product.name) : product.name}
                 </p>
                 {product.descriptionKey && (
                   <p className="font-satoshi text-[var(--dominant-brand)]/70 text-xs mb-3 leading-relaxed">
