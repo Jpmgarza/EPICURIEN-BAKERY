@@ -59,7 +59,7 @@ const fr: Dict = {
     painSuisseAmandes: "Crème pâtissière, pépites de chocolat et crème d'amande",
     // Pâtisseries descriptions
     cookies: "Croustillant en surface, fondant à cœur — généreusement sucré.",
-    madeleineeLemon: "Moelleuse et parfumée au citron. Zeste naturel dans la pâte. 2 pièces ฿90 ou 4 pièces ฿170",
+    madeleineeLemon: "Moelleuse et parfumée au citron. Zeste naturel dans la pâte. 2 pièces ฿90 ou 4 pièces ฿198",
     // Boissons descriptions
     icedEspresso: "Espresso Glacé",
     icedLatte: "Latte Glacé",

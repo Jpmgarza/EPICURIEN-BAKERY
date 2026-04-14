@@ -57,7 +57,7 @@ const en = {
     painSuisseAmandes: "Custard with chocolate chips and almond cream",
     // Pâtisseries descriptions
     cookies: "Crispy on the outside, soft inside. Fairly sweet.",
-    madeleineeLemon: "Like sponge cake with lemon. Lemon zest in the batter. 2 pieces ฿90 or 4 pieces ฿170",
+    madeleineeLemon: "Like sponge cake with lemon. Lemon zest in the batter. 2 pieces ฿90 or 4 pieces ฿198",
     // Boissons descriptions
     icedEspresso: "Iced Espresso",
     icedLatte: "Iced Latte",
