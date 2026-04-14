@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 
 interface LoadingScreenProps {
@@ -36,20 +36,27 @@ export function LoadingScreen({
   brandName = "Épicurien",
   subLabel  = "W District · Bangkok",
 }: LoadingScreenProps) {
-  // Start hidden — useEffect determines whether to show (avoids SSR hydration mismatch)
   const [visible, setVisible] = useState(false);
+  // Ref so useEffect can read the decision made by useLayoutEffect
+  const skipRef = useRef(false);
 
-  useEffect(() => {
-    const hasVisited  = sessionStorage.getItem("epicurien_visited")     === "true";
+  // Runs synchronously after React's DOM commit but BEFORE the browser paints.
+  // React resets <body className> on re-render, wiping the imperative page-loaded
+  // class — this restores it immediately so #main-content never flashes invisible.
+  useLayoutEffect(() => {
+    const hasVisited   = sessionStorage.getItem("epicurien_visited")     === "true";
     const isLangSwitch = sessionStorage.getItem("epicurien_lang_switch") === "true";
 
     if (isLangSwitch) sessionStorage.removeItem("epicurien_lang_switch");
 
     if (hasVisited || isLangSwitch) {
-      // Not a genuine first load — ensure content is visible and bail out
       document.body.classList.add("page-loaded");
-      return;
+      skipRef.current = true;
     }
+  }, []);
+
+  useEffect(() => {
+    if (skipRef.current) return; // lang switch or revisit — nothing to do
 
     // Genuine first load / hard refresh — show the loading screen
     sessionStorage.setItem("epicurien_visited", "true");
