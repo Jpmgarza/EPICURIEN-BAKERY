@@ -33,6 +33,7 @@ export const frProductNames: Record<string, string> = {
   "panna-cotta":                  "Panna cotta",
   "chocolate-mousse":             "Mousse au chocolat",
   "milk-rice":                    "Riz au lait",
+  "tropicale":                    "Tropézienne",
   "cheesecake-cup":               "Cheesecake en verrine",
   // Boissons
   "iced-espresso":                "Espresso glacé",

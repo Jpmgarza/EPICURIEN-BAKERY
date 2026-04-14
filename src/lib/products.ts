@@ -45,7 +45,7 @@ export const products: Product[] = [
   { id: "panna-cotta", name: "Panna Cotta", price: 200, category: "Pâtisseries", descriptionKey: "pannaCotta", image: "Menu images/cakes/Pana cota.png" },
   { id: "chocolate-mousse", name: "Chocolate Mousse", price: 200, category: "Pâtisseries", descriptionKey: "chocolateMousse", image: "Menu images/cakes/Mousse au chocolat.png" },
   { id: "milk-rice", name: "Milk Rice", price: 200, category: "Pâtisseries", descriptionKey: "milkRice" },
-  { id: "tropicale", name: "Tropicale", price: 225, category: "Pâtisseries", descriptionKey: "tropicale" },
+  { id: "tropicale", name: "Tropicale", price: 225, category: "Pâtisseries", descriptionKey: "tropicale", image: "Menu images/cakes/Tropezienne (1).png" },
   { id: "cheesecake-cup", name: "Cheesecake In Cup", price: 230, category: "Pâtisseries", descriptionKey: "cheesecakeCup" },
 
   // Boissons
