@@ -22,14 +22,14 @@ function NavLink({
 }) {
   return (
     <motion.div
-      className="relative"
+      className="relative cursor-pointer select-none"
       initial="rest"
       whileHover="hover"
       animate="rest"
     >
       <Link
         href={href}
-        className={`font-satoshi text-xs tracking-[0.2em] uppercase ${dimOpacity} hover:opacity-100 transition-all duration-300 ${textColorClass}`}
+        className={`font-satoshi text-xs tracking-[0.2em] uppercase ${dimOpacity} hover:opacity-100 transition-all duration-300 select-none cursor-pointer ${textColorClass}`}
       >
         {label}
       </Link>
