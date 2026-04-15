@@ -151,7 +151,7 @@ export function LoadingScreen({
           >
             <div className="croissant-spin">
               <Image
-                src="https://pbrnjxgzfmhbcgcqawro.supabase.co/storage/v1/object/public/products/Croissant-icon-laodingscreen.svg"
+                src="/Croissant-icon-laodingscreen.svg"
                 alt=""
                 width={52}
                 height={52}
