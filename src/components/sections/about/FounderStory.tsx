@@ -15,6 +15,7 @@ export function FounderStory() {
             src="https://pbrnjxgzfmhbcgcqawro.supabase.co/storage/v1/object/public/products/About-Image-enzo.png"
             alt="Enzo Le Bohec — founder of Épicurien"
             fill
+            quality={80}
             sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover object-center"
           />

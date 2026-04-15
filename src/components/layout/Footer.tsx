@@ -29,7 +29,7 @@ export function Footer() {
                 alt="Épicurien French Bakery logo"
                 width={300}
                 height={300}
-                quality={100}
+                quality={85}
                 sizes="(max-width: 640px) 120px, 160px"
                 className="w-[120px] sm:w-[160px] h-auto opacity-80"
               />

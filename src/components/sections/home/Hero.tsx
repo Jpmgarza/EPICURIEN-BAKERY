@@ -20,6 +20,7 @@ export function Hero() {
         alt="Freshly baked artisan croissants at Épicurien French Bakery, W District Bangkok"
         fill
         priority
+        quality={85}
         sizes="100vw"
         className="object-cover [object-position:70%_center] md:[object-position:center]"
       />

@@ -39,6 +39,7 @@ export function InstagramStrip() {
                 src={src}
                 alt={alt}
                 fill
+                quality={80}
                 sizes="(max-width: 768px) 50vw, 20vw"
                 className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
               />

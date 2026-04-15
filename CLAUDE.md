@@ -195,6 +195,8 @@ ESLint rejects JSX in `.ts` files. Do not convert it.
 
 **`en.ts` has no `as const`** — `fr.ts` and `th.ts` must independently satisfy `Dict`.
 
+**`fr-product-names.ts`** — French product name overrides keyed by product ID (e.g. `"pain-chocolat": "Pain au chocolat"`). Used by `CategoryFilter` for the FR locale; it falls back to `product.name` for any missing key. Edit only this file for FR product name changes — do not touch `en.ts`, `th.ts`, or `products.ts`.
+
 **Adding a translation string:**
 1. Add key + English value to `en.ts` (camelCase, no `as const`)
 2. Mirror exact key structure in `fr.ts` and `th.ts`
@@ -307,7 +309,8 @@ To control navbar appearance on a new section, add `data-nav-color="light"` or `
 1. Upload image to Supabase `products` bucket — note the relative path
 2. Add product object to `src/lib/products.ts` (id, name, price, category, image, descriptionKey)
 3. Add `descriptionKey` string to `en.ts`, `fr.ts`, `th.ts` under `menu` section
-4. If featured: add to `featuredProducts` array
+4. Add an entry to `src/lib/lang/fr-product-names.ts` keyed by the product `id` with the French name
+5. If featured: add to `featuredProducts` array
 
 ### Adding a New Page
 1. Create `src/app/[locale]/[route]/page.tsx` (and `layout.tsx` with per-page metadata if needed)
