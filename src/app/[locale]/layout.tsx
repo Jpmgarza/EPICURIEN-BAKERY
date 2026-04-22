@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist_Mono } from "next/font/google";
 import { Cormorant_Garamond } from "next/font/google";
 import localFont from "next/font/local";
@@ -58,6 +58,11 @@ const VALID_LOCALES: Locale[] = ["en", "fr", "th"];
 export function generateStaticParams() {
   return [{ locale: "en" }, { locale: "fr" }, { locale: "th" }];
 }
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
 
 export async function generateMetadata({
   params,
