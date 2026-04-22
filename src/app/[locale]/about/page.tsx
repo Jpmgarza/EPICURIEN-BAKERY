@@ -1,43 +1,52 @@
-"use client";
+import type { Metadata } from "next";
+import { AboutContent } from "@/components/sections/about/AboutContent";
 
-import { PageTransition } from "@/components/layout/PageTransition";
-import { FounderStory } from "@/components/sections/about/FounderStory";
-import { PhilosophyCards } from "@/components/sections/about/PhilosophyCards";
-import { TestimonialsSection } from "@/components/shared/TestimonialsSection";
-import { DualCTA } from "@/components/shared/DualCTA";
-import { useLang } from "@/lib/lang";
+const OG_IMAGE =
+  "https://pbrnjxgzfmhbcgcqawro.supabase.co/storage/v1/object/public/products/hero-image-goldmarble-croissant.png";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return {
+    title: "Our Story",
+    description:
+      "Meet Enzo Le Bohec — N.1 Best Croissant in Paris 2021 — and discover how Épicurien brings authentic French bakery craft to Bangkok's W District.",
+    alternates: {
+      canonical: `https://epicurien-bakery.vercel.app/${locale}/about`,
+      languages: {
+        en: "https://epicurien-bakery.vercel.app/en/about",
+        fr: "https://epicurien-bakery.vercel.app/fr/about",
+        th: "https://epicurien-bakery.vercel.app/th/about",
+        "x-default": "https://epicurien-bakery.vercel.app/en/about",
+      },
+    },
+    openGraph: {
+      title: "Our Story | Épicurien French Bakery Bangkok",
+      description:
+        "Meet Enzo Le Bohec — N.1 Best Croissant in Paris 2021 — and discover how Épicurien brings authentic French bakery craft to Bangkok.",
+      url: `https://epicurien-bakery.vercel.app/${locale}/about`,
+      images: [
+        {
+          url: OG_IMAGE,
+          width: 1200,
+          height: 630,
+          alt: "Freshly baked artisan croissants at Épicurien French Bakery Bangkok",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Our Story | Épicurien French Bakery Bangkok",
+      description:
+        "Meet Enzo Le Bohec — N.1 Best Croissant in Paris 2021 — and the story behind Épicurien in Bangkok.",
+      images: [OG_IMAGE],
+    },
+  };
+}
 
 export default function AboutPage() {
-  const { t } = useLang();
-  return (
-    <PageTransition>
-      {/* Hero */}
-      <section data-nav-color="dark" className="bg-[var(--secondary-brand)] min-h-[55vh] flex flex-col items-center justify-center text-center px-6 pt-16 relative overflow-hidden">
-        {/* Decorative ampersand */}
-        <span className="absolute font-cormorant italic text-[var(--accent-brand)] opacity-[0.04] text-[22rem] leading-none select-none pointer-events-none top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-          &amp;
-        </span>
-        <div className="relative z-10 flex flex-col items-center gap-5">
-          <div className="w-8 h-px bg-[var(--accent-brand)] opacity-50" />
-          <h1 className="font-cormorant font-normal italic text-[var(--dominant-brand)] text-4xl sm:text-5xl md:text-7xl">
-            {t.about.headline}
-          </h1>
-          <p className="font-satoshi text-[var(--dominant-brand)] opacity-40 text-[10px] tracking-[0.3em] uppercase">
-            {t.about.subline}
-          </p>
-        </div>
-      </section>
-
-      <FounderStory />
-      <PhilosophyCards />
-      <TestimonialsSection variant="light" />
-
-      {/* CTA footer */}
-      <section data-nav-color="light" className="bg-[var(--dominant-brand)] py-28 px-6">
-        <div className="max-w-3xl mx-auto">
-          <DualCTA heading={t.about.ctaHeading} variant="light" />
-        </div>
-      </section>
-    </PageTransition>
-  );
+  return <AboutContent />;
 }

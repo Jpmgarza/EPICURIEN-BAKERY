@@ -1,30 +1,52 @@
-"use client";
+import type { Metadata } from "next";
+import { MenuContent } from "@/components/sections/menu/MenuContent";
 
-import { PageTransition } from "@/components/layout/PageTransition";
-import { CategoryFilter } from "@/components/sections/menu/CategoryFilter";
-import { useLang } from "@/lib/lang";
+const OG_IMAGE =
+  "https://pbrnjxgzfmhbcgcqawro.supabase.co/storage/v1/object/public/products/hero-image-goldmarble-croissant.png";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return {
+    title: "Our Menu",
+    description:
+      "Freshly baked croissants, viennoiseries, pains and pâtisseries — handcrafted every morning in W District, Bangkok by award-winning baker Enzo Le Bohec.",
+    alternates: {
+      canonical: `https://epicurien-bakery.vercel.app/${locale}/menu`,
+      languages: {
+        en: "https://epicurien-bakery.vercel.app/en/menu",
+        fr: "https://epicurien-bakery.vercel.app/fr/menu",
+        th: "https://epicurien-bakery.vercel.app/th/menu",
+        "x-default": "https://epicurien-bakery.vercel.app/en/menu",
+      },
+    },
+    openGraph: {
+      title: "Our Menu | Épicurien French Bakery Bangkok",
+      description:
+        "Freshly baked croissants, viennoiseries, pains and pâtisseries — handcrafted every morning in W District, Bangkok.",
+      url: `https://epicurien-bakery.vercel.app/${locale}/menu`,
+      images: [
+        {
+          url: OG_IMAGE,
+          width: 1200,
+          height: 630,
+          alt: "Freshly baked artisan croissants at Épicurien French Bakery Bangkok",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Our Menu | Épicurien French Bakery Bangkok",
+      description:
+        "Freshly baked croissants, viennoiseries and pâtisseries — handcrafted every morning in Bangkok.",
+      images: [OG_IMAGE],
+    },
+  };
+}
 
 export default function MenuPage() {
-  const { t } = useLang();
-  return (
-    <PageTransition>
-      {/* Compact Hero */}
-      <section data-nav-color="dark" className="bg-[var(--secondary-brand)] min-h-[40vh] flex flex-col items-center justify-center text-center px-6 pt-16">
-        <div className="w-8 h-px bg-[var(--accent-brand)] opacity-50 mb-8" />
-        <h1 className="font-cormorant font-normal italic text-[var(--dominant-brand)] text-4xl sm:text-5xl md:text-7xl mb-4">
-          {t.menu.headline}
-        </h1>
-        <p className="font-satoshi text-[var(--dominant-brand)] opacity-40 text-[10px] tracking-[0.3em] uppercase">
-          {t.menu.subline}
-        </p>
-      </section>
-
-      {/* Filter + Grid */}
-      <section data-nav-color="light" className="bg-[var(--dominant-brand)] pb-32 px-6">
-        <div className="max-w-7xl mx-auto">
-          <CategoryFilter />
-        </div>
-      </section>
-    </PageTransition>
-  );
+  return <MenuContent />;
 }

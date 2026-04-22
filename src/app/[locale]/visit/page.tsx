@@ -1,39 +1,52 @@
-"use client";
+import type { Metadata } from "next";
+import { VisitContent } from "@/components/sections/visit/VisitContent";
 
-import { PageTransition } from "@/components/layout/PageTransition";
-import { InfoGrid } from "@/components/sections/visit/InfoGrid";
-import { MapEmbed } from "@/components/sections/visit/MapEmbed";
-import { DualCTA } from "@/components/shared/DualCTA";
-import { useLang } from "@/lib/lang";
+const OG_IMAGE =
+  "https://pbrnjxgzfmhbcgcqawro.supabase.co/storage/v1/object/public/products/hero-image-goldmarble-croissant.png";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return {
+    title: "Visit Us",
+    description:
+      "Find Épicurien French Bakery at W District, Bangkok. Open daily 07:00–21:00. Order on Grab or visit us at 1693 Sukhumvit 71, Watthana.",
+    alternates: {
+      canonical: `https://epicurien-bakery.vercel.app/${locale}/visit`,
+      languages: {
+        en: "https://epicurien-bakery.vercel.app/en/visit",
+        fr: "https://epicurien-bakery.vercel.app/fr/visit",
+        th: "https://epicurien-bakery.vercel.app/th/visit",
+        "x-default": "https://epicurien-bakery.vercel.app/en/visit",
+      },
+    },
+    openGraph: {
+      title: "Visit Us | Épicurien French Bakery Bangkok",
+      description:
+        "Open daily 07:00–21:00 at W District, 1693 Sukhumvit 71, Bangkok. Order on Grab or come see us.",
+      url: `https://epicurien-bakery.vercel.app/${locale}/visit`,
+      images: [
+        {
+          url: OG_IMAGE,
+          width: 1200,
+          height: 630,
+          alt: "Freshly baked artisan croissants at Épicurien French Bakery Bangkok",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Visit Us | Épicurien French Bakery Bangkok",
+      description:
+        "Open daily 07:00–21:00 at W District, 1693 Sukhumvit 71, Bangkok.",
+      images: [OG_IMAGE],
+    },
+  };
+}
 
 export default function VisitPage() {
-  const { t } = useLang();
-  return (
-    <PageTransition>
-      {/* Hero */}
-      <section data-nav-color="dark" className="bg-[var(--secondary-brand)] min-h-[40vh] flex flex-col items-center justify-center text-center px-6 pt-16">
-        <div className="w-8 h-px bg-[var(--accent-brand)] opacity-50 mb-8" />
-        <h1 className="font-cormorant font-normal italic text-[var(--dominant-brand)] text-4xl sm:text-5xl md:text-7xl mb-4">
-          {t.visit.headline}
-        </h1>
-        <p className="font-satoshi text-[var(--dominant-brand)] opacity-40 text-[10px] tracking-[0.3em] uppercase">
-          {t.visit.subline}
-        </p>
-      </section>
-
-      <InfoGrid />
-      <MapEmbed />
-
-      {/* Grab delivery banner */}
-      <section data-nav-color="light" className="bg-[var(--dominant-brand)] py-24 px-6">
-        <div className="max-w-3xl mx-auto">
-          <DualCTA
-            heading={t.visit.grabHeading}
-            subline={t.visit.grabSubline}
-            variant="light"
-          />
-        </div>
-      </section>
-    </PageTransition>
-  );
+  return <VisitContent />;
 }
