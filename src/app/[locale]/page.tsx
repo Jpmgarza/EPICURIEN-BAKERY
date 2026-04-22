@@ -77,7 +77,12 @@ const bakerySchema = {
   },
 };
 
-export default function HomePage() {
+export default async function HomePage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
   return (
     <>
       {/* JSON-LD: LocalBusiness schema — static structured data, no user input */}
@@ -91,7 +96,7 @@ export default function HomePage() {
         <MidPageCTA />
         <StoryTeaser />
         <TestimonialsSection variant="light" />
-        <InstagramStrip />
+        <InstagramStrip locale={locale} />
         <BottomCTA />
       </main>
     </>
