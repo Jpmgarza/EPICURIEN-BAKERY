@@ -5,6 +5,14 @@ import th from "@/lib/lang/th";
 
 const INSTAGRAM_URL = "https://instagram.com/epicurien.bkk";
 
+// TODO: Set INSTAGRAM_ACCESS_TOKEN to activate the live feed.
+// 1. Go to developers.facebook.com → create a Facebook App
+// 2. Add "Instagram Graph API" product and connect the epicurien.bkk Business/Creator account
+// 3. Generate a long-lived access token (valid 60 days — must be refreshed before expiry)
+// 4. In Vercel → Project Settings → Environment Variables, add: INSTAGRAM_ACCESS_TOKEN=<token>
+// 5. Redeploy — the grid will show the 4 latest posts automatically (refreshes every 30 min)
+// Until the token is set, the 4 static fallback images below are shown instead.
+
 const DICTS = { en, fr, th } as const;
 type Locale = keyof typeof DICTS;
 
