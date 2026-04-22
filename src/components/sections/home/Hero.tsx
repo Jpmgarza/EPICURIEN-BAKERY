@@ -42,7 +42,11 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
             className="font-cormorant font-semibold uppercase text-white text-4xl sm:text-5xl md:text-7xl lg:text-8xl leading-[0.95] tracking-tight"
           >
-            {t.hero.headline}
+            THE ART OF FRENCH{" "}
+            <span className="italic">
+              CROISSANTS
+            </span>
+            .
           </motion.h1>
 
           {/* Subline */}
