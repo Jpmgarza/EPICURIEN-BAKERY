@@ -114,7 +114,7 @@ export function LoadingScreen({
             <div className="overflow-hidden">
               <motion.p
                 {...curtain(0)}
-                className="font-cormorant font-light text-[0.7rem] uppercase tracking-[0.35em] text-[var(--secondary-brand)] opacity-[0.45] m-0"
+                className="font-cormorant font-light text-[0.7rem] uppercase tracking-[0.35em] text-[var(--secondary-brand)] opacity-70 m-0"
               >
                 French Bakery
               </motion.p>
@@ -131,15 +131,10 @@ export function LoadingScreen({
               </motion.h1>
             </div>
 
-            {/* Sub-label — curtain reveal */}
-            <div className="overflow-hidden">
-              <motion.p
-                {...curtain(0.18)}
-                className="font-satoshi text-[0.65rem] uppercase tracking-[0.3em] text-[rgba(12,9,8,0.38)] m-0"
-              >
-                {subLabel}
-              </motion.p>
-            </div>
+            {/* Sub-label — static render so browser can paint it immediately as LCP */}
+            <p className="font-satoshi text-[0.65rem] uppercase tracking-[0.3em] text-[rgba(12,9,8,0.65)] m-0">
+              {subLabel}
+            </p>
           </div>
 
           {/* ── Croissant icon — spin ────────────────────── */}

@@ -38,7 +38,7 @@ export function Footer() {
 
           {/* Col 2: Nav + social */}
           <div>
-            <p className="font-satoshi text-[var(--dominant-brand)] opacity-40 text-[9px] tracking-[0.3em] uppercase mb-5">
+            <p className="font-satoshi text-[var(--footer-muted)] text-[9px] tracking-[0.3em] uppercase mb-5">
               {t.nav.footerHeading}
             </p>
             <div className="flex flex-col gap-3 mb-8">
@@ -82,7 +82,7 @@ export function Footer() {
 
           {/* Col 3: Address + hours + phone */}
           <div>
-            <p className="font-satoshi text-[var(--dominant-brand)] opacity-40 text-[9px] tracking-[0.3em] uppercase mb-5">
+            <p className="font-satoshi text-[var(--footer-muted)] text-[9px] tracking-[0.3em] uppercase mb-5">
               {t.visit.headline}
             </p>
             <div className="flex flex-col gap-2.5 font-satoshi text-sm text-[var(--dominant-brand)] opacity-50">
@@ -96,7 +96,7 @@ export function Footer() {
 
       {/* Bottom bar */}
       <div className="border-t border-[var(--divider)] px-6 py-5 pb-24 md:pb-5">
-        <p className="text-center font-satoshi text-[10px] text-[var(--dominant-brand)] opacity-40 tracking-widest">
+        <p className="text-center font-satoshi text-[10px] text-[var(--footer-muted)] tracking-widest">
           {t.footer.copyright}
         </p>
       </div>

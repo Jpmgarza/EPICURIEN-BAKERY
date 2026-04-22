@@ -48,7 +48,7 @@ export function InfoGrid() {
             <MapPin size={15} />
             {t.visit.directionsBtn}
           </a>
-          <p className="font-satoshi text-[var(--muted-text)] text-xs opacity-60 text-center tracking-wide">
+          <p className="font-satoshi text-[var(--muted-text)] text-xs opacity-80 text-center tracking-wide">
             {t.visit.subline}
           </p>
         </div>

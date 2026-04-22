@@ -20,7 +20,7 @@ export function Hero() {
         alt="Freshly baked artisan croissants at Épicurien French Bakery, W District Bangkok"
         fill
         priority
-        quality={90}
+        quality={75}
         sizes="100vw"
         className="object-cover [object-position:70%_center] md:[object-position:center]"
       />
@@ -47,8 +47,8 @@ export function Hero() {
 
           {/* Subline */}
           <motion.p
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ y: 12 }}
+            animate={{ y: 0 }}
             transition={{ duration: 0.5, delay: 0.38 }}
             className="font-satoshi text-white/75 text-[11px] tracking-[0.3em] uppercase"
           >

@@ -90,6 +90,8 @@
   --accent-brand: #FFFFFF;
   --muted-text: #2B1B17;
   --divider: rgba(255, 255, 255, 0.10);
+  /* Accessible muted label on dark (#0C0908) bg — contrast ≥9:1 vs --secondary-brand */
+  --footer-muted: #B5AFA9;
 }
 
 .dark {
