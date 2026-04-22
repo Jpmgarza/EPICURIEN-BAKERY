@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Geist_Mono } from "next/font/google";
-import { Cormorant_Garamond, Great_Vibes } from "next/font/google";
+import { Cormorant_Garamond } from "next/font/google";
 import localFont from "next/font/local";
 import { Analytics } from "@vercel/analytics/next";
 import { LangProvider, type Locale } from "@/lib/lang";
@@ -36,12 +36,6 @@ const satoshi = localFont({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
-});
-
-const greatVibes = Great_Vibes({
-  variable: "--font-great-vibes",
-  subsets: ["latin"],
-  weight: ["400"],
 });
 
 const ICON_BASE =
@@ -151,7 +145,7 @@ export default async function LocaleLayout({
   return (
     <html
       lang={safeLocale}
-      className={`${cormorant.variable} ${satoshi.variable} ${geistMono.variable} ${greatVibes.variable} h-full antialiased`}
+      className={`${cormorant.variable} ${satoshi.variable} ${geistMono.variable} h-full antialiased`}
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col bg-[var(--dominant-brand)]" suppressHydrationWarning>
