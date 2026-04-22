@@ -218,7 +218,7 @@ export function NavBar() {
           {/* Mobile hamburger */}
           <button
             type="button"
-            className={`md:hidden p-2.5 -mr-2.5 transition-all duration-300 ${tc}`}
+            className={`md:hidden p-2.5 -mr-2.5 min-h-[44px] min-w-[44px] flex items-center justify-center transition-all duration-300 ${tc}`}
             onClick={() => setDrawerOpen(true)}
             aria-label={t.nav.openMenu}
           >
@@ -248,7 +248,7 @@ export function NavBar() {
             >
               <button
                 type="button"
-                className="self-end text-[var(--dominant-brand)] opacity-60 hover:opacity-100 transition-opacity mb-12"
+                className="self-end min-h-[44px] min-w-[44px] flex items-center justify-center text-[var(--dominant-brand)] opacity-60 hover:opacity-100 transition-opacity mb-12"
                 onClick={() => setDrawerOpen(false)}
                 aria-label={t.nav.closeMenu}
               >
@@ -275,7 +275,7 @@ export function NavBar() {
                       key={loc}
                       type="button"
                       onClick={() => setLocale(loc)}
-                      className={`uppercase cursor-pointer transition-colors ${
+                      className={`uppercase cursor-pointer transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center px-3 ${
                         locale === loc
                           ? "text-[var(--dominant-brand)]"
                           : "text-[var(--dominant-brand)] opacity-40"

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useLang } from "@/lib/lang";
 
 export function StoryTeaser() {
-  const { t } = useLang();
+  const { t, locale } = useLang();
   return (
     <section className="bg-[var(--dominant-brand)] py-28 px-6">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-16 md:gap-24 items-center">
@@ -22,7 +22,7 @@ export function StoryTeaser() {
             {t.storyTeaser.body}
           </p>
           <Link
-            href="/about"
+            href={`/${locale}/about`}
             className="inline-flex items-center gap-2 font-satoshi text-[var(--secondary-brand)] text-[10px] tracking-[0.3em] uppercase border-b border-[var(--secondary-brand)]/30 pb-px self-start hover:border-[var(--secondary-brand)] hover:opacity-60 transition-all"
           >
             {t.storyTeaser.meetBaker}

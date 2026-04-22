@@ -19,7 +19,7 @@ const cardVariants: Variants = {
 };
 
 export function FeaturedProducts() {
-  const { t } = useLang();
+  const { t, locale } = useLang();
 
   return (
     <section className="bg-[var(--dominant-brand)] py-24 px-6">
@@ -43,7 +43,7 @@ export function FeaturedProducts() {
           {featuredProducts.map((product) => (
             <motion.div key={product.id} variants={cardVariants} className="shrink-0 w-[75vw] snap-start sm:w-auto">
               <Link
-                href="/menu"
+                href={`/${locale}/menu`}
                 className="group block bg-[var(--secondary-brand)] border border-[rgba(255,255,255,0.08)] hover:border-[rgba(255,255,255,0.30)] transition-all duration-300 overflow-hidden"
               >
                 {/* Product image */}
@@ -78,7 +78,7 @@ export function FeaturedProducts() {
         {/* View all link */}
         <div className="text-center mt-12">
           <Link
-            href="/menu"
+            href={`/${locale}/menu`}
             className="inline-flex items-center gap-2 font-satoshi text-[var(--secondary-brand)] text-[10px] tracking-[0.3em] uppercase border-b border-[var(--secondary-brand)]/30 pb-px hover:border-[var(--secondary-brand)] hover:opacity-70 transition-all"
           >
             {t.products.viewFullMenu}
