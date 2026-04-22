@@ -43,8 +43,8 @@ export function Hero() {
             className="font-cormorant font-semibold uppercase text-white text-4xl sm:text-5xl md:text-7xl lg:text-8xl leading-[0.95] tracking-tight"
           >
             THE ART OF FRENCH{" "}
-            <span className="italic">
-              CROISSANTS
+            <span className="[font-family:var(--font-great-vibes)] text-white italic tracking-wide">
+              Croissants
             </span>
             .
           </motion.h1>
