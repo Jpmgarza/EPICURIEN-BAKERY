@@ -23,7 +23,7 @@ export function Footer() {
               </span>
             </div>
 
-            <div className="mt-6">
+            <div className="mt-6 inline-block bg-[var(--dominant-brand)]">
               <Image
                 src="https://pbrnjxgzfmhbcgcqawro.supabase.co/storage/v1/object/public/products/Epicurien-logo/footer-logo.png"
                 alt="Épicurien French Bakery logo"
