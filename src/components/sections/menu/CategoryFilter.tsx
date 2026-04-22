@@ -97,7 +97,7 @@ export function CategoryFilter() {
                   href={GRAB_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 w-full border border-white/30 text-white font-satoshi text-[10px] tracking-[0.2em] uppercase py-2.5 hover:bg-white hover:text-[var(--secondary-brand)] hover:border-white transition-all duration-200 mt-auto"
+                  className="flex items-center justify-center gap-1.5 w-full border border-white/30 text-white font-satoshi text-[9px] tracking-[0.1em] uppercase px-2 py-2.5 min-h-[44px] whitespace-nowrap overflow-hidden hover:bg-white hover:text-[var(--secondary-brand)] hover:border-white transition-all duration-200 mt-auto"
                 >
                   <Bike size={12} />
                   {t.products.addToGrab}

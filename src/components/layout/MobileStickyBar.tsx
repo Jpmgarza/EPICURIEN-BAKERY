@@ -15,7 +15,7 @@ export function MobileStickyBar() {
         href={GRAB_URL}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex-1 flex items-center justify-center gap-2 bg-[var(--accent-brand)] text-[var(--secondary-brand)] font-satoshi font-medium text-[10px] tracking-[0.15em] uppercase py-3 min-h-[44px]"
+        className="flex-1 flex items-center justify-center gap-1.5 bg-[var(--accent-brand)] text-[var(--secondary-brand)] font-satoshi font-medium text-[10px] tracking-[0.1em] uppercase py-3 min-h-[44px] whitespace-nowrap overflow-hidden"
       >
         <Bike size={13} />
         {t.hero.ctaGrab}
@@ -24,7 +24,7 @@ export function MobileStickyBar() {
         href={MAPS_URL}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex-1 flex items-center justify-center gap-2 border border-[var(--dominant-brand)]/25 text-[var(--dominant-brand)] font-satoshi font-medium text-[10px] tracking-[0.15em] uppercase py-3 min-h-[44px] hover:border-[var(--dominant-brand)]/50 transition-colors"
+        className="flex-1 flex items-center justify-center gap-1.5 border border-[var(--dominant-brand)]/25 text-[var(--dominant-brand)] font-satoshi font-medium text-[10px] tracking-[0.1em] uppercase py-3 min-h-[44px] whitespace-nowrap overflow-hidden hover:border-[var(--dominant-brand)]/50 transition-colors"
       >
         <MapPin size={13} />
         {t.hero.ctaVisit}

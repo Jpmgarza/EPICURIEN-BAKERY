@@ -59,7 +59,7 @@ export function DualCTA({
           target="_blank"
           rel="noopener noreferrer"
           className={cn(
-            "flex items-center justify-center gap-2.5 font-satoshi font-medium text-xs tracking-[0.2em] uppercase w-full sm:w-auto px-6 sm:px-8 py-4 hover:opacity-90 transition-opacity",
+            "flex items-center justify-center gap-2.5 font-satoshi font-medium text-xs tracking-[0.2em] uppercase w-full sm:w-auto px-6 sm:px-8 py-4 whitespace-nowrap overflow-hidden hover:opacity-90 transition-opacity",
             variant === "dark"
               ? "bg-[var(--accent-brand)] text-[var(--secondary-brand)]"
               : "bg-[var(--secondary-brand)] text-[var(--dominant-brand)]"
@@ -73,7 +73,7 @@ export function DualCTA({
           target="_blank"
           rel="noopener noreferrer"
           className={cn(
-            "flex items-center justify-center gap-2.5 border font-satoshi font-medium text-xs tracking-[0.2em] uppercase w-full sm:w-auto px-6 sm:px-8 py-4 hover:opacity-70 transition-opacity",
+            "flex items-center justify-center gap-2.5 border font-satoshi font-medium text-xs tracking-[0.2em] uppercase w-full sm:w-auto px-6 sm:px-8 py-4 whitespace-nowrap overflow-hidden hover:opacity-70 transition-opacity",
             variant === "dark"
               ? "border-[var(--dominant-brand)]/30 text-[var(--dominant-brand)]"
               : "border-[var(--secondary-brand)]/30 text-[var(--secondary-brand)]"

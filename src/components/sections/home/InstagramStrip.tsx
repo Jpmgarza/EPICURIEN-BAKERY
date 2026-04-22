@@ -131,7 +131,7 @@ export async function InstagramStrip({ locale = "en" }: { locale?: string }) {
             href={INSTAGRAM_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block font-satoshi text-[var(--secondary-brand)] opacity-60 hover:opacity-90 text-[10px] tracking-[0.3em] uppercase border border-[var(--secondary-brand)]/30 hover:border-[var(--secondary-brand)]/60 px-8 py-3.5 transition-all"
+            className="inline-flex items-center justify-center font-satoshi text-[var(--secondary-brand)] opacity-60 hover:opacity-90 text-[10px] tracking-[0.2em] uppercase border border-[var(--secondary-brand)]/30 hover:border-[var(--secondary-brand)]/60 px-8 py-3.5 whitespace-nowrap transition-all"
           >
             {t.home.followInstagram}
           </a>
