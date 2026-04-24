@@ -75,7 +75,7 @@ const en = {
     kiwiSoda: "Kiwi Soda",
     // Pains descriptions
     baguette: "Traditional French baguette",
-    focacciaBread: "Focaccia bread, sold per piece",
+    focacciaBread: "Focaccia, sold by the piece",
     ficelle: "Bacon & cheese",
     // New Viennoiseries descriptions
     brioche: "Soft brioche bread",
@@ -100,8 +100,8 @@ const en = {
     cheesecakeCup: "120g",
     // New Boissons descriptions
     icedAmericano: "Iced Americano",
-    iceCappuccino: "Ice Cappuccino",
-    iceCaramelMacchiato: "Ice Caramel Macchiato",
+    iceCappuccino: "Iced Cappuccino",
+    iceCaramelMacchiato: "Iced Caramel Macchiato",
     icedCaramelMilk: "Iced Caramel Milk",
   },
   about: {

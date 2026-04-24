@@ -13,7 +13,7 @@ export async function generateMetadata({
   return {
     title: "Our Story",
     description:
-      "Meet Enzo Le Bohec — N.1 Best Croissant in Paris 2021 — and discover how Épicurien brings authentic French bakery craft to Bangkok's W District.",
+      "Meet Enzo Le Bohec — No. 1 Best Croissant in Paris 2021 — and discover how Épicurien brings authentic French bakery craft to Bangkok's W District.",
     alternates: {
       canonical: `https://epicurien-bakery.vercel.app/${locale}/about`,
       languages: {
@@ -26,7 +26,7 @@ export async function generateMetadata({
     openGraph: {
       title: "Our Story | Épicurien French Bakery Bangkok",
       description:
-        "Meet Enzo Le Bohec — N.1 Best Croissant in Paris 2021 — and discover how Épicurien brings authentic French bakery craft to Bangkok.",
+        "Meet Enzo Le Bohec — No. 1 Best Croissant in Paris 2021 — and discover how Épicurien brings authentic French bakery craft to Bangkok.",
       url: `https://epicurien-bakery.vercel.app/${locale}/about`,
       images: [
         {
@@ -41,7 +41,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: "Our Story | Épicurien French Bakery Bangkok",
       description:
-        "Meet Enzo Le Bohec — N.1 Best Croissant in Paris 2021 — and the story behind Épicurien in Bangkok.",
+        "Meet Enzo Le Bohec — No. 1 Best Croissant in Paris 2021 — and the story behind Épicurien in Bangkok.",
       images: [OG_IMAGE],
     },
   };
