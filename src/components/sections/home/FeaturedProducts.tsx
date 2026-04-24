@@ -1,22 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import { motion, type Variants } from "motion/react";
+import { motion } from "motion/react";
 import Link from "next/link";
 import { useLang } from "@/lib/lang";
 import { featuredProducts } from "@/lib/products";
 
 const SUPABASE_STORAGE = "https://pbrnjxgzfmhbcgcqawro.supabase.co/storage/v1/object/public/products/";
-
-const containerVariants: Variants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.08 } },
-};
-
-const cardVariants: Variants = {
-  hidden: { opacity: 0, y: 18 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.45 } },
-};
 
 export function FeaturedProducts() {
   const { t, locale } = useLang();
@@ -32,16 +22,25 @@ export function FeaturedProducts() {
           <div className="w-8 h-px bg-[var(--secondary-brand)] mx-auto opacity-30" />
         </div>
 
-        {/* Product grid */}
-        <motion.div
-          className="flex overflow-x-auto snap-x snap-mandatory [-webkit-overflow-scrolling:touch] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden gap-3 -mx-6 px-6 pb-4 sm:mx-0 sm:px-0 sm:pb-0 sm:grid sm:grid-cols-2 sm:overflow-x-visible sm:snap-none lg:grid-cols-4 sm:gap-4"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-60px" }}
-        >
-          {featuredProducts.map((product) => (
-            <motion.div key={product.id} variants={cardVariants} className="shrink-0 w-[75vw] snap-start sm:w-auto">
+        {/*
+          Mobile: vertical card stack — each card reveals individually as you scroll.
+          sm+:    2-col grid, lg+: 4-col grid (unchanged).
+        */}
+        <div className="flex flex-col gap-5 sm:grid sm:grid-cols-2 sm:gap-4 lg:grid-cols-4">
+          {featuredProducts.map((product, index) => (
+            <motion.div
+              key={product.id}
+              initial={{ opacity: 0, y: 48, scale: 0.97 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, margin: "-72px" }}
+              transition={{
+                duration: 0.55,
+                // On mobile cards scroll in one-by-one so index delay is minimal;
+                // on desktop the grid enters together so stagger looks intentional.
+                delay: index * 0.07,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+            >
               <Link
                 href={`/${locale}/menu`}
                 className="group block bg-[var(--secondary-brand)] border border-[rgba(255,255,255,0.08)] hover:border-[rgba(255,255,255,0.30)] transition-all duration-300 overflow-hidden"
@@ -57,7 +56,7 @@ export function FeaturedProducts() {
                       fill
                       quality={80}
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
-                      sizes="(max-width: 640px) 75vw, (max-width: 1024px) 50vw, 25vw"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     />
                   )}
                 </div>
@@ -73,7 +72,7 @@ export function FeaturedProducts() {
               </Link>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
 
         {/* View all link */}
         <div className="text-center mt-12">
