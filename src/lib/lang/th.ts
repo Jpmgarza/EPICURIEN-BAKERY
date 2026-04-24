@@ -30,7 +30,7 @@ const th: Dict = {
     location: "W District · BTS พระโขนง",
   },
   products: {
-    sectionTitle: "ผลงานของเรา",
+    sectionTitle: "คัดสรรพิเศษจากเรา",
     filterAll: "ทั้งหมด",
     filterViennoiseries: "Viennoiseries",
     filterPains: "ขนมปัง",

@@ -30,7 +30,7 @@ const fr: Dict = {
     location: "W District · BTS Phra Khanong",
   },
   products: {
-    sectionTitle: "Nos Créations",
+    sectionTitle: "Les Incontournables",
     filterAll: "Tout",
     filterViennoiseries: "Viennoiseries",
     filterPains: "Pains",

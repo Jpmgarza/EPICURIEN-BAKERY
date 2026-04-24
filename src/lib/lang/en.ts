@@ -28,7 +28,7 @@ const en = {
     location: "W District · BTS Phra Khanong",
   },
   products: {
-    sectionTitle: "Our Creations",
+    sectionTitle: "The Essentials",
     filterAll: "All",
     filterViennoiseries: "Viennoiseries",
     filterPains: "Breads",
