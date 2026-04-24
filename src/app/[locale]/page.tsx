@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Hero } from "@/components/sections/home/Hero";
 import { TrustBar } from "@/components/shared/TrustBar";
 import { FeaturedProducts } from "@/components/sections/home/FeaturedProducts";
-import { CardStack } from "@/components/sections/home/CardStack";
 import { MidPageCTA } from "@/components/sections/home/MidPageCTA";
 import { StoryTeaser } from "@/components/sections/home/StoryTeaser";
 import { TestimonialsSection } from "@/components/shared/TestimonialsSection";
@@ -94,15 +93,6 @@ export default async function HomePage({
         <Hero />
         <TrustBar />
         <FeaturedProducts />
-        <CardStack
-          cards={[
-            { src: "https://pbrnjxgzfmhbcgcqawro.supabase.co/storage/v1/object/public/products/Menu images/pasteries/Croisant.png", alt: "Croissant" },
-            { src: "https://pbrnjxgzfmhbcgcqawro.supabase.co/storage/v1/object/public/products/Menu images/pasteries/Pain Au Chocolat.png", alt: "Pain au Chocolat" },
-            { src: "https://pbrnjxgzfmhbcgcqawro.supabase.co/storage/v1/object/public/products/Menu images/pasteries/Croissant Aux Amandes.png", alt: "Croissant aux Amandes" },
-            { src: "https://pbrnjxgzfmhbcgcqawro.supabase.co/storage/v1/object/public/products/Menu images/pasteries/Croissant caramel.png", alt: "Croissant Caramel" },
-            { src: "https://pbrnjxgzfmhbcgcqawro.supabase.co/storage/v1/object/public/products/Menu images/pasteries/Croissant chocolat-noissettes.png", alt: "Croissant Chocolat Noisettes" },
-          ]}
-        />
         <MidPageCTA />
         <StoryTeaser />
         <TestimonialsSection variant="light" />
