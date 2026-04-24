@@ -38,7 +38,7 @@ export const products: Product[] = [
   { id: "cookies", name: "Cookies", price: 105, category: "Pâtisseries", descriptionKey: "cookies", image: "Menu images/cakes/Cookie.png" },
   { id: "madeleine-lemon", name: "Madeleine Lemon", price: 90, category: "Pâtisseries", descriptionKey: "madeleineeLemon", image: "Menu images/cakes/Madeleine Au Citron.png" },
   { id: "french-butter-cake", name: "French Butter Cake", price: 85, category: "Pâtisseries", descriptionKey: "frenchButterCake" },
-  { id: "mini-financier", name: "Mini Financier", price: 104, category: "Pâtisseries", descriptionKey: "miniFinancier" },
+  { id: "mini-financier", name: "Mini Financier", price: 130, category: "Pâtisseries", descriptionKey: "miniFinancier" },
   { id: "mini-cream-puffs", name: "Mini Cream Puffs", price: 65, category: "Pâtisseries", descriptionKey: "miniCreamPuffs" },
   { id: "chouquettes", name: "Chouquettes", price: 118, category: "Pâtisseries", descriptionKey: "chouquettes", image: "Menu images/cakes/chouquette.png" },
   { id: "tiramisu", name: "Tiramisu", price: 200, category: "Pâtisseries", descriptionKey: "tiramisu", image: "Menu images/cakes/Tiramisu.png" },
