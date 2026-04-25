@@ -27,7 +27,7 @@ export const products: Product[] = [
   { id: "croissant-caramel", name: "Croissant Caramel", price: 150, category: "Viennoiseries", descriptionKey: "croissantCaramel", image: "Menu images/pasteries/Croissant caramel.png" },
   { id: "croissant-chocolate-hazelnut", name: "Croissant Chocolate & Hazelnut", price: 150, category: "Viennoiseries", descriptionKey: "croissantChocolateHazelnut", image: "Menu images/pasteries/Croissant chocolat-noissettes.png" },
   { id: "croissant-strawberry-jam", name: "Croissant Strawberry Jam", price: 150, category: "Viennoiseries", descriptionKey: "croissantStrawberryJam", image: "Menu images/pasteries/Croissant confitures de fraises.png" },
-  { id: "croissant-chocolate-bun", name: "Croissant + Chocolate Pastry Bun", price: 270, category: "Viennoiseries", descriptionKey: "croissantChocolateBun" },
+  { id: "croissant-chocolate-bun", name: "Croissant + Chocolate Pastry Bun", price: 270, category: "Viennoiseries", descriptionKey: "croissantChocolateBun", image: "Menu images/pasteries/Croisant+croisant-au-chocolat.png" },
 
   // Pains
   { id: "baguette", name: "Baguette", price: 88, category: "Pains", descriptionKey: "baguette", image: "Menu images/Breads/Baguette.png" },
