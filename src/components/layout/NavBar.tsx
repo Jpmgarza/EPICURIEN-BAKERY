@@ -51,7 +51,7 @@ export function NavBar() {
   const [navTheme, setNavTheme] = useState<"dark" | "light">("light");
   const pathname = usePathname();
 
-  const isHome = pathname === `/${locale}` || pathname === `/${locale}/`;
+  const isHome = /^\/(en|fr|th)\/?$/.test(pathname);
   const transparent = isHome && !scrolled;
 
   // ── Home page: scroll-aware transparency (unchanged from previous) ──────

@@ -42,7 +42,6 @@ export function LangProvider({
   const pathname = usePathname();
 
   function setLocale(newLocale: Locale) {
-    setLocaleState(newLocale); // instant UI feedback before navigation
     // Flag must be set BEFORE router.push so LoadingScreen reads it on remount
     sessionStorage.setItem("epicurien_lang_switch", "true");
     const segments = pathname.split("/").filter(Boolean);
@@ -51,7 +50,9 @@ export function LangProvider({
     } else {
       segments.unshift(newLocale);
     }
-    router.push(`/${segments.join("/")}`);
+    // Smooth scroll to top; scroll: false prevents Next.js instant-jumping on its own
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    router.push(`/${segments.join("/")}`, { scroll: false });
   }
 
   return createElement(
