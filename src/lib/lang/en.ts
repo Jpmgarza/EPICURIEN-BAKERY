@@ -150,6 +150,8 @@ const en = {
     facebookLabel: "Facebook",
     facebookHandle: "Épicurien French Bakery",
     phoneLabel: "Phone",
+    emailLabel: "Email",
+    emailAddress: "epicurienbkk@gmail.com",
     wholesale: "For wholesale or catering inquiries, DM us on Instagram",
   },
   testimonials: {

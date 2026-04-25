@@ -153,6 +153,8 @@ const fr: Dict = {
     facebookLabel: "Facebook",
     facebookHandle: "Épicurien Boulangerie Française",
     phoneLabel: "Téléphone",
+    emailLabel: "E-mail",
+    emailAddress: "epicurienbkk@gmail.com",
     wholesale: "Pour les commandes en gros ou traiteur, contactez-nous sur Instagram.",
   },
   testimonials: {

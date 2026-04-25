@@ -1,7 +1,7 @@
 "use client";
 
 import { PageTransition } from "@/components/layout/PageTransition";
-import { Phone } from "lucide-react";
+import { Phone, Mail } from "lucide-react";
 import { InstagramIcon, FacebookIcon } from "@/components/shared/SocialIcons";
 import { useLang } from "@/lib/lang";
 
@@ -58,6 +58,19 @@ export function ContactContent() {
                 {t.contact.phoneLabel}
               </p>
               <p className="font-satoshi text-xs opacity-60">{t.visit.phone}</p>
+            </div>
+          </a>
+
+          <a
+            href="mailto:epicurienbkk@gmail.com"
+            className="flex items-center gap-4 p-5 border border-[var(--secondary-brand)]/10 hover:border-[var(--secondary-brand)]/30 text-[var(--secondary-brand)] transition-all group"
+          >
+            <Mail size={16} className="text-[var(--secondary-brand)] opacity-40 shrink-0" />
+            <div className="text-left">
+              <p className="font-satoshi font-medium text-sm opacity-70 group-hover:opacity-100 transition-opacity">
+                {t.contact.emailLabel}
+              </p>
+              <p className="font-satoshi text-xs opacity-60">{t.contact.emailAddress}</p>
             </div>
           </a>
         </div>

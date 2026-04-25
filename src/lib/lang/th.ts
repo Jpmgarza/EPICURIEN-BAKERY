@@ -152,6 +152,8 @@ const th: Dict = {
     facebookLabel: "Facebook",
     facebookHandle: "Épicurien เบเกอรี่ฝรั่งเศส",
     phoneLabel: "โทรศัพท์",
+    emailLabel: "อีเมล",
+    emailAddress: "epicurienbkk@gmail.com",
     wholesale: "สำหรับการสอบถามขายส่งหรือจัดเลี้ยง ส่ง DM มาทาง Instagram",
   },
   testimonials: {
