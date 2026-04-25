@@ -63,10 +63,10 @@ export const products: Product[] = [
   { id: "lychee-soda", name: "Lychee Soda", price: 80, category: "Boissons", descriptionKey: "lycheeSoda", image: "Menu images/drinks/Lychee Soda.png" },
   { id: "apple-soda", name: "Apple Soda", price: 80, category: "Boissons", descriptionKey: "appleSoda", image: "Menu images/drinks/Apple Soda.png" },
   { id: "kiwi-soda", name: "Kiwi Soda", price: 80, category: "Boissons", descriptionKey: "kiwiSoda", image: "Menu images/drinks/Kiwi Soda.png" },
-  { id: "iced-americano", name: "Iced Americano", price: 110, category: "Boissons", descriptionKey: "icedAmericano" },
+  { id: "iced-americano", name: "Iced Americano", price: 110, category: "Boissons", descriptionKey: "icedAmericano", image: "Menu images/drinks/Iced-Americano.png" },
   { id: "ice-cappuccino", name: "Ice Cappuccino", price: 120, category: "Boissons", descriptionKey: "iceCappuccino" },
-  { id: "ice-caramel-macchiato", name: "Ice Caramel Macchiato", price: 140, category: "Boissons", descriptionKey: "iceCaramelMacchiato" },
-  { id: "iced-caramel-milk", name: "Iced Caramel Milk", price: 95, category: "Boissons", descriptionKey: "icedCaramelMilk" },
+  { id: "ice-caramel-macchiato", name: "Ice Caramel Macchiato", price: 140, category: "Boissons", descriptionKey: "iceCaramelMacchiato", image: "Menu images/drinks/Iced-Caramel-Macchiato.png" },
+  { id: "iced-caramel-milk", name: "Iced Caramel Milk", price: 95, category: "Boissons", descriptionKey: "icedCaramelMilk", image: "Menu images/drinks/Iced-Caramel-Milk.png" },
 ];
 
 export const featuredProducts: Product[] = [
