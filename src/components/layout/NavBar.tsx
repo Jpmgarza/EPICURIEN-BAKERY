@@ -167,7 +167,7 @@ export function NavBar() {
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-10">
+          <div className="hidden lg:flex items-center gap-10">
             {navLinks.map((link) => (
               <NavLink
                 key={link.href}
@@ -179,7 +179,7 @@ export function NavBar() {
           </div>
 
           {/* Right: Lang Toggle + CTA */}
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden lg:flex items-center gap-6">
             <div className="flex items-center gap-0.5 font-satoshi text-[10px] tracking-widest">
               {(["fr", "en", "th"] as const).map((loc, i) => (
                 <span key={loc} className="flex items-center">
@@ -215,15 +215,37 @@ export function NavBar() {
             </a>
           </div>
 
-          {/* Mobile hamburger */}
-          <button
-            type="button"
-            className={`md:hidden p-2.5 -mr-2.5 min-h-[44px] min-w-[44px] flex items-center justify-center transition-all duration-300 ${tc}`}
-            onClick={() => setDrawerOpen(true)}
-            aria-label={t.nav.openMenu}
-          >
-            <Menu size={22} />
-          </button>
+          {/* Mobile: Lang Toggle + Hamburger */}
+          <div className="lg:hidden flex items-center gap-1">
+            <div className="flex items-center gap-0.5 font-satoshi text-[10px] tracking-widest">
+              {(["fr", "en", "th"] as const).map((loc, i) => (
+                <span key={loc} className="flex items-center">
+                  {i > 0 && (
+                    <span className={`opacity-20 px-1 transition-all duration-300 ${tc}`}>|</span>
+                  )}
+                  <button
+                    type="button"
+                    onClick={() => setLocale(loc)}
+                    className={`uppercase px-0.5 cursor-pointer transition-all duration-300 ${tc} ${
+                      locale === loc
+                        ? "font-medium"
+                        : `${displayMode === "transparent" ? "opacity-75" : "opacity-50"} hover:opacity-100`
+                    }`}
+                  >
+                    {loc}
+                  </button>
+                </span>
+              ))}
+            </div>
+            <button
+              type="button"
+              className={`p-2.5 -mr-2.5 min-h-[44px] min-w-[44px] flex items-center justify-center transition-all duration-300 ${tc}`}
+              onClick={() => setDrawerOpen(true)}
+              aria-label={t.nav.openMenu}
+            >
+              <Menu size={22} />
+            </button>
+          </div>
         </div>
       </nav>
 
@@ -269,22 +291,6 @@ export function NavBar() {
               </nav>
 
               <div className="mt-auto pt-8 border-t border-[var(--divider)]">
-                <div className="flex items-center gap-4 mb-6 font-satoshi text-xs tracking-widest">
-                  {(["fr", "en", "th"] as const).map((loc) => (
-                    <button
-                      key={loc}
-                      type="button"
-                      onClick={() => setLocale(loc)}
-                      className={`uppercase cursor-pointer transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center px-3 ${
-                        locale === loc
-                          ? "text-[var(--dominant-brand)]"
-                          : "text-[var(--dominant-brand)] opacity-40"
-                      }`}
-                    >
-                      {loc}
-                    </button>
-                  ))}
-                </div>
                 <a
                   href={GRAB_URL}
                   target="_blank"

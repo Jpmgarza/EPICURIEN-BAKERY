@@ -10,7 +10,7 @@ export function MobileStickyBar() {
   const { t } = useLang();
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-[var(--secondary-brand)] border-t border-[var(--divider)] px-4 py-3 flex gap-3">
+    <div className="fixed bottom-0 left-0 right-0 z-40 lg:hidden bg-[var(--secondary-brand)] border-t border-[var(--divider)] px-4 py-3 flex gap-3">
       <a
         href={GRAB_URL}
         target="_blank"

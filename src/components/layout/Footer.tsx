@@ -88,7 +88,18 @@ export function Footer() {
             <div className="flex flex-col gap-2.5 font-satoshi text-sm text-[var(--dominant-brand)] opacity-50">
               <p>{t.visit.address}</p>
               <p>{t.visit.hours}</p>
-              <p>{t.visit.phone}</p>
+              <a
+                href="tel:+66807912902"
+                className="hover:opacity-100 transition-opacity"
+              >
+                {t.visit.phone}
+              </a>
+              <a
+                href="mailto:epicurienbkk@gmail.com"
+                className="hover:opacity-100 transition-opacity"
+              >
+                epicurienbkk@gmail.com
+              </a>
             </div>
           </div>
         </div>
