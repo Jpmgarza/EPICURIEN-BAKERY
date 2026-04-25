@@ -37,14 +37,14 @@ export const products: Product[] = [
   // Pâtisseries
   { id: "cookies", name: "Cookies", price: 105, category: "Pâtisseries", descriptionKey: "cookies", image: "Menu images/cakes/Cookie.png" },
   { id: "madeleine-lemon", name: "Madeleine Lemon", price: 90, category: "Pâtisseries", descriptionKey: "madeleineeLemon", image: "Menu images/cakes/Madeleine Au Citron.png" },
-  { id: "french-butter-cake", name: "French Butter Cake", price: 85, category: "Pâtisseries", descriptionKey: "frenchButterCake" },
-  { id: "mini-financier", name: "Mini Financier", price: 130, category: "Pâtisseries", descriptionKey: "miniFinancier" },
+  { id: "french-butter-cake", name: "French Butter Cake", price: 85, category: "Pâtisseries", descriptionKey: "frenchButterCake", image: "Menu images/cakes/Gateau-au-beur.png" },
+  { id: "mini-financier", name: "Mini Financier", price: 130, category: "Pâtisseries", descriptionKey: "miniFinancier", image: "Menu images/cakes/mini-financier-5pcs.png" },
   { id: "mini-cream-puffs", name: "Mini Cream Puffs", price: 65, category: "Pâtisseries", descriptionKey: "miniCreamPuffs" },
   { id: "chouquettes", name: "Chouquettes", price: 118, category: "Pâtisseries", descriptionKey: "chouquettes", image: "Menu images/cakes/chouquette.png" },
   { id: "tiramisu", name: "Tiramisu", price: 200, category: "Pâtisseries", descriptionKey: "tiramisu", image: "Menu images/cakes/Tiramisu.png" },
   { id: "panna-cotta", name: "Panna Cotta", price: 200, category: "Pâtisseries", descriptionKey: "pannaCotta", image: "Menu images/cakes/Pana cota.png" },
   { id: "chocolate-mousse", name: "Chocolate Mousse", price: 200, category: "Pâtisseries", descriptionKey: "chocolateMousse", image: "Menu images/cakes/Mousse au chocolat.png" },
-  { id: "milk-rice", name: "Milk Rice", price: 200, category: "Pâtisseries", descriptionKey: "milkRice" },
+  { id: "milk-rice", name: "Milk Rice", price: 200, category: "Pâtisseries", descriptionKey: "milkRice", image: "Menu images/cakes/Rice-Milk-(madagascarVanilla).png" },
   { id: "tropicale", name: "Tropicale", price: 225, category: "Pâtisseries", descriptionKey: "tropicale", image: "Menu images/cakes/Tropezienne (1).png" },
   { id: "cheesecake-cup", name: "Cheesecake In Cup", price: 230, category: "Pâtisseries", descriptionKey: "cheesecakeCup" },
 
