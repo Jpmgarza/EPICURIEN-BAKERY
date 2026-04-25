@@ -163,6 +163,7 @@
 #main-content {
   opacity: 0;
   transition: opacity 0.8s 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: var(--secondary-brand);
 }
 body.page-loaded #main-content {
   opacity: 1;
