@@ -60,7 +60,7 @@ export function CategoryFilter() {
           transition={{ duration: 0.25 }}
           className="grid grid-cols-2 lg:grid-cols-4 gap-4"
         >
-          {filtered.map((product) => (
+          {filtered.map((product, i) => (
             <div
               key={product.id}
               className="group bg-[var(--secondary-brand)] border border-[var(--dominant-brand)]/8 hover:border-[var(--dominant-brand)]/25 transition-all duration-300 overflow-hidden flex flex-col"
@@ -75,6 +75,7 @@ export function CategoryFilter() {
                     alt={product.name}
                     fill
                     quality={80}
+                    priority={i < 8}
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                     sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                   />
