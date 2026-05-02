@@ -36,6 +36,7 @@ const fr: Dict = {
     filterPains: "Pains",
     filterPatisseries: "Pâtisseries",
     filterBoissons: "Boissons",
+    filterBiscuitsBretons: "Biscuits Bretons",
     addToGrab: "Commander sur Grab",
     viewFullMenu: "Voir la carte complète",
   },
@@ -59,7 +60,7 @@ const fr: Dict = {
     painSuisseAmandes: "Crème pâtissière, pépites de chocolat et crème d'amande",
     // Pâtisseries descriptions
     cookies: "Croustillant en surface, fondant à cœur — généreusement sucré.",
-    madeleineeLemon: "Moelleuse et parfumée au citron. Zeste naturel dans la pâte. 2 pièces ฿90 ou 4 pièces ฿198",
+    madeleineeLemon: "Moelleuse et parfumée au citron. Zeste naturel dans la pâte. 2 pièces ฿115 ou 4 pièces ฿220",
     // Boissons descriptions
     icedEspresso: "Espresso Glacé",
     icedLatte: "Latte Glacé",
@@ -90,7 +91,7 @@ const fr: Dict = {
     croissantChocolateBun: "Croissant accompagné d'un pain au chocolat",
     // New Pâtisseries descriptions
     frenchButterCake: "Vendu à la tranche",
-    madeleineLemon4: "Moelleuse au citron. 4 pièces",
+    madeleineLemon4: "Moelleuse et parfumée au citron. Zeste naturel dans la pâte. 4 pièces",
     miniFinancier: "Financiers aux amandes, 5 pièces",
     miniCreamPuffs: "Choux garnis, 3 pièces",
     chouquettes: "Chouquettes légères, 6 pièces",
@@ -105,6 +106,17 @@ const fr: Dict = {
     iceCappuccino: "Cappuccino glacé",
     iceCaramelMacchiato: "Caramel Macchiato glacé",
     icedCaramelMilk: "Lait caramel glacé",
+    // Biscuits Bretons descriptions
+    galettesBretonnesNature: "Galettes pur beurre de tradition bretonne. 280g",
+    paletsBretons:           "Palets pur beurre, fondants et dorés. 220g",
+    selectionBretonne:       "Une sélection raffinée de biscuits bretons. 240g",
+    galettesTube:            "Galettes bretonnes présentées en tube cadeau. 180g",
+    galettesMini:            "Petites galettes pur beurre format mini. 130g",
+    bretonAssortment:        "Assortiment de biscuits bretons nature. 200g",
+    galettesCaramel:         "Galettes bretonnes au caramel au beurre salé. 280g",
+    paletsChocolat:          "Palets au chocolat français de qualité supérieure. 225g",
+    coffretExcellence:       "Coffret cadeau prestige à la française. 395g",
+    assortimentBreton:       "Grand assortiment de biscuits bretons. 600g",
   },
   about: {
     headline: "L'Artisan",

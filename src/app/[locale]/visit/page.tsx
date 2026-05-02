@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
+import { pageMeta, BASE_URL, OG_IMAGE, OG_ALT, hreflangs } from "@/lib/metadata";
 import { VisitContent } from "@/components/sections/visit/VisitContent";
-
-const OG_IMAGE =
-  "https://pbrnjxgzfmhbcgcqawro.supabase.co/storage/v1/object/public/products/hero-image-goldmarble-croissant.png";
 
 export async function generateMetadata({
   params,
@@ -10,38 +8,26 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  const loc = (locale as "en" | "fr" | "th");
+  const { title, description } = pageMeta.visit[loc] ?? pageMeta.visit.en;
   return {
-    title: "Visit Us",
-    description:
-      "Find Épicurien French Bakery at W District, Bangkok. Open daily 07:00–21:00. Order on Grab or visit us at 1693 Sukhumvit 71, Watthana.",
+    title: { absolute: title },
+    description,
     alternates: {
-      canonical: `https://epicurien-bakery.vercel.app/${locale}/visit`,
-      languages: {
-        en: "https://epicurien-bakery.vercel.app/en/visit",
-        fr: "https://epicurien-bakery.vercel.app/fr/visit",
-        th: "https://epicurien-bakery.vercel.app/th/visit",
-        "x-default": "https://epicurien-bakery.vercel.app/en/visit",
-      },
+      canonical: `${BASE_URL}/${locale}/visit`,
+      languages: hreflangs("/visit"),
     },
     openGraph: {
-      title: "Visit Us | Épicurien French Bakery Bangkok",
-      description:
-        "Open daily 07:00–21:00 at W District, 1693 Sukhumvit 71, Bangkok. Order on Grab or come see us.",
-      url: `https://epicurien-bakery.vercel.app/${locale}/visit`,
-      images: [
-        {
-          url: OG_IMAGE,
-          width: 1200,
-          height: 630,
-          alt: "Freshly baked artisan croissants at Épicurien French Bakery Bangkok",
-        },
-      ],
+      type: "website",
+      title,
+      description,
+      url: `${BASE_URL}/${locale}/visit`,
+      images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: OG_ALT }],
     },
     twitter: {
       card: "summary_large_image",
-      title: "Visit Us | Épicurien French Bakery Bangkok",
-      description:
-        "Open daily 07:00–21:00 at W District, 1693 Sukhumvit 71, Bangkok.",
+      title,
+      description,
       images: [OG_IMAGE],
     },
   };

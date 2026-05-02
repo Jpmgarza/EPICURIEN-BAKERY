@@ -36,6 +36,7 @@ const th: Dict = {
     filterPains: "ขนมปัง",
     filterPatisseries: "Pâtisseries",
     filterBoissons: "เครื่องดื่ม",
+    filterBiscuitsBretons: "บิสกิตเบรอตง",
     addToGrab: "สั่งผ่าน Grab",
     viewFullMenu: "ดูเมนูทั้งหมด",
   },
@@ -59,7 +60,7 @@ const th: Dict = {
     painSuisseAmandes: "สอดไส้คัสตาทผสมช็อกโกแลตชิพ และครีมอัลมอนด์",
     // Pâtisseries descriptions
     cookies: "กรอบตรงผิวนอก แต่จะมีความนุ่มข้างใน รสชาติค่อนข้างหวาน",
-    madeleineeLemon: "คล้ายขนมไข่ แต่จะมีกลิ่นเลม่อน เนื้อแป้งจะมีผิวของเลม่อนผสมด้วย 2 ชิ้น 90 บาท และ 4 ชิ้น 198 บาท",
+    madeleineeLemon: "คล้ายขนมไข่ แต่จะมีกลิ่นเลม่อน เนื้อแป้งจะมีผิวของเลม่อนผสมด้วย 2 ชิ้น ฿115 หรือ 4 ชิ้น ฿220",
     // Boissons descriptions
     icedEspresso: "เอสเปรสโซเย็น",
     icedLatte: "ลาเต้เย็น",
@@ -90,7 +91,7 @@ const th: Dict = {
     croissantChocolateBun: "ครัวซองต์คู่กับขนมปังช็อกโกแลต",
     // New Pâtisseries descriptions
     frenchButterCake: "ขายเป็นชิ้น",
-    madeleineLemon4: "เนื้อนุ่มรสมะนาว 4 ชิ้น",
+    madeleineLemon4: "คล้ายขนมไข่ แต่จะมีกลิ่นเลม่อน เนื้อแป้งจะมีผิวของเลม่อนผสมด้วย 4 ชิ้น",
     miniFinancier: "ฟินันเซียร์อัลมอนด์ 5 ชิ้น",
     miniCreamPuffs: "ชูครีม 3 ชิ้น",
     chouquettes: "ชูเก็ตเบาบาง 6 ชิ้น",
@@ -105,6 +106,17 @@ const th: Dict = {
     iceCappuccino: "คาปูชิโน่เย็น",
     iceCaramelMacchiato: "คาราเมลมัคคิอาโต้เย็น",
     icedCaramelMilk: "นมคาราเมลเย็น",
+    // Biscuits Bretons descriptions
+    galettesBretonnesNature: "กาเล็ตเนยเบรอตงดั้งเดิม 280g",
+    paletsBretons:           "ปาเลเนยเบรอตง นุ่มและกรอบ 220g",
+    selectionBretonne:       "ชุดบิสกิตเบรอตงคัดสรร 240g",
+    galettesTube:            "กาเล็ตเบรอตงบรรจุในกระปุกของขวัญ 180g",
+    galettesMini:            "กาเล็ตเนยแท้ขนาดมินิ 130g",
+    bretonAssortment:        "บิสกิตเบรอตงออริจินัลรวมรส 200g",
+    galettesCaramel:         "กาเล็ตเบรอตงรสคาราเมลเนยเค็ม 280g",
+    paletsChocolat:          "ปาเลช็อกโกแลตฝรั่งเศสคุณภาพสูง 225g",
+    coffretExcellence:       "กล่องของขวัญบิสกิตฝรั่งเศสระดับพรีเมียม 395g",
+    assortimentBreton:       "บิสกิตเบรอตงรวมรสขนาดใหญ่ 600g",
   },
   about: {
     headline: "ช่างฝีมือ",

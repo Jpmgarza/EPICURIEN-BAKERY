@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta, BASE_URL, OG_IMAGE, OG_ALT, hreflangs } from "@/lib/metadata";
 import { Hero } from "@/components/sections/home/Hero";
 import { TrustBar } from "@/components/shared/TrustBar";
 import { FeaturedProducts } from "@/components/sections/home/FeaturedProducts";
@@ -14,24 +15,27 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  const loc = (locale as "en" | "fr" | "th");
+  const { title, description } = pageMeta.home[loc] ?? pageMeta.home.en;
   return {
-    title: {
-      absolute:
-        "Épicurien French Bakery Bangkok | Artisan Croissants & Pastries",
-    },
-    description:
-      "Award-winning French bakery in W District, Bangkok. Freshly baked croissants, pastries and cakes every morning by Enzo Le Bohec. Order on Grab.",
+    title: { absolute: title },
+    description,
     alternates: {
-      canonical: `https://epicurien-bakery.vercel.app/${locale}`,
-      languages: {
-        en: "https://epicurien-bakery.vercel.app/en",
-        fr: "https://epicurien-bakery.vercel.app/fr",
-        th: "https://epicurien-bakery.vercel.app/th",
-        "x-default": "https://epicurien-bakery.vercel.app/en",
-      },
+      canonical: `${BASE_URL}/${locale}`,
+      languages: hreflangs(""),
     },
     openGraph: {
-      url: `https://epicurien-bakery.vercel.app/${locale}`,
+      type: "website",
+      title,
+      description,
+      url: `${BASE_URL}/${locale}`,
+      images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: OG_ALT }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [OG_IMAGE],
     },
   };
 }
@@ -42,7 +46,7 @@ const bakerySchema = {
   name: "Épicurien French Bakery",
   description:
     "Award-winning artisan French bakery by Enzo Le Bohec, W District Bangkok",
-  url: "https://epicurien-bakery.vercel.app",
+  url: BASE_URL,
   telephone: "+66807912902",
   address: {
     "@type": "PostalAddress",

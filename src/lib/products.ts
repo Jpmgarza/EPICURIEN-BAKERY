@@ -1,4 +1,4 @@
-export type Category = "Viennoiseries" | "Pains" | "Pâtisseries" | "Boissons";
+export type Category = "Viennoiseries" | "Pains" | "Pâtisseries" | "Boissons" | "Biscuits Bretons";
 
 export interface Product {
   id: string;
@@ -16,7 +16,7 @@ export const products: Product[] = [
   { id: "pain-raisins", name: "Pain Aux Raisins", price: 115, category: "Viennoiseries", descriptionKey: "painRaisins", image: "Menu images/pasteries/Pain Aux Raisins.webp" },
   { id: "pain-suisse", name: "Pain Suisse", price: 125, category: "Viennoiseries", descriptionKey: "painSuisse", image: "Menu images/pasteries/Pain Suisse.webp" },
   { id: "chausson-pommes", name: "Chausson Aux Pommes", price: 115, category: "Viennoiseries", descriptionKey: "chaussonPommes", image: "Menu images/pasteries/Chausson Aux Pommes.webp" },
-  { id: "croissant-amandes", name: "Croissant Aux Amandes", price: 120, category: "Viennoiseries", descriptionKey: "croissantAmandes", image: "Menu images/pasteries/Croissant Aux Amandes.webp" },
+  { id: "croissant-amandes", name: "Croissant Aux Amandes", price: 155, category: "Viennoiseries", descriptionKey: "croissantAmandes", image: "Menu images/pasteries/Croissant Aux Amandes.webp" },
   { id: "pain-chocolat-amandes", name: "Pain Chocolate Aux Amandes", price: 125, category: "Viennoiseries", descriptionKey: "painChocolatAmandes", image: "Menu images/pasteries/Pain Chocolat Aux Amandes.webp" },
   { id: "pain-raisin-amandes", name: "Pain Raisin Aux Amandes", price: 125, category: "Viennoiseries", descriptionKey: "painRaisinAmandes", image: "Menu images/pasteries/Pain Raisin Aux Amandes.webp" },
   { id: "pain-suisse-amandes", name: "Pain Suisse Aux Amandes", price: 130, category: "Viennoiseries", descriptionKey: "painSuisseAmandes", image: "Menu images/pasteries/Pain Suisse Aux Amandes.webp" },
@@ -36,7 +36,7 @@ export const products: Product[] = [
 
   // Pâtisseries
   { id: "cookies", name: "Cookies", price: 105, category: "Pâtisseries", descriptionKey: "cookies", image: "Menu images/cakes/Cookie.webp" },
-  { id: "madeleine-lemon", name: "Madeleine Lemon", price: 90, category: "Pâtisseries", descriptionKey: "madeleineeLemon", image: "Menu images/cakes/Madeleine Au Citron.webp" },
+  { id: "madeleine-lemon", name: "Madeleine Lemon", price: 115, category: "Pâtisseries", descriptionKey: "madeleineeLemon", image: "Menu images/cakes/Madeleine Au Citron.webp" },
   { id: "french-butter-cake", name: "French Butter Cake", price: 85, category: "Pâtisseries", descriptionKey: "frenchButterCake", image: "Menu images/cakes/Gateau-au-beur.webp" },
   { id: "mini-financier", name: "Mini Financier", price: 130, category: "Pâtisseries", descriptionKey: "miniFinancier", image: "Menu images/cakes/mini-financier-5pcs.webp" },
   { id: "mini-cream-puffs", name: "Mini Cream Puffs", price: 65, category: "Pâtisseries", descriptionKey: "miniCreamPuffs", image: "Menu images/cakes/Chouquettes-6pcs.webp" },
@@ -47,6 +47,19 @@ export const products: Product[] = [
   { id: "milk-rice", name: "Milk Rice", price: 200, category: "Pâtisseries", descriptionKey: "milkRice", image: "Menu images/cakes/Rice-Milk-(madagascarVanilla).webp" },
   { id: "tropicale", name: "Tropicale", price: 225, category: "Pâtisseries", descriptionKey: "tropicale", image: "Menu images/cakes/Tropezienne (1).webp" },
   { id: "cheesecake-cup", name: "Cheesecake In Cup", price: 230, category: "Pâtisseries", descriptionKey: "cheesecakeCup" },
+
+  // TODO: replace with real product images
+  // Biscuits Bretons
+  { id: "galettes-bretonnes-nature", name: "Breton Butter Galettes Nature",      price: 332, category: "Biscuits Bretons", descriptionKey: "galettesBretonnesNature" },
+  { id: "palets-bretons-nature",     name: "Breton Butter Palets Nature",        price: 318, category: "Biscuits Bretons", descriptionKey: "paletsBretons" },
+  { id: "selection-bretonne",        name: "Breton Selection",                   price: 332, category: "Biscuits Bretons", descriptionKey: "selectionBretonne" },
+  { id: "galettes-tube",             name: "Breton Galettes Tub",                price: 744, category: "Biscuits Bretons", descriptionKey: "galettesTube" },
+  { id: "galettes-mini",             name: "Mini Pure Butter Breton Galettes",   price: 358, category: "Biscuits Bretons", descriptionKey: "galettesMini" },
+  { id: "breton-assortment",         name: "Original Breton Nature Assortment",  price: 318, category: "Biscuits Bretons", descriptionKey: "bretonAssortment" },
+  { id: "galettes-caramel",          name: "Breton Caramel Galettes",            price: 358, category: "Biscuits Bretons", descriptionKey: "galettesCaramel" },
+  { id: "palets-chocolat",           name: "French Chocolate Palets",            price: 358, category: "Biscuits Bretons", descriptionKey: "paletsChocolat" },
+  { id: "coffret-excellence",        name: "French Excellence Gift Box",          price: 664, category: "Biscuits Bretons", descriptionKey: "coffretExcellence" },
+  { id: "assortiment-breton",        name: "Assorted Breton Biscuits",           price: 930, category: "Biscuits Bretons", descriptionKey: "assortimentBreton" },
 
   // Boissons
   { id: "iced-espresso", name: "Iced Espresso", price: 85, category: "Boissons", descriptionKey: "icedEspresso", image: "Menu images/drinks/Iced Espresso.webp" },
@@ -72,6 +85,6 @@ export const products: Product[] = [
 export const featuredProducts: Product[] = [
   { id: "croissant", name: "Croissant", price: 95, category: "Viennoiseries", descriptionKey: "croissant", image: "Menu images/pasteries/Croisant.webp" },
   { id: "pain-chocolat", name: "Pain Au Chocolat", price: 105, category: "Viennoiseries", descriptionKey: "painChocolat", image: "Menu images/pasteries/Pain Au Chocolat.webp" },
-  { id: "croissant-amandes", name: "Croissant Aux Amandes", price: 120, category: "Viennoiseries", descriptionKey: "croissantAmandes", image: "Menu images/pasteries/Croissant Aux Amandes.webp" },
-  { id: "madeleine-lemon", name: "Madeleine Lemon", price: 90, category: "Pâtisseries", descriptionKey: "madeleineeLemon", image: "Menu images/cakes/Madeleine Au Citron.webp" },
+  { id: "croissant-amandes", name: "Croissant Aux Amandes", price: 155, category: "Viennoiseries", descriptionKey: "croissantAmandes", image: "Menu images/pasteries/Croissant Aux Amandes.webp" },
+  { id: "madeleine-lemon", name: "Madeleine Lemon", price: 115, category: "Pâtisseries", descriptionKey: "madeleineeLemon", image: "Menu images/cakes/Madeleine Au Citron.webp" },
 ];

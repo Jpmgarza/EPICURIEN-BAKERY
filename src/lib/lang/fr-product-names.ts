@@ -54,4 +54,15 @@ export const frProductNames: Record<string, string> = {
   "ice-cappuccino":               "Cappuccino glacé",
   "ice-caramel-macchiato":        "Caramel macchiato glacé",
   "iced-caramel-milk":            "Lait au caramel glacé",
+  // Biscuits Bretons
+  "galettes-bretonnes-nature":    "Les Galettes Bretonnes nature",
+  "palets-bretons-nature":        "Les Palets Bretons nature",
+  "selection-bretonne":           "La Sélection Bretonne",
+  "galettes-tube":                "Galettes Bretonnes tube",
+  "galettes-mini":                "Galettes Bretonnes pur beurre Mini",
+  "breton-assortment":            "Original Breton nature assortiment",
+  "galettes-caramel":             "Les Galettes Bretonnes au caramel",
+  "palets-chocolat":              "Les Palets de chocolat français",
+  "coffret-excellence":           "Coffret excellence à la Française",
+  "assortiment-breton":           "Assortiment de biscuits bretons",
 };

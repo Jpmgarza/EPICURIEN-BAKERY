@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { pageMeta, BASE_URL, OG_IMAGE as ROOT_OG_IMAGE, OG_ALT, hreflangs } from "@/lib/metadata";
 import { Geist_Mono } from "next/font/google";
 import { Cormorant_Garamond } from "next/font/google";
 import localFont from "next/font/local";
@@ -43,14 +44,11 @@ const ICON_BASE =
 const FAVICON_FILES =
   "https://pbrnjxgzfmhbcgcqawro.supabase.co/storage/v1/object/public/products/favicon%20logo";
 
-const OG_IMAGE =
-  "https://pbrnjxgzfmhbcgcqawro.supabase.co/storage/v1/object/public/products/logo/epicuriens-og-logo.png";
-
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: "Épicurien French Bakery",
-  url: "https://epicurien-bakery.vercel.app",
+  url: BASE_URL,
 };
 
 const VALID_LOCALES: Locale[] = ["en", "fr", "th"];
@@ -70,50 +68,37 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  const loc = (locale as "en" | "fr" | "th");
+  const { title, description } = pageMeta.home[loc] ?? pageMeta.home.en;
   return {
-    metadataBase: new URL("https://epicurien-bakery.vercel.app"),
+    metadataBase: new URL(BASE_URL),
     title: {
-      default: "Épicurien French Bakery Bangkok",
-      template: "%s | Épicurien French Bakery Bangkok",
+      default: title,
+      template: `%s | Épicurien — French Bakery Bangkok`,
     },
-    description:
-      "Award-winning artisan French bakery in W District, Bangkok. Freshly baked croissants, pastries and viennoiseries every morning by Enzo Le Bohec.",
+    description,
     robots: {
       index: true,
       follow: true,
     },
     alternates: {
-      canonical: `https://epicurien-bakery.vercel.app/${locale}`,
-      languages: {
-        en: "https://epicurien-bakery.vercel.app/en",
-        fr: "https://epicurien-bakery.vercel.app/fr",
-        th: "https://epicurien-bakery.vercel.app/th",
-        "x-default": "https://epicurien-bakery.vercel.app/en",
-      },
+      canonical: `${BASE_URL}/${locale}`,
+      languages: hreflangs(""),
     },
     openGraph: {
       type: "website",
       locale: "en_US",
-      url: `https://epicurien-bakery.vercel.app/${locale}`,
+      url: `${BASE_URL}/${locale}`,
       siteName: "Épicurien French Bakery Bangkok",
-      title: "Épicurien French Bakery Bangkok | Artisan Croissants & Pastries",
-      description:
-        "Award-winning artisan French bakery in W District, Bangkok. Freshly baked croissants, pastries and viennoiseries every morning by Enzo Le Bohec.",
-      images: [
-        {
-          url: OG_IMAGE,
-          width: 1200,
-          height: 630,
-          alt: "Freshly baked artisan croissants at Épicurien French Bakery Bangkok",
-        },
-      ],
+      title,
+      description,
+      images: [{ url: ROOT_OG_IMAGE, width: 1200, height: 630, alt: OG_ALT }],
     },
     twitter: {
       card: "summary_large_image",
-      title: "Épicurien French Bakery Bangkok | Artisan Croissants & Pastries",
-      description:
-        "Award-winning artisan French bakery in W District, Bangkok. Freshly baked croissants, pastries and viennoiseries every morning by Enzo Le Bohec.",
-      images: [OG_IMAGE],
+      title,
+      description,
+      images: [ROOT_OG_IMAGE],
     },
     icons: {
       icon: [

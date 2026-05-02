@@ -24,6 +24,7 @@ export function CategoryFilter() {
     { key: "Pains", label: t.products.filterPains },
     { key: "Pâtisseries", label: t.products.filterPatisseries },
     { key: "Boissons", label: t.products.filterBoissons },
+    { key: "Biscuits Bretons", label: t.products.filterBiscuitsBretons },
   ];
 
   const filtered =
@@ -38,6 +39,7 @@ export function CategoryFilter() {
         {filters.map((f) => (
           <button
             key={f.key}
+            type="button"
             onClick={() => setActiveFilter(f.key)}
             className={`font-satoshi text-[10px] tracking-[0.2em] uppercase px-6 py-2.5 border transition-all duration-200 cursor-pointer ${
               activeFilter === f.key

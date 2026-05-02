@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
+import { pageMeta, BASE_URL, OG_IMAGE, OG_ALT, hreflangs } from "@/lib/metadata";
 import { AboutContent } from "@/components/sections/about/AboutContent";
-
-const OG_IMAGE =
-  "https://pbrnjxgzfmhbcgcqawro.supabase.co/storage/v1/object/public/products/hero-image-goldmarble-croissant.png";
 
 export async function generateMetadata({
   params,
@@ -10,38 +8,26 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  const loc = (locale as "en" | "fr" | "th");
+  const { title, description } = pageMeta.about[loc] ?? pageMeta.about.en;
   return {
-    title: "Our Story",
-    description:
-      "Meet Enzo Le Bohec — No. 1 Best Croissant in Paris 2021 — and discover how Épicurien brings authentic French bakery craft to Bangkok's W District.",
+    title: { absolute: title },
+    description,
     alternates: {
-      canonical: `https://epicurien-bakery.vercel.app/${locale}/about`,
-      languages: {
-        en: "https://epicurien-bakery.vercel.app/en/about",
-        fr: "https://epicurien-bakery.vercel.app/fr/about",
-        th: "https://epicurien-bakery.vercel.app/th/about",
-        "x-default": "https://epicurien-bakery.vercel.app/en/about",
-      },
+      canonical: `${BASE_URL}/${locale}/about`,
+      languages: hreflangs("/about"),
     },
     openGraph: {
-      title: "Our Story | Épicurien French Bakery Bangkok",
-      description:
-        "Meet Enzo Le Bohec — No. 1 Best Croissant in Paris 2021 — and discover how Épicurien brings authentic French bakery craft to Bangkok.",
-      url: `https://epicurien-bakery.vercel.app/${locale}/about`,
-      images: [
-        {
-          url: OG_IMAGE,
-          width: 1200,
-          height: 630,
-          alt: "Freshly baked artisan croissants at Épicurien French Bakery Bangkok",
-        },
-      ],
+      type: "website",
+      title,
+      description,
+      url: `${BASE_URL}/${locale}/about`,
+      images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: OG_ALT }],
     },
     twitter: {
       card: "summary_large_image",
-      title: "Our Story | Épicurien French Bakery Bangkok",
-      description:
-        "Meet Enzo Le Bohec — No. 1 Best Croissant in Paris 2021 — and the story behind Épicurien in Bangkok.",
+      title,
+      description,
       images: [OG_IMAGE],
     },
   };

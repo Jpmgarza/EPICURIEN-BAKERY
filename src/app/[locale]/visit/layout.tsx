@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { BASE_URL } from "@/lib/metadata";
 
 const bakerySchema = {
   "@context": "https://schema.org",
@@ -6,7 +6,7 @@ const bakerySchema = {
   name: "Épicurien French Bakery",
   description:
     "Award-winning artisan French bakery by Enzo Le Bohec, W District Bangkok",
-  url: "https://epicurien-bakery.vercel.app",
+  url: BASE_URL,
   telephone: "+66807912902",
   address: {
     "@type": "PostalAddress",
@@ -40,31 +40,6 @@ const bakerySchema = {
     name: "Enzo Le Bohec",
   },
 };
-
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}): Promise<Metadata> {
-  const { locale } = await params;
-  return {
-    title: "Visit Us",
-    description:
-      "Find Épicurien French Bakery at W District, Bangkok. Open daily 7am–9pm. BTS Phra Khanong — 3-minute walk. Order on Grab for delivery.",
-    alternates: {
-      canonical: `https://epicurien-bakery.vercel.app/${locale}/visit`,
-      languages: {
-        en: "https://epicurien-bakery.vercel.app/en/visit",
-        fr: "https://epicurien-bakery.vercel.app/fr/visit",
-        th: "https://epicurien-bakery.vercel.app/th/visit",
-        "x-default": "https://epicurien-bakery.vercel.app/en/visit",
-      },
-    },
-    openGraph: {
-      url: `https://epicurien-bakery.vercel.app/${locale}/visit`,
-    },
-  };
-}
 
 export default function VisitLayout({
   children,

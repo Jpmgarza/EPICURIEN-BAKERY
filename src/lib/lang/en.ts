@@ -34,6 +34,7 @@ const en = {
     filterPains: "Breads",
     filterPatisseries: "Pâtisseries",
     filterBoissons: "Drinks",
+    filterBiscuitsBretons: "Breton Biscuits",
     addToGrab: "Order on Grab",
     viewFullMenu: "View Full Menu",
   },
@@ -57,7 +58,7 @@ const en = {
     painSuisseAmandes: "Custard with chocolate chips and almond cream",
     // Pâtisseries descriptions
     cookies: "Crispy on the outside, soft inside. Fairly sweet.",
-    madeleineeLemon: "Like sponge cake with lemon. Lemon zest in the batter. 2 pieces ฿90 or 4 pieces ฿198",
+    madeleineeLemon: "Like sponge cake with lemon. Lemon zest in the batter. 2 pieces ฿115 or 4 pieces ฿220",
     // Boissons descriptions
     icedEspresso: "Iced Espresso",
     icedLatte: "Iced Latte",
@@ -88,7 +89,7 @@ const en = {
     croissantChocolateBun: "Croissant paired with a chocolate pastry bun",
     // New Pâtisseries descriptions
     frenchButterCake: "Sold by the slice",
-    madeleineLemon4: "Like sponge cake with lemon. 4 pieces",
+    madeleineLemon4: "Like sponge cake with lemon. Lemon zest in the batter. 4 pieces",
     miniFinancier: "Almond financiers, 5 pieces",
     miniCreamPuffs: "Filled cream puffs, 3 pieces",
     chouquettes: "Light choux pastry puffs, 6 pieces",
@@ -103,6 +104,17 @@ const en = {
     iceCappuccino: "Iced Cappuccino",
     iceCaramelMacchiato: "Iced Caramel Macchiato",
     icedCaramelMilk: "Iced Caramel Milk",
+    // Biscuits Bretons descriptions
+    galettesBretonnesNature: "Classic Breton butter galettes. 280g",
+    paletsBretons:           "Round Breton butter biscuits. 220g",
+    selectionBretonne:       "A curated selection of Breton biscuits. 240g",
+    galettesTube:            "Breton galettes in a gift tub. 180g",
+    galettesMini:            "Bite-sized pure butter galettes. 130g",
+    bretonAssortment:        "Mixed Breton biscuit assortment. 200g",
+    galettesCaramel:         "Galettes with salted caramel. 280g",
+    paletsChocolat:          "Rich French chocolate palets. 225g",
+    coffretExcellence:       "Premium French biscuit gift box. 395g",
+    assortimentBreton:       "A generous assortment of Breton biscuits. 600g",
   },
   about: {
     headline: "The Artisan",

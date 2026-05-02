@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
+import { pageMeta, BASE_URL, OG_IMAGE, OG_ALT, hreflangs } from "@/lib/metadata";
 import { ContactContent } from "@/components/sections/contact/ContactContent";
-
-const OG_IMAGE =
-  "https://pbrnjxgzfmhbcgcqawro.supabase.co/storage/v1/object/public/products/hero-image-goldmarble-croissant.png";
 
 export async function generateMetadata({
   params,
@@ -10,38 +8,26 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  const loc = (locale as "en" | "fr" | "th");
+  const { title, description } = pageMeta.contact[loc] ?? pageMeta.contact.en;
   return {
-    title: "Contact",
-    description:
-      "Connect with Épicurien French Bakery Bangkok on Instagram, Facebook, or by phone. Find us at W District, 1693 Sukhumvit 71.",
+    title: { absolute: title },
+    description,
     alternates: {
-      canonical: `https://epicurien-bakery.vercel.app/${locale}/contact`,
-      languages: {
-        en: "https://epicurien-bakery.vercel.app/en/contact",
-        fr: "https://epicurien-bakery.vercel.app/fr/contact",
-        th: "https://epicurien-bakery.vercel.app/th/contact",
-        "x-default": "https://epicurien-bakery.vercel.app/en/contact",
-      },
+      canonical: `${BASE_URL}/${locale}/contact`,
+      languages: hreflangs("/contact"),
     },
     openGraph: {
-      title: "Contact | Épicurien French Bakery Bangkok",
-      description:
-        "Connect with us on Instagram, Facebook, or call us directly. W District, Bangkok.",
-      url: `https://epicurien-bakery.vercel.app/${locale}/contact`,
-      images: [
-        {
-          url: OG_IMAGE,
-          width: 1200,
-          height: 630,
-          alt: "Freshly baked artisan croissants at Épicurien French Bakery Bangkok",
-        },
-      ],
+      type: "website",
+      title,
+      description,
+      url: `${BASE_URL}/${locale}/contact`,
+      images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: OG_ALT }],
     },
     twitter: {
       card: "summary_large_image",
-      title: "Contact | Épicurien French Bakery Bangkok",
-      description:
-        "Connect with us on Instagram, Facebook, or call us directly. W District, Bangkok.",
+      title,
+      description,
       images: [OG_IMAGE],
     },
   };
