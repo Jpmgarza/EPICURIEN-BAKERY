@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 import { useLang } from "@/lib/lang";
 
 const EASE_UP = [0.16, 1, 0.3, 1] as [number, number, number, number];
-const REVIEWS_URL = "https://maps.app.goo.gl/mRJsESrH4KEqCGJ9A";
+const REVIEWS_URL = "https://www.google.com/maps/place/%C3%89PICURIEN+FRENCH+BAKERY+(W+District)/@13.7142476,100.5933191,17z/data=!4m8!3m7!1s0x30e29d0036bd0e7b:0xd098b067113fa3f7!8m2!3d13.7142476!4d100.5933191!9m1!1b1!16s%2Fg%2F11vxmd9b6k!18m1!1e1?entry=ttu&g_ep=EgoyMDI2MDQyOS4wIKXMDSoASAFQAw%3D%3D";
 
 const reviews = [
   { id: "mathieu", author: "Mathieu C.",      context: "Galette des Rois"    },
