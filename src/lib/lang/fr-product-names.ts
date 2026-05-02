@@ -27,7 +27,6 @@ export const frProductNames: Record<string, string> = {
   "cookies":                      "Cookie",
   "madeleine-lemon":              "Madeleine au citron",
   "french-butter-cake":           "Gâteau breton",
-  "madeleine-lemon-4":            "Madeleine au citron",
   "mini-financier":               "Mini financiers",
   "mini-cream-puffs":             "Mini choux",
   "panna-cotta":                  "Panna cotta",

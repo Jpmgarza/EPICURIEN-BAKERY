@@ -40,8 +40,9 @@ export function CategoryFilter() {
           <button
             key={f.key}
             type="button"
+            aria-pressed={activeFilter === f.key ? "true" : "false"}
             onClick={() => setActiveFilter(f.key)}
-            className={`font-satoshi text-[10px] tracking-[0.2em] uppercase px-6 py-2.5 border transition-all duration-200 cursor-pointer ${
+            className={`font-satoshi text-[10px] tracking-[0.2em] uppercase px-6 py-2.5 border transition-all duration-200 cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--secondary-brand)] ${
               activeFilter === f.key
                 ? "bg-[var(--secondary-brand)] border-[var(--secondary-brand)] text-[var(--dominant-brand)]"
                 : "border-[var(--secondary-brand)]/25 text-[var(--secondary-brand)] opacity-50 hover:opacity-100 hover:border-[var(--secondary-brand)]/50"
