@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
+import { Star } from "lucide-react";
 import { useLang } from "@/lib/lang";
 
 const EASE_UP = [0.16, 1, 0.3, 1] as [number, number, number, number];
@@ -33,7 +34,7 @@ export function TestimonialsSection({ variant = "dark" }: TestimonialsSectionPro
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.85, ease: EASE_UP }}
-          className="flex flex-col items-center gap-4 mb-20"
+          className="flex flex-col items-center gap-4 mb-10"
         >
           <p className={`font-satoshi text-[0.6rem] uppercase tracking-[0.4em] ${isDark ? "text-[rgba(255,250,240,0.65)]" : "text-[rgba(12,9,8,0.75)]"}`}>
             {t.testimonials.eyebrow}
@@ -49,6 +50,38 @@ export function TestimonialsSection({ variant = "dark" }: TestimonialsSectionPro
             {t.testimonials.heading}
           </h2>
         </motion.div>
+
+        {/* ── Google rating badge ───────────────────────── */}
+        <motion.a
+          href={REVIEWS_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, ease: EASE_UP, delay: 0.05 }}
+          className="flex flex-col items-center gap-2.5 mb-14 group"
+        >
+          <div className="flex items-center gap-1">
+            {[...Array(5)].map((_, i) => (
+              <Star
+                key={i}
+                size={13}
+                className={isDark ? "text-[var(--dominant-brand)] opacity-75" : "text-[var(--secondary-brand)] opacity-60"}
+                fill="currentColor"
+              />
+            ))}
+          </div>
+          <div className="flex items-center gap-2">
+            <span className={`font-satoshi text-sm font-medium ${isDark ? "text-[var(--dominant-brand)]" : "text-[var(--secondary-brand)]"}`}>
+              {t.testimonials.rating}
+            </span>
+            <span className={`${isDark ? "text-[var(--dominant-brand)]" : "text-[var(--secondary-brand)]"} opacity-20`}>·</span>
+            <span className={`font-satoshi text-[0.6rem] uppercase tracking-[0.3em] opacity-45 group-hover:opacity-70 transition-opacity ${isDark ? "text-[var(--dominant-brand)]" : "text-[var(--secondary-brand)]"}`}>
+              {t.testimonials.ratingCount} · {t.testimonials.source}
+            </span>
+          </div>
+        </motion.a>
 
         {/* ── Reviews grid ──────────────────────────────── */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[rgba(255,250,240,0.08)]">

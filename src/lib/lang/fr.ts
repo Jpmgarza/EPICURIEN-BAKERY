@@ -28,6 +28,7 @@ const fr: Dict = {
     award: "1er Meilleur Croissant de Paris — 2021",
     ingredient: "Beurre AOP · Farine française",
     location: "W District · BTS Phra Khanong",
+    google: "4.8 · 239 avis Google",
   },
   products: {
     sectionTitle: "Les Incontournables",
@@ -173,6 +174,8 @@ const fr: Dict = {
     eyebrow: "Avis clients",
     heading: "Ce que disent nos clients",
     source: "Google Maps",
+    rating: "4.8",
+    ratingCount: "239 avis",
     reviewTexts: [
       "En tant que Français ayant grandi en mangeant des galettes depuis mon enfance, je la recommande sans hésiter. Le goût est exactement le même qu'en France : beurré, équilibré, parfaitement cuit. Rien n'est adapté ni modifié. C'est l'authentique.",
       "L'une des meilleures boulangeries françaises de Bangkok. Baguettes, croissants et viennoiseries confectionnés avec des ingrédients français de première qualité. Le propriétaire a remporté le premier prix du meilleur croissant à Paris ; vous imaginez donc le niveau d'exigence.",

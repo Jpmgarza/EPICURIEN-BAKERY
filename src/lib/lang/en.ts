@@ -26,6 +26,7 @@ const en = {
     award: "1st Best Croissant in Paris — 2021",
     ingredient: "AOP Butter · French Flour",
     location: "W District · BTS Phra Khanong",
+    google: "4.8 · 239 Reviews on Google",
   },
   products: {
     sectionTitle: "The Essentials",
@@ -170,6 +171,8 @@ const en = {
     eyebrow: "Guest Reviews",
     heading: "What our guests say",
     source: "Google Maps",
+    rating: "4.8",
+    ratingCount: "239 reviews",
     reviewTexts: [
       "As a French person who grew up eating galettes since childhood, I 100% recommend it. The taste is exactly the same as what you'd find in France — buttery, well balanced, properly baked. Nothing felt adapted or localized. It's the real deal.",
       "One of the best French bakeries in Bangkok. Baguette, Croissant, and Viennoiseries made with premium French ingredients. The owner won 1st place for best croissant in Paris — you can imagine how high the standard is.",
