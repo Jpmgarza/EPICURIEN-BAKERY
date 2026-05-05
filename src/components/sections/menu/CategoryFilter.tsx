@@ -24,13 +24,11 @@ export function CategoryFilter() {
     { key: "Pains", label: t.products.filterPains },
     { key: "Pâtisseries", label: t.products.filterPatisseries },
     { key: "Boissons", label: t.products.filterBoissons },
+    { key: "Biscuits Bretons", label: t.products.filterBiscuitsBretons },
   ];
 
-  // TODO: restore Biscuits Bretons filter pill and remove this exclusion once product images are added
-  // TODO: remove image filter once focaccia-bread, cheesecake-cup, and ice-cappuccino have images
-  const visibleProducts = products.filter(
-    (p) => p.image && p.category !== "Biscuits Bretons"
-  );
+  // TODO: add image to focaccia-bread and cheesecake-cup in products.ts to make them visible
+  const visibleProducts = products.filter((p) => p.image);
 
   const filtered =
     activeFilter === "All"
