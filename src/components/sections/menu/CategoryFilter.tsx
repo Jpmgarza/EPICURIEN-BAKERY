@@ -12,6 +12,9 @@ const SUPABASE_STORAGE = "https://pbrnjxgzfmhbcgcqawro.supabase.co/storage/v1/ob
 
 const GRAB_URL = "https://r.grab.com/g/6-20260425_161413_D423C37AF6D44E2FB0FCDCEB13FA084F_MEXMPS-3-C7LVFA53AXX2AX";
 
+// 4×5 SVG placeholder matching --secondary-brand (#0C0908) card background
+const BLUR_DATA_URL = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='5'%3E%3Crect width='4' height='5' fill='%230C0908'/%3E%3C/svg%3E";
+
 type Filter = "All" | Category;
 
 export function CategoryFilter() {
@@ -82,8 +85,10 @@ export function CategoryFilter() {
                     fill
                     quality={80}
                     priority={i < 8}
+                    placeholder="blur"
+                    blurDataURL={BLUR_DATA_URL}
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    sizes="(max-width: 1023px) 50vw, 25vw"
                   />
                 )}
               </div>

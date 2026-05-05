@@ -138,6 +138,9 @@ export default async function LocaleLayout({
       className={`${cormorant.variable} ${satoshi.variable} ${geistMono.variable} h-full antialiased`}
       suppressHydrationWarning
     >
+      <head>
+        <link rel="preconnect" href="https://pbrnjxgzfmhbcgcqawro.supabase.co" />
+      </head>
       <body className="min-h-full flex flex-col bg-[var(--dominant-brand)]" suppressHydrationWarning>
         {/* JSON-LD: WebSite schema — static structured data, no user input */}
         <script type="application/ld+json">
