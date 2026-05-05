@@ -24,13 +24,18 @@ export function CategoryFilter() {
     { key: "Pains", label: t.products.filterPains },
     { key: "Pâtisseries", label: t.products.filterPatisseries },
     { key: "Boissons", label: t.products.filterBoissons },
-    { key: "Biscuits Bretons", label: t.products.filterBiscuitsBretons },
   ];
+
+  // TODO: restore Biscuits Bretons filter pill and remove this exclusion once product images are added
+  // TODO: remove image filter once focaccia-bread, cheesecake-cup, and ice-cappuccino have images
+  const visibleProducts = products.filter(
+    (p) => p.image && p.category !== "Biscuits Bretons"
+  );
 
   const filtered =
     activeFilter === "All"
-      ? products
-      : products.filter((p) => p.category === activeFilter);
+      ? visibleProducts
+      : visibleProducts.filter((p) => p.category === activeFilter);
 
   return (
     <div className="pt-12">
@@ -40,7 +45,7 @@ export function CategoryFilter() {
           <button
             key={f.key}
             type="button"
-            aria-pressed={activeFilter === f.key ? "true" : "false"}
+            aria-pressed={activeFilter === f.key}
             onClick={() => setActiveFilter(f.key)}
             className={`font-satoshi text-[10px] tracking-[0.2em] uppercase px-6 py-2.5 border transition-all duration-200 cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--secondary-brand)] ${
               activeFilter === f.key
