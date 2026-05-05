@@ -50,18 +50,18 @@ export const products: Product[] = [
 
   // Biscuits Bretons
   // TODO: add images for breton-assortment, galettes-caramel, palets-chocolat, coffret-excellence, assortiment-breton
-  { id: "galettes-bretonnes-nature", name: "Breton Butter Galettes Nature",      price: 332, category: "Biscuits Bretons", descriptionKey: "galettesBretonnesNature", image: "Menu images/Biscuits/Les-galettes-bretonnes-nature-280g.jpeg" },
-  { id: "palets-bretons-nature",     name: "Breton Butter Palets Nature",        price: 318, category: "Biscuits Bretons", descriptionKey: "paletsBretons",            image: "Menu images/Biscuits/les-palets-bretons-nature-220g.jpeg" },
-  { id: "selection-bretonne",        name: "Breton Selection",                   price: 332, category: "Biscuits Bretons", descriptionKey: "selectionBretonne",        image: "Menu images/Biscuits/la-selection-bretonne-240g.jpeg" },
-  { id: "galettes-tube",             name: "Breton Galettes Tub",                price: 744, category: "Biscuits Bretons", descriptionKey: "galettesTube",             image: "Menu images/Biscuits/galettes-bretonnes-tube-180g.jpeg" },
-  { id: "galettes-mini",             name: "Mini Pure Butter Breton Galettes",   price: 358, category: "Biscuits Bretons", descriptionKey: "galettesMini",             image: "Menu images/Biscuits/galettes-bretonnes-pur-beurre-mini-130g.jpeg" },
+  { id: "galettes-bretonnes-nature", name: "Breton Butter Galettes Nature",      price: 332, category: "Biscuits Bretons", descriptionKey: "galettesBretonnesNature", image: "Menu images/Biscuits/Les-galettes-bretonnes-nature-280g.webp" },
+  { id: "palets-bretons-nature",     name: "Breton Butter Palets Nature",        price: 318, category: "Biscuits Bretons", descriptionKey: "paletsBretons",            image: "Menu images/Biscuits/les-palets-bretons-nature-220g.webp" },
+  { id: "selection-bretonne",        name: "Breton Selection",                   price: 332, category: "Biscuits Bretons", descriptionKey: "selectionBretonne",        image: "Menu images/Biscuits/la-selection-bretonne-240g.webp" },
+  { id: "galettes-tube",             name: "Breton Galettes Tub",                price: 744, category: "Biscuits Bretons", descriptionKey: "galettesTube",             image: "Menu images/Biscuits/galettes-bretonnes-tube-180g.webp" },
+  { id: "galettes-mini",             name: "Mini Pure Butter Breton Galettes",   price: 358, category: "Biscuits Bretons", descriptionKey: "galettesMini",             image: "Menu images/Biscuits/galettes-bretonnes-pur-beurre-mini-130g.webp" },
   { id: "breton-assortment",         name: "Original Breton Nature Assortment",  price: 318, category: "Biscuits Bretons", descriptionKey: "bretonAssortment" },
   { id: "galettes-caramel",          name: "Breton Caramel Galettes",            price: 358, category: "Biscuits Bretons", descriptionKey: "galettesCaramel" },
   { id: "palets-chocolat",           name: "French Chocolate Palets",            price: 358, category: "Biscuits Bretons", descriptionKey: "paletsChocolat" },
   { id: "coffret-excellence",        name: "French Excellence Gift Box",          price: 664, category: "Biscuits Bretons", descriptionKey: "coffretExcellence" },
   { id: "assortiment-breton",        name: "Assorted Breton Biscuits",           price: 930, category: "Biscuits Bretons", descriptionKey: "assortimentBreton" },
-  { id: "echire-unsalted",           name: "Échiré Butter Unsalted 250g",        price: 380, category: "Biscuits Bretons", image: "Menu images/Biscuits/echire-beurre-non-sale-250g.jpeg" },
-  { id: "echire-salted",             name: "Échiré Butter Salted 250g",          price: 380, category: "Biscuits Bretons", image: "Menu images/Biscuits/echire-beurre-sale-250g.jpeg" },
+  { id: "echire-unsalted",           name: "Échiré Butter Unsalted 250g",        price: 380, category: "Biscuits Bretons", image: "Menu images/Biscuits/echire-beurre-non-sale-250g.webp" },
+  { id: "echire-salted",             name: "Échiré Butter Salted 250g",          price: 380, category: "Biscuits Bretons", image: "Menu images/Biscuits/echire-beurre-sale-250g (1).webp" },
 
   // Boissons
   { id: "iced-espresso", name: "Iced Espresso", price: 85, category: "Boissons", descriptionKey: "icedEspresso", image: "Menu images/drinks/Iced Espresso.webp" },
@@ -79,7 +79,7 @@ export const products: Product[] = [
   { id: "apple-soda", name: "Apple Soda", price: 80, category: "Boissons", descriptionKey: "appleSoda", image: "Menu images/drinks/Apple Soda.webp" },
   { id: "kiwi-soda", name: "Kiwi Soda", price: 80, category: "Boissons", descriptionKey: "kiwiSoda", image: "Menu images/drinks/Kiwi Soda.webp" },
   { id: "iced-americano", name: "Iced Americano", price: 110, category: "Boissons", descriptionKey: "icedAmericano", image: "Menu images/drinks/Iced-Americano.webp" },
-  { id: "ice-cappuccino", name: "Ice Cappuccino", price: 120, category: "Boissons", descriptionKey: "iceCappuccino", image: "Menu images/drinks/Iced capuccino.jpeg" },
+  { id: "ice-cappuccino", name: "Ice Cappuccino", price: 120, category: "Boissons", descriptionKey: "iceCappuccino", image: "Menu images/pasteries/Iced capuccino (1).webp" },
   { id: "ice-caramel-macchiato", name: "Ice Caramel Macchiato", price: 140, category: "Boissons", descriptionKey: "iceCaramelMacchiato", image: "Menu images/drinks/Iced-Caramel-Macchiato.webp" },
   { id: "iced-caramel-milk", name: "Iced Caramel Milk", price: 95, category: "Boissons", descriptionKey: "icedCaramelMilk", image: "Menu images/drinks/Iced-Caramel-Milk.webp" },
 ];
