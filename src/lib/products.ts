@@ -60,8 +60,8 @@ export const products: Product[] = [
   { id: "palets-chocolat",           name: "French Chocolate Palets",            price: 358, category: "Biscuits Bretons", descriptionKey: "paletsChocolat" },
   { id: "coffret-excellence",        name: "French Excellence Gift Box",          price: 664, category: "Biscuits Bretons", descriptionKey: "coffretExcellence" },
   { id: "assortiment-breton",        name: "Assorted Breton Biscuits",           price: 930, category: "Biscuits Bretons", descriptionKey: "assortimentBreton" },
-  { id: "echire-unsalted",           name: "Échiré Butter Unsalted 250g",        price: 380, category: "Biscuits Bretons", image: "Menu images/Biscuits/echire-beurre-non-sale-250g.webp" },
-  { id: "echire-salted",             name: "Échiré Butter Salted 250g",          price: 380, category: "Biscuits Bretons", image: "Menu images/Biscuits/echire-beurre-sale-250g (1).webp" },
+  { id: "echire-unsalted",           name: "Échiré Butter Unsalted 250g",        price: 380, category: "Biscuits Bretons", descriptionKey: "echireUnsalted", image: "Menu images/Biscuits/echire-beurre-non-sale-250g.webp" },
+  { id: "echire-salted",             name: "Échiré Butter Salted 250g",          price: 380, category: "Biscuits Bretons", descriptionKey: "echireSalted",   image: "Menu images/Biscuits/echire-beurre-sale-250g (1).webp" },
 
   // Boissons
   { id: "iced-espresso", name: "Iced Espresso", price: 85, category: "Boissons", descriptionKey: "icedEspresso", image: "Menu images/drinks/Iced Espresso.webp" },

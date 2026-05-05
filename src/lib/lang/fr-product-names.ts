@@ -58,10 +58,13 @@ export const frProductNames: Record<string, string> = {
   "palets-bretons-nature":        "Les Palets Bretons nature",
   "selection-bretonne":           "La Sélection Bretonne",
   "galettes-tube":                "Galettes Bretonnes tube",
-  "galettes-mini":                "Galettes Bretonnes pur beurre Mini",
-  "breton-assortment":            "Original Breton nature assortiment",
+  "galettes-mini":                "Galettes Bretonnes pur beurre mini",
+  "breton-assortment":            "Assortiment breton nature",
   "galettes-caramel":             "Les Galettes Bretonnes au caramel",
   "palets-chocolat":              "Les Palets de chocolat français",
-  "coffret-excellence":           "Coffret excellence à la Française",
+  "coffret-excellence":           "Coffret excellence à la française",
   "assortiment-breton":           "Assortiment de biscuits bretons",
+  // Échiré butter
+  "echire-unsalted":              "Beurre Échiré doux 250g",
+  "echire-salted":                "Beurre Échiré demi-sel 250g",
 };

@@ -112,12 +112,15 @@ const fr: Dict = {
     paletsBretons:           "Palets pur beurre, fondants et dorés. 220g",
     selectionBretonne:       "Une sélection raffinée de biscuits bretons. 240g",
     galettesTube:            "Galettes bretonnes présentées en tube cadeau. 180g",
-    galettesMini:            "Petites galettes pur beurre format mini. 130g",
+    galettesMini:            "Petites galettes pur beurre. 130g",
     bretonAssortment:        "Assortiment de biscuits bretons nature. 200g",
     galettesCaramel:         "Galettes bretonnes au caramel au beurre salé. 280g",
-    paletsChocolat:          "Palets au chocolat français de qualité supérieure. 225g",
+    paletsChocolat:          "Palets au chocolat noir, fondants. 225g",
     coffretExcellence:       "Coffret cadeau prestige à la française. 395g",
     assortimentBreton:       "Grand assortiment de biscuits bretons. 600g",
+    // Échiré butter descriptions
+    echireUnsalted:          "Beurre AOP d'Échiré, doux. 250g",
+    echireSalted:            "Beurre AOP d'Échiré, demi-sel. 250g",
   },
   about: {
     headline: "L'Artisan",

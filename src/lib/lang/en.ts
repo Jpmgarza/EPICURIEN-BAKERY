@@ -107,15 +107,18 @@ const en = {
     icedCaramelMilk: "Iced Caramel Milk",
     // Biscuits Bretons descriptions
     galettesBretonnesNature: "Classic Breton butter galettes. 280g",
-    paletsBretons:           "Round Breton butter biscuits. 220g",
-    selectionBretonne:       "A curated selection of Breton biscuits. 240g",
+    paletsBretons:           "Breton butter biscuits. 220g",
+    selectionBretonne:       "Selection of Breton biscuits. 240g",
     galettesTube:            "Breton galettes in a gift tub. 180g",
     galettesMini:            "Bite-sized pure butter galettes. 130g",
-    bretonAssortment:        "Mixed Breton biscuit assortment. 200g",
+    bretonAssortment:        "Breton biscuit assortment. 200g",
     galettesCaramel:         "Galettes with salted caramel. 280g",
     paletsChocolat:          "Rich French chocolate palets. 225g",
     coffretExcellence:       "Premium French biscuit gift box. 395g",
-    assortimentBreton:       "A generous assortment of Breton biscuits. 600g",
+    assortimentBreton:       "Large Breton biscuit assortment. 600g",
+    // Échiré butter descriptions
+    echireUnsalted:          "AOP butter from Échiré, the finest in France. Unsalted. 250g",
+    echireSalted:            "AOP butter from Échiré, the finest in France. Lightly salted. 250g",
   },
   about: {
     headline: "The Artisan",

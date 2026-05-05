@@ -111,13 +111,16 @@ const th: Dict = {
     galettesBretonnesNature: "กาเล็ตเนยเบรอตงดั้งเดิม 280g",
     paletsBretons:           "ปาเลเนยเบรอตง นุ่มและกรอบ 220g",
     selectionBretonne:       "ชุดบิสกิตเบรอตงคัดสรร 240g",
-    galettesTube:            "กาเล็ตเบรอตงบรรจุในกระปุกของขวัญ 180g",
+    galettesTube:            "กาเล็ตเบรอตงบรรจุในกระบอกของขวัญ 180g",
     galettesMini:            "กาเล็ตเนยแท้ขนาดมินิ 130g",
-    bretonAssortment:        "บิสกิตเบรอตงออริจินัลรวมรส 200g",
+    bretonAssortment:        "บิสกิตเบรอตงแบบดั้งเดิมรวมรส 200g",
     galettesCaramel:         "กาเล็ตเบรอตงรสคาราเมลเนยเค็ม 280g",
     paletsChocolat:          "ปาเลช็อกโกแลตฝรั่งเศสคุณภาพสูง 225g",
     coffretExcellence:       "กล่องของขวัญบิสกิตฝรั่งเศสระดับพรีเมียม 395g",
     assortimentBreton:       "บิสกิตเบรอตงรวมรสขนาดใหญ่ 600g",
+    // Échiré butter descriptions
+    echireUnsalted:          "เนย AOP จากเอชิเร่ ฝรั่งเศส รสจืด 250g",
+    echireSalted:            "เนย AOP จากเอชิเร่ ฝรั่งเศส รสเค็มเล็กน้อย 250g",
   },
   about: {
     headline: "ช่างฝีมือ",
