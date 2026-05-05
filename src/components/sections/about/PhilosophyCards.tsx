@@ -36,9 +36,9 @@ export function PhilosophyCards() {
               size={20}
               className="text-[var(--secondary-brand)] opacity-50 mb-6"
             />
-            <h3 className="font-satoshi font-medium text-[var(--secondary-brand)] text-sm mb-3 tracking-wide">
+            <h2 className="font-satoshi font-medium text-[var(--secondary-brand)] text-sm mb-3 tracking-wide">
               {card.title}
-            </h3>
+            </h2>
             <p className="font-satoshi text-[var(--secondary-brand)] opacity-60 text-sm leading-relaxed">
               {card.desc}
             </p>

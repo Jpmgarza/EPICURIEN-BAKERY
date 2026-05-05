@@ -47,7 +47,7 @@ const fr: Dict = {
     bottomCTAHeading: "Venez découvrir le goût d'un vrai croissant.",
   },
   menu: {
-    headline: "La Carte",
+    headline: "Notre Carte — Pâtisseries & Viennoiseries Françaises",
     subline: "Cuit frais chaque matin dans notre atelier du W District",
     // Viennoiseries descriptions
     croissant: "Notre signature. C'est ce croissant qui vaut à Enzo le 1er prix du Meilleur Croissant de Paris 2021.",
@@ -123,7 +123,7 @@ const fr: Dict = {
     echireSalted:            "Beurre AOP d'Échiré, demi-sel. 250g",
   },
   about: {
-    headline: "L'Artisan",
+    headline: "Épicurien — L'Histoire Derrière le Croissant",
     subline: "L'histoire derrière chaque croissant",
     ctaHeading: "Prêt à goûter ?",
 
@@ -144,7 +144,7 @@ const fr: Dict = {
     meetBaker: "Découvrir son histoire →",
   },
   visit: {
-    headline: "Nous Trouver",
+    headline: "Trouver Épicurien — W District, Bangkok",
     subline: "W District · Sukhumvit 71 · Bangkok",
     address: "1693 Sukhumvit 71, Klongton Nua, Watthana, Bangkok 10110",
     hours: "Ouvert tous les jours · 07h00–21h00",
@@ -164,6 +164,7 @@ const fr: Dict = {
     facebookAriaLabel: "Facebook Épicurien",
   },
   contact: {
+    headline: "Contacter Épicurien — Boulangerie Française",
     instagramLabel: "Instagram",
     instagramHandle: "@epicurien.bkk",
     facebookLabel: "Facebook",

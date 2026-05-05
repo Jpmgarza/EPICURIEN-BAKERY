@@ -11,85 +11,85 @@ export const pageMeta: Record<string, PageMeta> = {
     en: {
       title: "Épicurien — French Bakery Bangkok",
       description:
-        "Authentic French pastries, breads, and biscuits handcrafted in Bangkok. Experience the art of French baking at Épicurien.",
+        "Authentic French pastries, viennoiseries, and award-winning croissants handcrafted daily in Bangkok by chef Enzo Le Bohec. Visit Épicurien at W District.",
     },
     fr: {
       title: "Épicurien — Boulangerie Française à Bangkok",
       description:
-        "Pâtisseries, pains et biscuits français authentiques, faits à la main à Bangkok. Découvrez l'art de la boulangerie française.",
+        "Pâtisseries, viennoiseries et biscuits bretons artisanaux à Bangkok. Chef Enzo Le Bohec, 1er Meilleur Croissant de Paris 2021. Découvrez Épicurien au W District.",
     },
     th: {
       title: "Épicurien — เบเกอรี่ฝรั่งเศส กรุงเทพ",
       description:
-        "ขนมอบ ขนมปัง และบิสกิตฝรั่งเศสแท้ๆ ทำด้วยมือในกรุงเทพ สัมผัสศิลปะการทำเบเกอรี่สไตล์ฝรั่งเศสที่ Épicurien",
+        "ขนมอบ วียนนัวซรี และบิสกิตเบรอตงฝรั่งเศสแท้ๆ ทำสดใหม่ทุกเช้าในกรุงเทพ ครัวซองต์รางวัลที่ 1 ในปารีส 2021 โดยเชฟ Enzo Le Bohec มาที่ Épicurien W District",
     },
   },
   menu: {
     en: {
       title: "Menu | Épicurien — French Bakery Bangkok",
       description:
-        "Explore our full menu of French pastries, Breton biscuits, viennoiseries, and more — freshly made every day in Bangkok.",
+        "Explore our full menu of French pastries, viennoiseries, Breton biscuits, breads, and drinks — all freshly made every day at Épicurien, W District, Bangkok.",
     },
     fr: {
       title: "Menu | Épicurien — Boulangerie Française à Bangkok",
       description:
-        "Découvrez notre menu complet : pâtisseries françaises, biscuits bretons, viennoiseries et plus encore, faits frais chaque jour.",
+        "Découvrez notre carte complète : viennoiseries, pâtisseries, biscuits bretons, pains et boissons — faits frais chaque matin chez Épicurien au W District, Bangkok.",
     },
     th: {
       title: "เมนู | Épicurien — เบเกอรี่ฝรั่งเศส กรุงเทพ",
       description:
-        "สำรวจเมนูครบครันของเรา ทั้งขนมอบฝรั่งเศส บิสกิตเบรอตง วียนนัวซรี และอีกมากมาย ทำสดทุกวันในกรุงเทพ",
+        "สำรวจเมนูครบครันของเรา วียนนัวซรี ขนมอบฝรั่งเศส บิสกิตเบรอตง ขนมปัง และเครื่องดื่ม ทำสดใหม่ทุกเช้าที่ Épicurien W District กรุงเทพฯ สั่งผ่าน Grab ได้เลย",
     },
   },
   about: {
     en: {
       title: "About Us | Épicurien — French Bakery Bangkok",
       description:
-        "Learn the story behind Épicurien — a passion for authentic French baking brought to the heart of Bangkok.",
+        "The story of Épicurien: chef Enzo Le Bohec, winner of the 1st Best Croissant in Paris 2021, brings authentic French baking to the heart of W District, Bangkok.",
     },
     fr: {
       title: "À Propos | Épicurien — Boulangerie Française à Bangkok",
       description:
-        "Découvrez l'histoire d'Épicurien — une passion pour la boulangerie française authentique au cœur de Bangkok.",
+        "L'histoire d'Épicurien : le chef Enzo Le Bohec, 1er Meilleur Croissant de Paris 2021, apporte la boulangerie française authentique au cœur du W District, Bangkok.",
     },
     th: {
       title: "เกี่ยวกับเรา | Épicurien — เบเกอรี่ฝรั่งเศส กรุงเทพ",
       description:
-        "เรียนรู้เรื่องราวเบื้องหลัง Épicurien ความหลงใหลในการทำเบเกอรี่ฝรั่งเศสแท้ๆ กลางใจกรุงเทพ",
+        "เรื่องราวของ Épicurien เชฟ Enzo Le Bohec ผู้คว้ารางวัลที่ 1 ครัวซองต์ที่ดีที่สุดในปารีส 2021 นำการอบขนมฝรั่งเศสแท้ๆ มาสู่ W District กรุงเทพฯ",
     },
   },
   visit: {
     en: {
       title: "Visit Us | Épicurien — French Bakery Bangkok",
       description:
-        "Find Épicurien in Bangkok. Opening hours, location map, and everything you need to plan your visit.",
+        "Find Épicurien at W District, Sukhumvit 71, Bangkok. Open daily 7am–9pm, a 3-minute walk from BTS Phra Khanong. Get directions and plan your visit today.",
     },
     fr: {
-      title: "Nous Rendre Visite | Épicurien — Boulangerie Française à Bangkok",
+      title: "Trouver Épicurien | Boulangerie Française à Bangkok",
       description:
-        "Retrouvez Épicurien à Bangkok. Horaires d'ouverture, carte et tout ce qu'il faut savoir pour nous rendre visite.",
+        "Retrouvez Épicurien au W District, Sukhumvit 71, Bangkok. Ouvert tous les jours de 7h à 21h, à 3 min du BTS Phra Khanong. Préparez votre visite dès maintenant.",
     },
     th: {
       title: "มาเยี่ยมเรา | Épicurien — เบเกอรี่ฝรั่งเศส กรุงเทพ",
       description:
-        "ค้นหา Épicurien ในกรุงเทพ เวลาเปิด-ปิด แผนที่ และทุกอย่างที่คุณต้องการสำหรับการมาเยี่ยมชม",
+        "มาเยี่ยม Épicurien ที่ W District สุขุมวิท 71 กรุงเทพฯ เปิดทุกวัน 7:00–21:00 น. ห่าง BTS พระโขนง 3 นาทีเดินเท้า มีที่จอดรถ ดูแผนที่และวางแผนการมาได้เลย",
     },
   },
   contact: {
     en: {
       title: "Contact | Épicurien — French Bakery Bangkok",
       description:
-        "Get in touch with Épicurien. We'd love to hear from you — for orders, events, or any questions.",
+        "Contact Épicurien French Bakery by phone, email, Instagram, or Facebook. We're happy to answer questions about orders, catering, events, or wholesale inquiries.",
     },
     fr: {
       title: "Contact | Épicurien — Boulangerie Française à Bangkok",
       description:
-        "Contactez Épicurien. Commandes, événements ou questions — nous serions ravis de vous répondre.",
+        "Contactez Épicurien Boulangerie Française par téléphone, e-mail, Instagram ou Facebook. Commandes, traiteur, événements : notre équipe vous répond avec plaisir.",
     },
     th: {
       title: "ติดต่อเรา | Épicurien — เบเกอรี่ฝรั่งเศส กรุงเทพ",
       description:
-        "ติดต่อ Épicurien สำหรับคำสั่งซื้อ อีเวนต์ หรือข้อสงสัยใดๆ เรายินดีตอบทุกคำถาม",
+        "ติดต่อ Épicurien เบเกอรี่ฝรั่งเศส ทางโทรศัพท์ อีเมล Instagram หรือ Facebook สำหรับการสั่งซื้อส่ง อีเวนต์ หรือสอบถามข้อมูลใดๆ เรายินดีช่วยเหลือ",
     },
   },
 };

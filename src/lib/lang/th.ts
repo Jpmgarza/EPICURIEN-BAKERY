@@ -47,7 +47,7 @@ const th: Dict = {
     bottomCTAHeading: "มาลิ้มรสความแตกต่าง",
   },
   menu: {
-    headline: "เมนู",
+    headline: "เมนูของเรา — ขนมอบฝรั่งเศสและวียนนัวซรี",
     subline: "อบสดใหม่ทุกเช้าในอาเตลิเยร์ของเราที่ W District",
     // Viennoiseries descriptions
     croissant: "ครัวซองต์ เป็นตัวที่ขายดีที่สุด (เชฟเคยได้รับรางวัล 1st best croissant in Paris 2021)",
@@ -123,7 +123,7 @@ const th: Dict = {
     echireSalted:            "เนย AOP จากเอชิเร่ ฝรั่งเศส รสเค็มเล็กน้อย 250g",
   },
   about: {
-    headline: "ช่างฝีมือ",
+    headline: "Épicurien — เรื่องราวเบื้องหลังครัวซองต์",
     subline: "เรื่องราวเบื้องหลังทุกชิ้นครัวซองต์",
     ctaHeading: "พร้อมจะลองชิมไหม?",
 
@@ -144,7 +144,7 @@ const th: Dict = {
     meetBaker: "พบกับเชฟ →",
   },
   visit: {
-    headline: "หาเราได้ที่",
+    headline: "มาที่ Épicurien — W District กรุงเทพฯ",
     subline: "W District · สุขุมวิท 71 · กรุงเทพฯ",
     address: "1693 สุขุมวิท 71, คลองตันเหนือ, วัฒนา, กรุงเทพฯ 10110",
     hours: "เปิดทุกวัน · 07:00–21:00 น.",
@@ -163,6 +163,7 @@ const th: Dict = {
     facebookAriaLabel: "Facebook Épicurien",
   },
   contact: {
+    headline: "ติดต่อ Épicurien เบเกอรี่ฝรั่งเศส",
     instagramLabel: "Instagram",
     instagramHandle: "@epicurien.bkk",
     facebookLabel: "Facebook",

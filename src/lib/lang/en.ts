@@ -45,7 +45,7 @@ const en = {
     bottomCTAHeading: "Come taste the difference.",
   },
   menu: {
-    headline: "The Menu",
+    headline: "Our Menu — French Pastries & Viennoiseries",
     subline: "Baked fresh every morning in our W District atelier",
     // Viennoiseries descriptions
     croissant: "Our best-seller. Enzo won 1st Best Croissant in Paris 2021 for exactly this.",
@@ -121,7 +121,7 @@ const en = {
     echireSalted:            "AOP butter from Échiré, the finest in France. Lightly salted. 250g",
   },
   about: {
-    headline: "The Artisan",
+    headline: "Épicurien — The Story Behind the Croissant",
     subline: "The story behind every croissant",
     ctaHeading: "Ready to taste it?",
 
@@ -142,7 +142,7 @@ const en = {
     meetBaker: "Meet the Baker →",
   },
   visit: {
-    headline: "Find Us",
+    headline: "Visit Épicurien — W District, Bangkok",
     subline: "W District · Sukhumvit 71 · Bangkok",
     address: "1693 Sukhumvit 71, Klongton Nua, Watthana, Bangkok 10110",
     hours: "Open daily · 7:00am–9:00pm",
@@ -161,6 +161,7 @@ const en = {
     facebookAriaLabel: "Facebook Épicurien",
   },
   contact: {
+    headline: "Contact Épicurien French Bakery",
     instagramLabel: "Instagram",
     instagramHandle: "@epicurien.bkk",
     facebookLabel: "Facebook",

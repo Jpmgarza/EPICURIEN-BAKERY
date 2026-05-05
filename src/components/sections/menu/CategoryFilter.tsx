@@ -81,7 +81,7 @@ export function CategoryFilter() {
                 {product.image && (
                   <Image
                     src={SUPABASE_STORAGE + product.image}
-                    alt={product.name}
+                    alt={`${product.name} — Épicurien French Bakery Bangkok`}
                     fill
                     quality={80}
                     priority={i < 8}
