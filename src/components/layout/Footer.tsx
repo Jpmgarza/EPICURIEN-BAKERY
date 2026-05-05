@@ -52,18 +52,18 @@ export function Footer() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="font-satoshi text-[var(--dominant-brand)] opacity-50 hover:opacity-100 text-sm transition-opacity"
+                  className="font-satoshi text-[var(--dominant-brand)] opacity-50 hover:opacity-100 text-base transition-opacity"
                 >
                   {link.label}
                 </Link>
               ))}
             </div>
-            <div className="flex items-center gap-5">
+            <div className="flex items-center gap-3">
               <a
                 href="https://instagram.com/epicurien.bkk"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[var(--dominant-brand)] opacity-40 hover:opacity-100 transition-all"
+                className="min-h-[44px] min-w-[44px] flex items-center justify-center -ml-3 text-[var(--dominant-brand)] opacity-40 hover:opacity-100 transition-all"
                 aria-label={t.footer.instagramAriaLabel}
               >
                 <InstagramIcon size={17} />
@@ -72,7 +72,7 @@ export function Footer() {
                 href="https://facebook.com/share/18WCJuTpEe/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[var(--dominant-brand)] opacity-40 hover:opacity-100 transition-all"
+                className="min-h-[44px] min-w-[44px] flex items-center justify-center text-[var(--dominant-brand)] opacity-40 hover:opacity-100 transition-all"
                 aria-label={t.footer.facebookAriaLabel}
               >
                 <FacebookIcon size={17} />
@@ -85,7 +85,7 @@ export function Footer() {
             <p className="font-satoshi text-[var(--footer-muted)] text-[9px] tracking-[0.3em] uppercase mb-5">
               {t.visit.headline}
             </p>
-            <div className="flex flex-col gap-2.5 font-satoshi text-sm text-[var(--dominant-brand)] opacity-50">
+            <div className="flex flex-col gap-2.5 font-satoshi text-base text-[var(--dominant-brand)] opacity-50">
               <p>{t.visit.address}</p>
               <p>{t.visit.hours}</p>
               <a

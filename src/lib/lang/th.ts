@@ -15,7 +15,7 @@ const th: Dict = {
   },
   hero: {
     trustBadge: "อันดับ 1 ครัวซองต์ที่ดีที่สุดในปารีส — 2021",
-    headline: "ศิลปะแห่งครัวซองต์ฝรั่งเศส.",
+    headline: "ศิลปะแห่งครัวซองต์ฝรั่งเศส. กรุงเทพฯ.",
     subline: "เบเกอรี่ฝรั่งเศสอาร์ติซาน · W District กรุงเทพฯ",
     ctaGrab: "สั่งผ่าน Grab",
     ctaVisit: "มาที่ร้าน",
@@ -121,9 +121,12 @@ const th: Dict = {
     // Échiré butter descriptions
     echireUnsalted:          "เนย AOP จากเอชิเร่ ฝรั่งเศส รสจืด 250g",
     echireSalted:            "เนย AOP จากเอชิเร่ ฝรั่งเศส รสเค็มเล็กน้อย 250g",
+    // Cross-links
+    crossLinkVisit: "มาเยี่ยมเราที่ W District →",
+    crossLinkAbout: "เรื่องราวของเรา →",
   },
   about: {
-    headline: "Épicurien — เรื่องราวเบื้องหลังครัวซองต์",
+    headline: "Épicurien กรุงเทพฯ — เรื่องราวเบื้องหลังครัวซองต์",
     subline: "เรื่องราวเบื้องหลังทุกชิ้นครัวซองต์",
     ctaHeading: "พร้อมจะลองชิมไหม?",
 
@@ -137,6 +140,7 @@ const th: Dict = {
     philosophy3Title: "ฝีมือที่ได้รับรางวัล",
     philosophy3Desc:
       "อันดับ 1 ครัวซองต์ที่ดีที่สุดในปารีส 2021 ทุกชุดรักษามาตรฐานนั้น",
+    crossLinkMenu: "ดูเมนูทั้งหมด →",
   },
   storyTeaser: {
     pullQuote: "ปาติสเซอรีคือภาษาแห่งความรัก",
@@ -155,6 +159,7 @@ const th: Dict = {
     grabBanner: "มาไม่ได้วันนี้? สั่งผ่าน Grab — จัดส่งสด",
     grabHeading: "มาไม่ได้วันนี้?",
     grabSubline: "สั่งผ่าน Grab — จัดส่งสด",
+    crossLinkMenu: "ดูขนมอบและเครื่องดื่ม →",
   },
   footer: {
     tagline: "เบเกอรี่ฝรั่งเศสอาร์ติซาน กรุงเทพฯ",
@@ -163,7 +168,7 @@ const th: Dict = {
     facebookAriaLabel: "Facebook Épicurien",
   },
   contact: {
-    headline: "ติดต่อ Épicurien เบเกอรี่ฝรั่งเศส",
+    headline: "ติดต่อ Épicurien — เบเกอรี่ฝรั่งเศส กรุงเทพฯ",
     instagramLabel: "Instagram",
     instagramHandle: "@epicurien.bkk",
     facebookLabel: "Facebook",
@@ -172,6 +177,8 @@ const th: Dict = {
     emailLabel: "อีเมล",
     emailAddress: "epicurienbkk@gmail.com",
     wholesale: "สำหรับการสอบถามขายส่งหรือจัดเลี้ยง ส่ง DM มาทาง Instagram",
+    crossLinkVisit: "มาหาเราที่ W District →",
+    crossLinkMenu: "ดูเมนู →",
   },
   testimonials: {
     eyebrow: "รีวิวจากลูกค้า",

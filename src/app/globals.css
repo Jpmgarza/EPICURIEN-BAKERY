@@ -185,7 +185,7 @@ body.page-loaded #main-content {
 .loader-progress-fill {
   transform-origin: left;
   transform: scaleX(0);
-  animation: epicProgressFill 2.6s cubic-bezier(0.4, 0, 0.2, 1) 0.4s forwards;
+  animation: epicProgressFill 1.8s cubic-bezier(0.4, 0, 0.2, 1) 0.4s forwards;
 }
 
 /* ── Croissant icon ────────────────────────────────────────── */

@@ -1,11 +1,12 @@
 "use client";
 
+import Link from "next/link";
 import { PageTransition } from "@/components/layout/PageTransition";
 import { CategoryFilter } from "@/components/sections/menu/CategoryFilter";
 import { useLang } from "@/lib/lang";
 
 export function MenuContent() {
-  const { t } = useLang();
+  const { t, locale } = useLang();
   return (
     <PageTransition>
       <section data-nav-color="dark" className="bg-[var(--secondary-brand)] min-h-[40vh] flex flex-col items-center justify-center text-center px-6 pt-16">
@@ -21,6 +22,20 @@ export function MenuContent() {
       <section data-nav-color="light" className="bg-[var(--dominant-brand)] pb-32 px-6">
         <div className="max-w-7xl mx-auto">
           <CategoryFilter />
+          <div className="border-t border-[var(--secondary-brand)]/10 mt-16 pt-10 flex flex-wrap gap-8">
+            <Link
+              href={`/${locale}/visit`}
+              className="font-satoshi text-[var(--secondary-brand)] text-[10px] tracking-[0.3em] uppercase border-b border-[var(--secondary-brand)]/30 pb-px hover:border-[var(--secondary-brand)] hover:opacity-60 transition-all"
+            >
+              {t.menu.crossLinkVisit}
+            </Link>
+            <Link
+              href={`/${locale}/about`}
+              className="font-satoshi text-[var(--secondary-brand)] text-[10px] tracking-[0.3em] uppercase border-b border-[var(--secondary-brand)]/30 pb-px hover:border-[var(--secondary-brand)] hover:opacity-60 transition-all"
+            >
+              {t.menu.crossLinkAbout}
+            </Link>
+          </div>
         </div>
       </section>
     </PageTransition>

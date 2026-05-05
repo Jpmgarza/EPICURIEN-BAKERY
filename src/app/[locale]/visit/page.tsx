@@ -33,6 +33,24 @@ export async function generateMetadata({
   };
 }
 
-export default function VisitPage() {
-  return <VisitContent />;
+export default async function VisitPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const breadcrumb = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `${BASE_URL}/${locale}` },
+      { "@type": "ListItem", position: 2, name: "Visit", item: `${BASE_URL}/${locale}/visit` },
+    ],
+  };
+  return (
+    <>
+      <script type="application/ld+json">{JSON.stringify(breadcrumb)}</script>
+      <VisitContent />
+    </>
+  );
 }

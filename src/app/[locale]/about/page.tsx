@@ -33,6 +33,39 @@ export async function generateMetadata({
   };
 }
 
-export default function AboutPage() {
-  return <AboutContent />;
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Enzo Le Bohec",
+  jobTitle: "Chef & Founder",
+  worksFor: {
+    "@type": "Bakery",
+    name: "Épicurien French Bakery",
+    url: BASE_URL,
+  },
+  award: "1st Best Croissant in Paris 2021",
+  nationality: "French",
+};
+
+export default async function AboutPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const breadcrumb = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `${BASE_URL}/${locale}` },
+      { "@type": "ListItem", position: 2, name: "About", item: `${BASE_URL}/${locale}/about` },
+    ],
+  };
+  return (
+    <>
+      <script type="application/ld+json">{JSON.stringify(breadcrumb)}</script>
+      <script type="application/ld+json">{JSON.stringify(personSchema)}</script>
+      <AboutContent />
+    </>
+  );
 }

@@ -144,6 +144,7 @@ export function NavBar() {
     { href: `/${locale}/menu`, label: t.nav.menu },
     { href: `/${locale}/about`, label: t.nav.about },
     { href: `/${locale}/visit`, label: t.nav.visit },
+    { href: `/${locale}/contact`, label: t.nav.contact },
   ];
 
   return (
@@ -167,7 +168,7 @@ export function NavBar() {
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden lg:flex items-center gap-10">
+          <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
               <NavLink
                 key={link.href}
@@ -193,7 +194,7 @@ export function NavBar() {
                   <button
                     type="button"
                     onClick={() => setLocale(loc)}
-                    className={`uppercase px-0.5 cursor-pointer transition-all duration-300 ${tc} ${
+                    className={`uppercase px-1.5 py-2 min-h-[44px] flex items-center cursor-pointer transition-all duration-300 ${tc} ${
                       locale === loc
                         ? "font-medium"
                         : `${displayMode === "transparent" ? "opacity-75" : "opacity-50"} hover:opacity-100`
@@ -226,7 +227,7 @@ export function NavBar() {
                   <button
                     type="button"
                     onClick={() => setLocale(loc)}
-                    className={`uppercase px-0.5 cursor-pointer transition-all duration-300 ${tc} ${
+                    className={`uppercase px-2 min-h-[44px] flex items-center cursor-pointer transition-all duration-300 ${tc} ${
                       locale === loc
                         ? "font-medium"
                         : `${displayMode === "transparent" ? "opacity-75" : "opacity-50"} hover:opacity-100`

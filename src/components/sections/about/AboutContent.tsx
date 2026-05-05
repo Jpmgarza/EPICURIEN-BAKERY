@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { PageTransition } from "@/components/layout/PageTransition";
 import { FounderStory } from "@/components/sections/about/FounderStory";
 import { PhilosophyCards } from "@/components/sections/about/PhilosophyCards";
@@ -8,7 +9,7 @@ import { DualCTA } from "@/components/shared/DualCTA";
 import { useLang } from "@/lib/lang";
 
 export function AboutContent() {
-  const { t } = useLang();
+  const { t, locale } = useLang();
   return (
     <PageTransition>
       <section data-nav-color="dark" className="bg-[var(--secondary-brand)] min-h-[55vh] flex flex-col items-center justify-center text-center px-6 pt-16 relative overflow-hidden">
@@ -31,7 +32,13 @@ export function AboutContent() {
       <TestimonialsSection variant="light" />
 
       <section data-nav-color="light" className="bg-[var(--dominant-brand)] py-28 px-6">
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-3xl mx-auto flex flex-col items-center gap-10">
+          <Link
+            href={`/${locale}/menu`}
+            className="font-satoshi text-[var(--secondary-brand)] text-[10px] tracking-[0.3em] uppercase border-b border-[var(--secondary-brand)]/30 pb-px hover:border-[var(--secondary-brand)] hover:opacity-60 transition-all"
+          >
+            {t.about.crossLinkMenu}
+          </Link>
           <DualCTA heading={t.about.ctaHeading} variant="light" />
         </div>
       </section>

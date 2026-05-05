@@ -62,10 +62,10 @@ export function FeaturedProducts() {
                 </div>
                 {/* Info */}
                 <div className="p-5 border-t border-[rgba(255,255,255,0.06)]">
-                  <p className="font-satoshi font-medium text-[var(--dominant-brand)] text-sm mb-1.5">
+                  <p className="font-satoshi font-medium text-[var(--dominant-brand)] text-base mb-1.5">
                     {product.name}
                   </p>
-                  <p className="font-satoshi text-[var(--dominant-brand)] opacity-60 text-sm">
+                  <p className="font-satoshi text-[var(--dominant-brand)] opacity-60 text-base">
                     {product.price} THB
                   </p>
                 </div>

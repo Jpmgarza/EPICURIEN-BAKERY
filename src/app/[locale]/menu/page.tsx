@@ -33,6 +33,24 @@ export async function generateMetadata({
   };
 }
 
-export default function MenuPage() {
-  return <MenuContent />;
+export default async function MenuPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const breadcrumb = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `${BASE_URL}/${locale}` },
+      { "@type": "ListItem", position: 2, name: "Menu", item: `${BASE_URL}/${locale}/menu` },
+    ],
+  };
+  return (
+    <>
+      <script type="application/ld+json">{JSON.stringify(breadcrumb)}</script>
+      <MenuContent />
+    </>
+  );
 }

@@ -13,7 +13,7 @@ const en = {
   },
   hero: {
     trustBadge: "1st Best Croissant in Paris — 2021",
-    headline: "THE ART OF FRENCH CROISSANTS.",
+    headline: "THE ART OF FRENCH CROISSANTS. BANGKOK.",
     subline: "Artisan French Bakery · W District, Bangkok",
     ctaGrab: "Order on Grab",
     ctaVisit: "Visit the Shop",
@@ -119,9 +119,12 @@ const en = {
     // Échiré butter descriptions
     echireUnsalted:          "AOP butter from Échiré, the finest in France. Unsalted. 250g",
     echireSalted:            "AOP butter from Échiré, the finest in France. Lightly salted. 250g",
+    // Cross-links
+    crossLinkVisit: "Visit us at W District →",
+    crossLinkAbout: "Our story →",
   },
   about: {
-    headline: "Épicurien — The Story Behind the Croissant",
+    headline: "Épicurien Bangkok — The Story Behind the Croissant",
     subline: "The story behind every croissant",
     ctaHeading: "Ready to taste it?",
 
@@ -135,6 +138,7 @@ const en = {
     philosophy3Title: "Award-Winning Craft",
     philosophy3Desc:
       "1st place, Best Croissant in Paris 2021. Every batch holds that standard.",
+    crossLinkMenu: "Explore our full menu →",
   },
   storyTeaser: {
     pullQuote: "Pâtisserie is a love language.",
@@ -153,6 +157,7 @@ const en = {
     grabBanner: "Can't make it today? Order on Grab — delivered fresh.",
     grabHeading: "Can't make it today?",
     grabSubline: "Order on Grab — delivered fresh",
+    crossLinkMenu: "View our pastries & drinks →",
   },
   footer: {
     tagline: "Artisan French Bakery, Bangkok",
@@ -161,7 +166,7 @@ const en = {
     facebookAriaLabel: "Facebook Épicurien",
   },
   contact: {
-    headline: "Contact Épicurien French Bakery",
+    headline: "Contact Épicurien — French Bakery Bangkok",
     instagramLabel: "Instagram",
     instagramHandle: "@epicurien.bkk",
     facebookLabel: "Facebook",
@@ -170,6 +175,8 @@ const en = {
     emailLabel: "Email",
     emailAddress: "epicurienbkk@gmail.com",
     wholesale: "For wholesale or catering inquiries, DM us on Instagram",
+    crossLinkVisit: "Find us at W District →",
+    crossLinkMenu: "Browse our menu →",
   },
   testimonials: {
     eyebrow: "Guest Reviews",

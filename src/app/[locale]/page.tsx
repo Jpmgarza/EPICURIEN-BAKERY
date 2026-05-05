@@ -56,16 +56,16 @@ const bakerySchema = {
     postalCode: "10110",
     addressCountry: "TH",
   },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 13.7142476,
+    longitude: 100.5933191,
+  },
   openingHoursSpecification: {
     "@type": "OpeningHoursSpecification",
     dayOfWeek: [
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-      "Sunday",
+      "Monday", "Tuesday", "Wednesday", "Thursday",
+      "Friday", "Saturday", "Sunday",
     ],
     opens: "07:00",
     closes: "21:00",
@@ -79,6 +79,19 @@ const bakerySchema = {
     "@type": "Person",
     name: "Enzo Le Bohec",
   },
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.8",
+    reviewCount: "239",
+    bestRating: "5",
+    worstRating: "1",
+  },
+  menu: `${BASE_URL}/en/menu`,
+  hasMap: "https://maps.app.goo.gl/mRJsESrH4KEqCGJ9A",
+  sameAs: [
+    "https://instagram.com/epicurien.bkk",
+    "https://facebook.com/share/18WCJuTpEe/",
+  ],
 };
 
 export default async function HomePage({

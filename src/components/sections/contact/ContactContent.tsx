@@ -1,12 +1,13 @@
 "use client";
 
+import Link from "next/link";
 import { PageTransition } from "@/components/layout/PageTransition";
 import { Phone, Mail } from "lucide-react";
 import { InstagramIcon, FacebookIcon } from "@/components/shared/SocialIcons";
 import { useLang } from "@/lib/lang";
 
 export function ContactContent() {
-  const { t } = useLang();
+  const { t, locale } = useLang();
   return (
     <PageTransition>
       <section data-nav-color="light" className="bg-[var(--dominant-brand)] min-h-screen flex flex-col items-center justify-center text-center px-6 pt-16">
@@ -24,7 +25,7 @@ export function ContactContent() {
           >
             <InstagramIcon size={16} className="text-[var(--secondary-brand)] opacity-40 shrink-0" />
             <div className="text-left">
-              <p className="font-satoshi font-medium text-sm opacity-70 group-hover:opacity-100 transition-opacity">
+              <p className="font-satoshi font-medium text-base opacity-70 group-hover:opacity-100 transition-opacity">
                 {t.contact.instagramLabel}
               </p>
               <p className="font-satoshi text-xs opacity-60">{t.contact.instagramHandle}</p>
@@ -39,7 +40,7 @@ export function ContactContent() {
           >
             <FacebookIcon size={16} className="text-[var(--secondary-brand)] opacity-40 shrink-0" />
             <div className="text-left">
-              <p className="font-satoshi font-medium text-sm opacity-70 group-hover:opacity-100 transition-opacity">
+              <p className="font-satoshi font-medium text-base opacity-70 group-hover:opacity-100 transition-opacity">
                 {t.contact.facebookLabel}
               </p>
               <p className="font-satoshi text-xs opacity-60">
@@ -54,7 +55,7 @@ export function ContactContent() {
           >
             <Phone size={16} className="text-[var(--secondary-brand)] opacity-40 shrink-0" />
             <div className="text-left">
-              <p className="font-satoshi font-medium text-sm opacity-70 group-hover:opacity-100 transition-opacity">
+              <p className="font-satoshi font-medium text-base opacity-70 group-hover:opacity-100 transition-opacity">
                 {t.contact.phoneLabel}
               </p>
               <p className="font-satoshi text-xs opacity-60">{t.visit.phone}</p>
@@ -67,7 +68,7 @@ export function ContactContent() {
           >
             <Mail size={16} className="text-[var(--secondary-brand)] opacity-40 shrink-0" />
             <div className="text-left">
-              <p className="font-satoshi font-medium text-sm opacity-70 group-hover:opacity-100 transition-opacity">
+              <p className="font-satoshi font-medium text-base opacity-70 group-hover:opacity-100 transition-opacity">
                 {t.contact.emailLabel}
               </p>
               <p className="font-satoshi text-xs opacity-60">{t.contact.emailAddress}</p>
@@ -78,6 +79,21 @@ export function ContactContent() {
         <p className="font-satoshi text-[var(--secondary-brand)] opacity-50 text-[10px] tracking-widest mt-14 max-w-xs leading-relaxed">
           {t.contact.wholesale}
         </p>
+
+        <div className="flex flex-wrap items-center justify-center gap-8 mt-10">
+          <Link
+            href={`/${locale}/visit`}
+            className="font-satoshi text-[var(--secondary-brand)] text-[10px] tracking-[0.3em] uppercase border-b border-[var(--secondary-brand)]/30 pb-px hover:border-[var(--secondary-brand)] hover:opacity-60 transition-all"
+          >
+            {t.contact.crossLinkVisit}
+          </Link>
+          <Link
+            href={`/${locale}/menu`}
+            className="font-satoshi text-[var(--secondary-brand)] text-[10px] tracking-[0.3em] uppercase border-b border-[var(--secondary-brand)]/30 pb-px hover:border-[var(--secondary-brand)] hover:opacity-60 transition-all"
+          >
+            {t.contact.crossLinkMenu}
+          </Link>
+        </div>
       </section>
     </PageTransition>
   );

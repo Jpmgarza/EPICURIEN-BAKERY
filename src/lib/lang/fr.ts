@@ -15,7 +15,7 @@ const fr: Dict = {
   },
   hero: {
     trustBadge: "1er Meilleur Croissant de Paris — 2021",
-    headline: "L'ART DU CROISSANT FRANÇAIS.",
+    headline: "L'ART DU CROISSANT FRANÇAIS. BANGKOK.",
     subline: "Boulangerie-Pâtisserie Artisanale · W District, Bangkok",
     ctaGrab: "Commander sur Grab",
     ctaVisit: "Trouver la boutique",
@@ -121,9 +121,12 @@ const fr: Dict = {
     // Échiré butter descriptions
     echireUnsalted:          "Beurre AOP d'Échiré, doux. 250g",
     echireSalted:            "Beurre AOP d'Échiré, demi-sel. 250g",
+    // Cross-links
+    crossLinkVisit: "Nous trouver au W District →",
+    crossLinkAbout: "Notre histoire →",
   },
   about: {
-    headline: "Épicurien — L'Histoire Derrière le Croissant",
+    headline: "Épicurien Bangkok — L'Histoire Derrière le Croissant",
     subline: "L'histoire derrière chaque croissant",
     ctaHeading: "Prêt à goûter ?",
 
@@ -137,6 +140,7 @@ const fr: Dict = {
     philosophy3Title: "Savoir-faire primé",
     philosophy3Desc:
       "1ère place, Meilleur Croissant de Paris 2021. Chaque fournée répond à la même exigence.",
+    crossLinkMenu: "Voir toute notre carte →",
   },
   storyTeaser: {
     pullQuote: "La pâtisserie est un langage d'amour.",
@@ -156,6 +160,7 @@ const fr: Dict = {
       "Pas le temps de passer ? Commandez sur Grab — livré frais.",
     grabHeading: "Pas le temps de passer ?",
     grabSubline: "Commandez sur Grab — livré frais",
+    crossLinkMenu: "Découvrir nos pâtisseries & boissons →",
   },
   footer: {
     tagline: "Boulangerie-Pâtisserie Artisanale, Bangkok",
@@ -164,7 +169,7 @@ const fr: Dict = {
     facebookAriaLabel: "Facebook Épicurien",
   },
   contact: {
-    headline: "Contacter Épicurien — Boulangerie Française",
+    headline: "Contacter Épicurien — Boulangerie Française Bangkok",
     instagramLabel: "Instagram",
     instagramHandle: "@epicurien.bkk",
     facebookLabel: "Facebook",
@@ -173,6 +178,8 @@ const fr: Dict = {
     emailLabel: "E-mail",
     emailAddress: "epicurienbkk@gmail.com",
     wholesale: "Pour les commandes en gros ou traiteur, contactez-nous sur Instagram.",
+    crossLinkVisit: "Nous trouver au W District →",
+    crossLinkMenu: "Parcourir notre carte →",
   },
   testimonials: {
     eyebrow: "Avis clients",

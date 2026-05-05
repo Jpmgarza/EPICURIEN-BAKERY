@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import { pageMeta, BASE_URL, OG_IMAGE as ROOT_OG_IMAGE, OG_ALT, hreflangs } from "@/lib/metadata";
-import { Geist_Mono } from "next/font/google";
 import { Cormorant_Garamond } from "next/font/google";
 import localFont from "next/font/local";
 import { Analytics } from "@vercel/analytics/next";
@@ -16,6 +15,7 @@ const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   style: ["normal", "italic"],
+  display: "swap",
 });
 
 const satoshi = localFont({
@@ -32,11 +32,6 @@ const satoshi = localFont({
     },
   ],
   variable: "--font-satoshi",
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
 });
 
 const ICON_BASE =
@@ -135,7 +130,7 @@ export default async function LocaleLayout({
   return (
     <html
       lang={safeLocale}
-      className={`${cormorant.variable} ${satoshi.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${cormorant.variable} ${satoshi.variable} h-full antialiased`}
       suppressHydrationWarning
     >
       <head>
@@ -147,7 +142,7 @@ export default async function LocaleLayout({
           {JSON.stringify(websiteSchema)}
         </script>
         <LangProvider initialLocale={safeLocale}>
-          <LoadingScreen />
+          <LoadingScreen duration={1800} />
           <div id="main-content">
             <NavBar />
             {children}
